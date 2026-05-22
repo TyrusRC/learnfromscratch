@@ -1,0 +1,18 @@
+---
+---
+
+@use "main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+";
+
+/* Hide the sidebar avatar — we don't have a logo for this site. */
+#sidebar .profile-wrapper #avatar {
+  display: none;
+}
+
+/* Tighten the gap the avatar used to occupy. */
+#sidebar .profile-wrapper {
+  margin-top: 2rem;
+}
