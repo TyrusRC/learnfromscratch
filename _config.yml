@@ -1,0 +1,54 @@
+theme: jekyll-theme-chirpy
+
+title: Learn From Scratch
+tagline: Share my learning journey
+description: >-
+  Technical notes on programming — built up one topic at a time.
+
+url: "https://tyrusrc.github.io"
+baseurl: "/learnfromscratch"
+
+github:
+  username: TyrusRC
+
+social:
+  name: TyrusRC
+  links:
+    - https://github.com/TyrusRC
+
+timezone: Asia/Ho_Chi_Minh
+
+lang: en
+theme_mode:        # blank = visitor toggles light/dark
+paginate: 10
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Exclude these from the published site
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - package*.json
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
