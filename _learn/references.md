@@ -288,8 +288,12 @@ aliases: [refs, external-references, sources]
 
 ## Books — web and bug bounty
 
-- *The Web Application Hacker's Handbook* — Stuttard & Pinto. Still
-  the reference text for chained logic bugs and methodology framing.
+- *The Web Application Hacker's Handbook* (1st + 2nd ed.) — Stuttard
+  & Pinto (Wiley, 2007 / 2011). Still the reference text for chained
+  logic bugs and methodology framing. Structural source for the
+  injection, session-token-analysis, account-recovery, WebDAV, WAF,
+  shared-hosting, canonicalization, DNS-rebinding, ViewState, and
+  client-side-storage topic stubs.
 - *Bug Bounty Bootcamp* — Vickie Li (No Starch, 2021). Drawn on for
   the bug-class taxonomy under [[web-index]] and methodology
   ordering under [[bug-bounty-methodology]].

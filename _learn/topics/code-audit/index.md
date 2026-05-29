@@ -4,7 +4,7 @@ slug: code-audit-index
 aliases: [code-audit-topics, source-review-index]
 ---
 
-Source-review notes for PHP and Java stacks. See
+Source-review notes for PHP, Java, and ASP.NET stacks. See
 [[code-auditing]] for ordering.
 
 ## Methodology
@@ -14,8 +14,13 @@ Source-review notes for PHP and Java stacks. See
 - [[php-code-auditing]]
 - [[php-magic-methods]]
 - [[php-deserialization-gadgets]]
+- [[dangerous-php-sinks]]
 
 ## Java
 - [[java-code-auditing]]
 - [[java-deserialization-audit]]
 - [[expression-injection]]
+- [[dangerous-java-sinks]]
+
+## ASP.NET
+- [[dangerous-aspnet-sinks]]
