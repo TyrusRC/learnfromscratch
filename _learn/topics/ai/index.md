@@ -18,14 +18,23 @@ ordering.
 
 ## Agent and tool
 - [[tool-confusion]] · [[mcp-attacks]]
-- [[rag-poisoning]] · [[memory-poisoning]]
+- [[mcp-tool-poisoning-rug-pull]]
+- [[agentic-tool-chain-confused-deputy]]
+- [[copilot-zero-click-echoleak]]
 - [[chain-of-trust-confusion]]
 - [[exfiltration-via-rendered-content]]
+
+## RAG and memory
+- [[rag-poisoning]] · [[memory-poisoning]]
+- [[poisonedrag-five-doc]]
+- [[phantom-rag-backdoor]]
+- [[embedding-inversion-algen]]
 
 ## Model-level
 - [[model-extraction]] · [[training-data-extraction]]
 - [[membership-inference]]
 - [[supply-chain-attacks-on-models]]
+- [[slopsquatting]]
 
 ## Infrastructure
 - [[infrastructure-around-llms]]

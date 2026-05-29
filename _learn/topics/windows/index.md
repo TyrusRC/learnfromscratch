@@ -22,3 +22,6 @@ Windows internals primitives and post-exploitation notes. See
 
 ## Exploit dev (intro)
 - See [[exploit-dev-index|exploit dev]] for primitives.
+
+## Boot / firmware
+- [[pkfail-uefi-secureboot-bypass]]

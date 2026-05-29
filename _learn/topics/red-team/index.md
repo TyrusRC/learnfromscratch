@@ -27,6 +27,9 @@ ordering.
 - [[persistence-techniques-windows]]
 - [[ad-persistence]]
 
+## Enterprise infrastructure tradecraft
+- [[sccm-misconfiguration-manager]]
+
 ## Adversary feedback
 - [[purple-team-feedback-loop]]
 - [[ad-recon-low-noise]]

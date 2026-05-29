@@ -26,3 +26,7 @@ Network and infrastructure attack-surface notes. See
 ## Pivoting and tunneling
 - [[port-forwarding]] · [[ssh-tunneling]]
 - [[chisel]] · [[ligolo-ng]]
+
+## Protocol-layer attacks
+- [[tunnelvision-dhcp-opt121]]
+- [[terrapin-ssh-prefix-truncation]]

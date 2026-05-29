@@ -19,12 +19,21 @@ AD attack primitives. See [[active-directory]] for ordering.
 
 ## ACL / object abuse
 - [[acl-abuse]] · [[gpo-abuse]] · [[shadow-credentials]]
+- [[dmsa-badsuccessor]]
 
 ## Credential primitives
 - [[dcsync]] · [[dpapi-secrets]] · [[lsa-secrets]]
 
+## Relay
+- [[ntlm-relay-ws2025-mitigations]]
+
+## AD CS
+- [[adcs-attacks]] — ESC1–ESC13 baseline.
+- [[adcs-esc14-altsecidentities]]
+- [[adcs-esc15-ekuwu]]
+- [[adcs-esc16-securityext-disabled]]
+
 ## Advanced
-- [[adcs-attacks]]
 - [[child-to-forest-root]] · [[cross-forest-trust-abuse]]
 - [[ms-rpc-abuse]] · [[ad-persistence]]
 - [[mssql-trusted-links]]

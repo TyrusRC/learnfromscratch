@@ -22,15 +22,19 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[dom-clobbering]] · [[prototype-pollution]]
 - [[content-security-policy-bypass]] · [[trusted-types-bypass]]
 - [[xs-leaks]] · [[javascript-hijacking]]
+- [[css-injection-exfiltration]]
 - [[relative-path-overwrite]]
 - [[dns-rebinding]]
+- [[service-worker-persistent-xss]] · [[mv3-extension-bypass]]
 
 ## Auth / session
 - [[jwt]] · [[oauth-flows]] · [[oauth-token-theft]]
-- [[saml-attacks]] · [[sso-attacks]]
+- [[saml-attacks]] · [[parser-differential-saml-ruby]]
+- [[sso-attacks]]
 - [[session-fixation]] · [[session-token-analysis]]
 - [[2fa-bypass]] · [[account-recovery-attacks]] · [[remember-me-flaws]]
 - [[captcha-bypass]]
+- [[webauthn-api-hijacking-downgrade]] · [[passkey-mobile-ble-phish]]
 
 ## Authorisation and logic
 - [[broken-access-control]] · [[idor]]
@@ -38,6 +42,7 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 
 ## Request-layer
 - [[http-request-smuggling]] · [[cache-poisoning]] · [[cache-deception]]
+- [[http2-h2-downgrade-desync-v3]] · [[request-tunnelling-desync]]
 - [[websocket-attacks]]
 - [[race-conditions]]
 
