@@ -20,7 +20,6 @@ timezone: Asia/Ho_Chi_Minh
 
 lang: en
 theme_mode:        # blank = visitor toggles light/dark
-paginate: 10
 
 markdown: kramdown
 highlighter: rouge
@@ -44,15 +43,6 @@ exclude:
   - LICENSE
   - "*.config.js"
   - package*.json
-
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
 
 # ---- Chirpy collection & default-front-matter definitions ----
 # Chirpy expects these to live in the user's _config.yml (the theme
