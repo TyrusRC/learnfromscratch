@@ -16,3 +16,15 @@
 #sidebar .profile-wrapper {
   margin-top: 2rem;
 }
+
+/* Wikilinks — Obsidian-style [[links]] rendered by _plugins/wikilinks.rb. */
+.wikilink {
+  border-bottom: 1px dashed currentColor;
+  text-decoration: none;
+}
+
+.wikilink-broken {
+  color: #b3261e;
+  cursor: help;
+  opacity: 0.85;
+}

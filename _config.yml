@@ -38,6 +38,7 @@ exclude:
   - "*.gem"
   - "*.gemspec"
   - docs
+  - test
   - tools
   - README.md
   - LICENSE
@@ -60,6 +61,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  learn:
+    output: true
+    permalink: /learn/:path/
 
 defaults:
   - scope:
@@ -80,3 +84,9 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: learn
+    values:
+      layout: page
+      toc: true
