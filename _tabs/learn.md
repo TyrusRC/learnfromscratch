@@ -6,10 +6,13 @@ permalink: /learn/
 ---
 
 A personal **learning hub** for offensive security — web, API,
-network, Active Directory, Windows / Linux / macOS internals, exploit
-development, cloud red team, red team operations, AI red teaming, and
-bug bounty. Notes are atomic (one topic per file) and cross-linked in
-Obsidian style — every `[[topic]]` is a jump to that page.
+network, Active Directory, Windows / Linux / macOS internals, reverse
+engineering, exploit development, mobile, cloud red team, red team
+operations, AI red teaming, smart contracts, applied crypto, code
+auditing, and bug bounty. Skills aim at **real-world applicability** —
+bug bounty, audit, red team, IR — with CTFs as the training ground.
+Notes are atomic (one topic per file) and cross-linked in Obsidian
+style — every `[[topic]]` is a jump to that page.
 
 ## How to read this
 
@@ -26,17 +29,25 @@ wikilink-broken">Dashed red</span> = planned but not yet written.
 ## Pick a starting point
 
 ### Web and API
-- [[web-application-security]] · [[api-security]] · [[bug-bounty-methodology]]
+- [[web-application-security]] · [[api-security]] ·
+  [[bug-bounty-methodology]] · [[code-auditing]]
 
 ### Network and identity
 - [[network-pentesting]] · [[active-directory]]
 
-### OS internals and exploit dev
+### OS internals, reverse, exploit dev
+- [[reverse-engineering]]
 - [[windows-internals]] · [[advanced-windows-exploitation]]
 - [[linux-internals]] · [[macos-security]]
 
-### Operations and adversarial
-- [[red-team-operations]] · [[cloud-red-team]] · [[ai-red-teaming]]
+### Mobile, blockchain, AI
+- [[mobile-security]] · [[blockchain-security]] · [[ai-red-teaming]]
+
+### Operations and cloud
+- [[red-team-operations]] · [[cloud-red-team]]
+
+### Applied disciplines
+- [[applied-crypto|Applied cryptography]]
 
 ## Browse atomic topics
 
@@ -45,11 +56,18 @@ wikilink-broken">Dashed red</span> = planned but not yet written.
 - [[active-directory-index|Active Directory]] ·
   [[privilege-escalation-index|Privilege escalation]] ·
   [[lateral-movement-index|Lateral movement]]
-- [[exploit-dev-index|Exploit dev]] ·
-  [[red-team-index|Red team]] ·
-  [[cloud-index|Cloud]] ·
+- [[reverse-engineering-index|Reverse engineering]] ·
+  [[exploit-dev-index|Exploit dev]] ·
+  [[red-team-index|Red team]]
+- [[cloud-index|Cloud]] ·
   [[ai-index|AI red teaming]] ·
   [[bug-bounty-index|Bug bounty]]
+- [[crypto-index|Crypto]] ·
+  [[forensics-index|Forensics & misc]] ·
+  [[mobile-index|Mobile]] ·
+  [[blockchain-index|Blockchain]] ·
+  [[code-audit-index|Code auditing]] ·
+  [[awd-index|AWD]]
 
 ## Reference shelves
 
@@ -63,5 +81,7 @@ wikilink-broken">Dashed red</span> = planned but not yet written.
 [*HackTricks Cloud*](https://cloud.hacktricks.wiki/en/index.html),
 [*ired.team*](https://www.ired.team/),
 [*PortSwigger Web Security Academy*](https://portswigger.net/web-security),
-[*The Hacker Recipes*](https://www.thehacker.recipes/), and assorted
-research blogs and conference talks linked from individual pages.
+[*The Hacker Recipes*](https://www.thehacker.recipes/),
+[*OWASP WSTG*](https://owasp.org/www-project-web-security-testing-guide/),
+and assorted research blogs, conference talks, and security books
+cited in [[references]].

@@ -288,10 +288,29 @@ aliases: [refs, external-references, sources]
 
 ## Books — web and bug bounty
 
-- *The Web Application Hacker's Handbook* — Stuttard & Pinto.
-- *Bug Bounty Bootcamp* — Vickie Li.
-- *Real-World Bug Hunting* — Peter Yaworski.
-- *Hacking APIs* — Corey Ball.
+- *The Web Application Hacker's Handbook* — Stuttard & Pinto. Still
+  the reference text for chained logic bugs and methodology framing.
+- *Bug Bounty Bootcamp* — Vickie Li (No Starch, 2021). Drawn on for
+  the bug-class taxonomy under [[web-index]] and methodology
+  ordering under [[bug-bounty-methodology]].
+- *Real-World Bug Hunting* — Peter Yaworski (No Starch, 2019).
+  Disclosed-report case studies that informed bug-class framing
+  (HPP, HTML injection, CRLF, subdomain takeover, memory bugs in
+  web stack).
+- *Hacking APIs* — Corey Ball (No Starch, 2022). Structural source
+  for the API discovery, endpoint analysis, BOLA / BFLA / mass
+  assignment, JWT, GraphQL, and XAS topics under [[api-index]].
+- *Bug Bounty Playbook V2* — Alex Thomas / Ghostlulz. CMS, exposed
+  databases, subdomain takeover, and per-DB SQLi coverage that
+  shaped [[web-index]] additions.
+- *zseano's Methodology* — Sean Roesner. Informed the
+  hacker-mindset and workflow stubs under [[bug-bounty-index]].
+- *Enumerating Esoteric Attack Surfaces* — Jann Moon (2024). Deep
+  recon framing — vertical vs horizontal scope, ASN / reverse-whois
+  / acquisitions / cert-transparency / vhost / analytics-tag
+  correlation surfaced under [[bug-bounty-index]].
+- *How To Shot Web* (Jason Haddix, DEF CON 23, 2015). Bug-bounty
+  philosophy and recon-stack framing.
 
 ## Books — Windows, Linux, exploit dev, CTF
 
@@ -300,7 +319,9 @@ aliases: [refs, external-references, sources]
 - *Practical Binary Analysis* — Dennis Andriesse.
 - *A Guide to Kernel Exploitation* — Perla, Oldani.
 - *Hacking: The Art of Exploitation* — Jon Erickson.
-- *Handbook for CTFers* — Nu1L Team (Springer).
+- *Handbook for CTFers* — Nu1L Team (Springer, 2022). Cited as the
+  structural source for the crypto, forensics, mobile, code-auditing,
+  AWD, and CTF-style PWN topic categories in this hub.
 
 ## Books — macOS / iOS
 

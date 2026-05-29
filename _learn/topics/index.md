@@ -23,9 +23,18 @@ paths]] when you want a sequenced route.
 - [[linux-index|Linux]]
 - [[macos-index|macOS]]
 - [[exploit-dev-index|Exploit development]]
+- [[reverse-engineering-index|Reverse engineering]]
 
 ## Operations and adversarial
 - [[red-team-index|Red team]]
 - [[cloud-index|Cloud]]
 - [[ai-index|AI red teaming]]
 - [[bug-bounty-index|Bug bounty]]
+
+## CTF and applied disciplines
+- [[crypto-index|Crypto]]
+- [[forensics-index|Forensics & misc]]
+- [[mobile-index|Mobile]]
+- [[blockchain-index|Blockchain / smart contracts]]
+- [[code-audit-index|Code auditing]]
+- [[awd-index|AWD]]

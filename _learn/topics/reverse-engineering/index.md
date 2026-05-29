@@ -1,0 +1,30 @@
+---
+title: Reverse engineering — topics
+slug: reverse-engineering-index
+aliases: [reverse-engineering-topics, re-index]
+---
+
+Reverse engineering primitives — separate from exploit dev (which is
+in [[exploit-dev-index]]).
+
+## Foundations
+- [[reverse-engineering-overview]]
+- [[executable-files-pe-elf]]
+- [[assembly-basics-x86-64]] · [[assembly-basics-arm]]
+
+## Static / dynamic
+- [[static-analysis]] · [[dynamic-debugging]]
+- [[string-and-import-recon]]
+- [[algorithm-identification]]
+
+## Tooling
+- [[ida-hexrays]] · [[ghidra-decompiler]] · [[binary-ninja]]
+
+## Counter-measures
+- [[anti-static-analysis]] · [[anti-debugging]] · [[packers]]
+
+## Modern techniques
+- [[symbolic-execution]] · [[binary-instrumentation]]
+
+## Per-language
+- [[rust-go-reverse]] · [[csharp-python-reverse]]
