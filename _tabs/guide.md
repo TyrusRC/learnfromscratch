@@ -63,6 +63,12 @@ real note renders as a clickable link. A page that hasn't been
 written yet renders as a <span class="wikilink wikilink-broken">dashed
 red span</span> — that's a deliberate TODO marker, not an error.
 
+There's also a fourth layer for when you're mid-engagement and
+**stuck**: **[[playbooks-index|Playbooks]]** — mermaid decision
+trees that route from a real-world starting condition ("I scanned, now
+what?", "I have a shell, how do I escalate?") to the right topic
+note. Use them when you don't know what to look up.
+
 ## Where to start by level
 
 ### If you're new to offensive security

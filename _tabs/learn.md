@@ -25,6 +25,10 @@ style — every `[[topic]]` is a jump to that page.
   topics together in a recommended order with a target depth.
 - **[[topics-index|Topics]]** are atomic notes — one attack class,
   primitive, or concept per page.
+- **[[playbooks-index|Playbooks]]** are mermaid decision trees for
+  the "I'm stuck — what next?" moments: recon → foothold,
+  bug-class triage, Linux / Windows / AD privesc, lateral movement,
+  bug-bounty workflow, cloud foothold.
 - **[[tools|Tools]]** and **[[references|References]]** index the
   tooling and external material the topics link out to.
 
