@@ -18,3 +18,6 @@ Thumbs.db
 
 # Local design / planning docs (not part of the published site)
 docs/
+
+# Local source material (books, notes, training archives) — not for publishing
+test/
