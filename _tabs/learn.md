@@ -16,6 +16,11 @@ style — every `[[topic]]` is a jump to that page.
 
 ## How to read this
 
+> 🧭 **New here?** Read the **[Guide]({{ "/guide/" | relative_url }})**
+> first — how to use this hub, learning patterns that work, realistic
+> timelines, and the anti-patterns to avoid. The field is too big to
+> master; the Guide is about turning that into an advantage.
+
 - **[[paths-index|Learning paths]]** are zero-to-hero tracks that string
   topics together in a recommended order with a target depth.
 - **[[topics-index|Topics]]** are atomic notes — one attack class,
