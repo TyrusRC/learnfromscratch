@@ -25,6 +25,12 @@ and exploit a textbook example of each in a lab.
 - Burp Suite essentials — Proxy, Repeater, Intruder, Decoder.
 - Lab through [PortSwigger Web Security
   Academy](https://portswigger.net/web-security) — apprentice tier.
+  The [labs catalogue](https://portswigger.net/web-security/all-labs)
+  is the quickest way to find a hands-on exercise for any class.
+- Keep the [OWASP Web Security Testing
+  Guide](https://owasp.org/www-project-web-security-testing-guide/)
+  ([repo](https://github.com/OWASP/wstg)) open next to your notes —
+  structured test methodology, one technique per section.
 - Bug classes: [[sql-injection]], [[cross-site-scripting]],
   [[csrf]], [[idor]], [[file-upload]], [[lfi-rfi]],
   [[open-redirect]], [[cors-misconfig]].
