@@ -14,6 +14,7 @@ Go is often perceived as "memory-safe so audit-light", but several stdlib APIs a
 - Safe-looking patterns: `exec.Command("bash", "-c", userArg)`, `template.New("x").Parse(userTmpl)`, `gob.NewDecoder(conn).Decode(&v)`
 
 ## Technique
+{% raw %}
 ```go
 // 1. Command injection — shell interpreter with user input
 cmd := exec.Command("sh", "-c", "convert "+r.FormValue("path")+" out.png")
@@ -35,6 +36,7 @@ io.Copy(w, resp.Body)
 // 5. unsafe.Pointer reinterpret of attacker bytes
 hdr := (*Header)(unsafe.Pointer(&buf[0])) // OOB read if buf too short
 ```
+{% endraw %}
 
 ## Detection and defence
 - Semgrep: `go.lang.security.audit.dangerous-exec-command`, `go.lang.security.audit.dangerous-template-execute`, `go.lang.security.audit.net.ssrf`

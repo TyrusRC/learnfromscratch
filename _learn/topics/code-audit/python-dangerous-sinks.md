@@ -14,6 +14,7 @@ Python ships several stdlib and ecosystem APIs that interpret their argument as 
 - Safe-looking patterns: `yaml.load(stream, Loader=yaml.Loader)`, `subprocess.run(f"convert {name}", shell=True)`, `pickle.loads(redis.get(key))`
 
 ## Technique
+{% raw %}
 ```python
 # RCE via pickle deserialisation of a cache value
 import pickle, base64
@@ -34,6 +35,7 @@ from jinja2 import Environment
 Environment(autoescape=False).from_string(request.args["t"]).render()
 # Payload: {{ ''.__class__.__mro__[1].__subclasses__() }}
 ```
+{% endraw %}
 
 ## Detection and defence
 - Semgrep: `python.lang.security.audit.dangerous-subprocess-use`, `python.lang.security.deserialization.pickle`, `python.flask.security.audit.render-template-string`
