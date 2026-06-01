@@ -14,7 +14,18 @@ Steganography, traffic / memory / disk forensics. Paired with the
 - [[audio-steganography]]
 - [[compressed-archive-encryption]]
 
-## Forensics
-- [[traffic-analysis]]
-- [[memory-image-forensics]]
+## Disk and filesystem
 - [[disk-image-forensics]]
+- [[mft-analysis]] · [[usn-journal-forensics]]
+- [[prefetch-analysis]] · [[shimcache-amcache]]
+
+## Windows artefacts
+- [[windows-event-log-analysis]]
+- [[registry-hive-forensics]]
+- [[scheduled-tasks-forensics]]
+- [[lnk-jumplist-forensics]]
+- [[browser-history-forensics]]
+
+## Memory and network
+- [[memory-image-forensics]] · [[volatility-plugins]]
+- [[traffic-analysis]]

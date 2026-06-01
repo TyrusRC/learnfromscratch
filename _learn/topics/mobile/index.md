@@ -25,3 +25,7 @@ Android and iOS-side reverse + pentest primitives. See
 
 ## iOS
 - [[ios-reverse-overview]]
+- [[ios-ipa-structure]] · [[ios-class-dump]]
+- [[ios-jailbreak-detection-bypass]]
+- [[ios-keychain-extraction]]
+- [[dyld-shared-cache-extraction]]
