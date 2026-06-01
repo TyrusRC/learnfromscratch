@@ -49,6 +49,8 @@ NtAllocateVirtualMemory ENDP
 
 Toolchains: SysWhispers2 (direct), SysWhispers3 (indirect + egg hunting + jumper to random ntdll syscall addresses for variety), Hell's Hall, FreshyCalls.
 
+**Build-side gotchas.** In Visual Studio you need to enable the *Microsoft Macro Assembler* under Build Customizations and rename the `.asm` so it does not collide with the C++ object name, otherwise MASM silently drops the syscall stub. Decorate the prototype with `EXTERN_C` so the linker matches the unmangled symbol to the `PROC`, and remember syscall numbers are per-build: a stub hardcoded for 22H2 will return `STATUS_INVALID_SYSTEM_SERVICE` on 23H2 and surface as a noisy crash rather than a silent miss. Resolving SSNs dynamically (Hell's/Halo's gate) avoids this entirely.
+
 **Stack spoofing.** Indirect syscall alone isn't enough if ETW-TI walks the *entire* stack. Combine with return-address spoofing (push fake frames pointing inside legitimate modules) so the whole stack passes inspection.
 
 ## Detection and defence
@@ -62,4 +64,5 @@ Toolchains: SysWhispers2 (direct), SysWhispers3 (indirect + egg hunting + jumper
 - [@am0nsec — Hell's Gate](https://github.com/am0nsec/HellsGate) — original technique
 - [klezVirus — SysWhispers3](https://github.com/klezVirus/SysWhispers3) — indirect syscalls + jumpers
 - [MDSec — Resolving SSNs via the exception directory](https://www.mdsec.co.uk/2022/04/resolving-system-service-numbers-using-the-exception-directory/) — SSN resolution research
+- [ired.team — Calling syscalls directly from Visual Studio](https://www.ired.team/offensive-security/defense-evasion/using-syscalls-directly-from-visual-studio-to-bypass-avs-edrs) — MASM build-customisation walkthrough and minimal `NtCreateFile` stub
 - [[edr-hooks-and-unhooking]] [[amsi-bypass]] [[etw-bypass]]

@@ -47,6 +47,8 @@ Service-class implications when you forge against a computer account:
 
 Useful enctype hygiene: forge AES256 when the account's `msDS-SupportedEncryptionTypes` advertises AES; RC4 forgeries on AES-only accounts pop "encryption type downgrade" alerts.
 
+The `/target` value must be the exact FQDN the client will request (mimikatz binds the ticket to that string); requesting `\\srv01\C$` via NetBIOS while the ticket carries `srv01.corp.lab` causes `KRB_AP_ERR_MODIFIED` on the target. Likewise, `/service` choices like `host` cover SCM/scheduled tasks/WMI in one forge but exclude `cifs` — for full SMB + remote-exec coverage on a single host you typically mint two tickets (`cifs` and `host`) under the same `KRB5CCNAME` rather than one. Stick to `klist purge` between forges to avoid stale-ticket confusion in interactive sessions.
+
 ## Detection and defence
 - Native logs are sparse: no 4769 on the DC. Watch target host 4624 with Logon Type 3 + Kerberos package + impossible source / time.
 - Defender for Identity has limited silver-ticket detection; some XDRs catch PAC signature anomalies (`PAC_ATTRIBUTES_INFO` missing in older forgers).
@@ -60,3 +62,4 @@ Useful enctype hygiene: forge AES256 when the account's `msDS-SupportedEncryptio
 - [HackTricks — Silver ticket](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/silver-ticket.html) — tool examples
 - [Microsoft — KB5020805 PAC validation](https://support.microsoft.com/topic/kb5020805-how-to-manage-kerberos-protocol-changes-related-to-cve-2022-37967-997e9acc-67c5-48e1-8d0d-190269bf4d5b) — PAC enforcement modes
 - [SpecterOps — Kerberos forgeries detection](https://posts.specterops.io/) — telemetry hunting
+- [ired.team — Kerberos Silver Tickets](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/kerberos-silver-tickets) — /target /service flag walkthrough and klist verification

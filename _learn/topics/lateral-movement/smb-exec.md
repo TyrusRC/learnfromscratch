@@ -34,6 +34,8 @@ Under the hood, each typed command is wrapped roughly as:
 
 The service is then deleted and `\\target\C$\__output` is read for the result. Output is semi-interactive — fine for `whoami`, painful for `powershell -nop` (no persistent session). For a persistent shell use [[wmi-exec]] or [[winrm-exec]] instead.
 
+The classic psexec cousin leaves an even louder fingerprint: the SysInternals binary writes `PSEXESVC.exe` to `ADMIN$` and registers a service literally named `PSEXESVC` — a hard-coded string EDR vendors hunt for verbatim. Impacket's `psexec.py` randomises the service name (`-service-name`) and the uploaded binary name, but the SMB write to `ADMIN$\<random>.exe` plus the 7045 service install pair is still distinctive. When you must use the service-based path, rename `__output` via `-output-file`, randomise the service via `-service-name`, and pre-stage the output file outside `C$` root to dodge the default 5145 rule.
+
 ## Detection and defence
 - 7045 service install events with `binPath` containing `%COMSPEC%`, `/Q /c`, or `echo ... ^>` — extremely high-signal for smbexec.
 - 5145 file-share events writing/reading `__output` (default Impacket filename — operators rename it).
@@ -44,3 +46,4 @@ The service is then deleted and `\\target\C$\__output` is read for the result. O
 - [Impacket smbexec.py source](https://github.com/fortra/impacket/blob/master/examples/smbexec.py) — exact command template.
 - [smbexec writeup — HackTricks](https://book.hacktricks.wiki/en/windows-hardening/lateral-movement/smbexec.html) — flow diagram.
 - [Detecting Impacket smbexec — Red Canary](https://redcanary.com/) — telemetry patterns.
+- [ired.team — Lateral movement with psexec](https://www.ired.team/offensive-security/lateral-movement/lateral-movement-with-psexec) — `PSEXESVC` service-name signature and SMB traffic detection notes.

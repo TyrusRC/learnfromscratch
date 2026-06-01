@@ -98,6 +98,8 @@ nltest /domain_trusts /all_trusts
 
 Automated kits — `winPEAS.exe` (or `.bat` for AMSI-free), `Seatbelt.exe -group=all`, `PrivescCheck.ps1`. Pair with [[user-account-control]] checks (`reg query HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA`).
 
+Bypassing command-line logging — when 4688/Sysmon-1 with `CommandLine` is on, swap `net user`, `sc query`, and `schtasks` for COM equivalents that never appear as separate processes: instantiate `WScript.Network` (hostname/username/domain), `Shell.Application` (drives, namespace), and `Schedule.Service` (`.Connect()` + `.GetFolder("\\").GetTasks(0)`) from inside an existing PowerShell/beacon. Domain recon over a SOCKS-proxied `rpcclient` from your attacker host (`enumdomusers`, `querydispinfo`, `lsaquery`) leaves zero command-line evidence on the target — only an SMB null/auth session in 4624 logs.
+
 ## Detection and defence
 - Burst of read-only registry / WMI / `net` commands within seconds of logon — Sysmon event 1 sequence detection
 - Hits on `findstr password`, `cmdkey /list`, `vssadmin list shadows` — high-signal
@@ -109,3 +111,4 @@ Automated kits — `winPEAS.exe` (or `.bat` for AMSI-free), `Seatbelt.exe -group
 - [HackTricks — Windows local privesc index](https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html) — exhaustive checklist
 - [PEASS-ng / WinPEAS](https://github.com/peass-ng/PEASS-ng/tree/master/winPEAS) — canonical auto-enum tool
 - [Seatbelt](https://github.com/GhostPack/Seatbelt) — Windows host situational-awareness collector
+- [ired.team — Enumeration and Discovery](https://www.ired.team/offensive-security/enumeration-and-discovery) — COM-based hostname/user/domain enumeration and command-line logging bypass via rpcclient over SOCKS

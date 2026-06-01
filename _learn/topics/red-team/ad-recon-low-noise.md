@@ -35,6 +35,8 @@ Read SYSVOL directly when you can — GPP cpassword, GPO contents, scripts. SYSV
 
 For BloodHound, scope by OU (`--OU "OU=Servers,DC=corp,DC=local"`) and split runs across days. Cypher the small subgraph you actually need rather than re-collecting.
 
+When you cannot run AD tooling on the foothold host without lighting up command-line telemetry, tunnel `rpcclient` from your own box through a beacon's SOCKS proxy (`socks 7777` in Cobalt Strike, then `proxychains rpcclient <DC> -U user` with `enumdomusers`, `queryuser`, `enumprivs`). The compromised host sees no `net user`, `net group`, or `Get-ADUser` process events — only outbound SMB to the DC from the beacon process, which is far less correlated. The same SOCKS path works for Impacket's `reg.py`, `lookupsid.py`, and a `nmap -sT -Pn` against a narrow port list when full RPC enumeration would be too loud.
+
 ## Detection and defence
 - Defender for Identity flags reconnaissance: LDAP enumeration of sensitive groups, SAMR enumeration, DNS zone transfer attempts
 - The LDAP server channel logs ring buffer flags unusual query volume per principal
@@ -45,4 +47,5 @@ For BloodHound, scope by OU (`--OU "OU=Servers,DC=corp,DC=local"`) and split run
 - [BloodHound docs — SharpHound collection methods](https://bloodhound.specterops.io/collectors/sharphound/all-flags) — what each flag actually hits
 - [thehacker.recipes — AD recon](https://www.thehacker.recipes/ad/recon) — LDAP filters and tooling
 - [SpecterOps blog](https://posts.specterops.io/) — research on quieter collection
+- [ired.team — rpcclient via SOCKS to bypass command-line logging](https://www.ired.team/offensive-security/enumeration-and-discovery/enumerating-windows-domains-using-rpcclient-through-socksproxy-bypassing-command-line-logging) — proxychains pattern for silent AD enumeration
 - [[opsec-fundamentals]]

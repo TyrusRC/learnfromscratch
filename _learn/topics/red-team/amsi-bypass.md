@@ -37,6 +37,8 @@ Constrained Language Mode (CLM) blocks the managed reflection technique — Add-
 
 Each substring of the patch gets signatured. Obfuscate, fetch strings from environment, build the byte array dynamically.
 
+A subtler variant returns `0x80070057` (`E_INVALIDARG`) in `eax` instead of `S_OK` — the call technically fails, but on multiple Defender code paths the buffer's effective scan result is still treated as clean, and a non-zero `HRESULT` looks less suspicious to a sanity check that asserts "AMSI returned exactly success" as a tamper canary. Patching `AmsiOpenSession` to fail also short-circuits later `AmsiScanBuffer` calls because the host bails before reaching the scanner.
+
 ## Detection and defence
 - AMSI providers report events with `Microsoft-Antimalware-Scan-Interface` ETW; tampering changes the rate to zero abruptly
 - EDRs can monitor write access to `amsi.dll` in-memory regions via ETW Threat Intelligence
@@ -48,4 +50,5 @@ Each substring of the patch gets signatured. Obfuscate, fetch strings from envir
 - [Microsoft Docs — AMSI](https://learn.microsoft.com/en-us/windows/win32/amsi/) — the official interface and behaviour
 - [S3cur3Th1sSh1t — Amsi-Bypass-Powershell](https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell) — collection of historic bypasses with notes on lifespan
 - [Pentest Partners blog](https://www.pentestpartners.com/security-blog/) — hardware-breakpoint variant write-ups
+- [ired.team — AV bypass with Metasploit templates](https://www.ired.team/offensive-security/defense-evasion/av-bypass-with-metasploit-templates) — adjacent userland evasion patterns useful when chaining around AMSI
 - [[etw-bypass]] [[edr-hooks-and-unhooking]]

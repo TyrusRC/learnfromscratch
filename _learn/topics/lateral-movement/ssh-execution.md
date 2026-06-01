@@ -46,6 +46,8 @@ for h in $(cat hosts); do ssh -o StrictHostKeyChecking=no -i id_rsa "$h" id; don
 
 Watch out for `command=` restrictions in `authorized_keys` and `ForceCommand` in `sshd_config` — they limit what the key can do.
 
+When pivoting with `ssh -R` to expose an internal service back through the foothold, remember that the remote bind defaults to `127.0.0.1` on the SSH server side — your attack-box tools won't reach it unless `sshd_config` has `GatewayPorts yes` (or `clientspecified`) and you bind explicitly with `ssh -R 0.0.0.0:5555:internal:445`. Most hardened estates leave `GatewayPorts no`, so prefer `-D` dynamic forwarding (which only needs an outbound socket on the foothold) for SOCKS-style pivoting and reserve `-R` for situations where the foothold is dual-homed and the operator box is firewalled off.
+
 ## Detection and defence
 - `auth.log` / `journalctl -u ssh` shows `Accepted publickey` from unusual source IPs for the same key fingerprint across many hosts in a short window.
 - Agent-forwarding abuse leaves no auth event on the source host beyond the original login — hunt via process tree (`ssh` children of unexpected parents) and socket access auditing (`auditd` on `/tmp/ssh-*`).
@@ -55,3 +57,4 @@ Watch out for `command=` restrictions in `authorized_keys` and `ForceCommand` in
 - [SSH lateral movement — HackTricks](https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html) — agent / config abuse.
 - [The Hacker Recipes — SSH](https://www.thehacker.recipes/) — ControlMaster hijack notes.
 - [OpenSSH manual — ssh_config](https://man.openbsd.org/ssh_config) — ControlMaster, ForwardAgent, IdentitiesOnly.
+- [ired.team — SSH tunnelling / port forwarding](https://www.ired.team/offensive-security/lateral-movement/ssh-tunnelling-port-forwarding) — `-L`/`-R`/`-D` mechanics and `GatewayPorts` binding nuance.

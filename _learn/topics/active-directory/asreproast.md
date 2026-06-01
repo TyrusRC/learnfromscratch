@@ -38,6 +38,8 @@ RC4 (`etype 23`) cracks an order of magnitude faster than AES (`17` / `18`); alw
 
 The hash represents the offline password — once cracked you have full credentials, often for a service account with persistent rights.
 
+Hashcat refuses to parse raw Rubeus output until you splice the etype into the header — for RC4 replies you insert `23` after `$krb5asrep$` so the line becomes `$krb5asrep$23$user@REALM:...`; AES tickets need `17`/`18` and hashcat modes `19900`/`19800` respectively. When operating from a Windows beachhead, `Rubeus.exe asreproast` emits the hash already wrapped for hashcat (no rewrap), but it line-wraps by default — pair with `/nowrap` when piping straight to a file to avoid mangled hashes that fail to crack silently.
+
 ## Detection and defence
 - Inventory and clear the `DONT_REQ_PREAUTH` flag wherever possible; if the account legitimately needs it, give it a long random password and rotate frequently
 - Detect via Windows event 4768 (TGT issued) with `Pre-Authentication Type = 0` — should be near zero in a healthy domain
@@ -48,4 +50,5 @@ The hash represents the offline password — once cracked you have full credenti
 - [HackTricks — AS-REP roasting](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/asreproast.html) — command reference
 - [Hacker Recipes — AS-REP roast](https://www.thehacker.recipes/a-d/movement/kerberos/asreproast) — protocol-level walkthrough
 - [Harmj0y — Roasting AS-REPs](https://blog.harmj0y.net/activedirectory/roasting-as-reps/) — original write-up
+- [ired.team — AS-REP Roasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/as-rep-roasting-using-rubeus-and-hashcat) — Rubeus + hashcat workflow including the etype-23 header splice
 - See also: [[kerberos]], [[kerberoasting]]

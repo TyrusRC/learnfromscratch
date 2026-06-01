@@ -33,6 +33,8 @@ Invoke-CimMethod -CimSession $o -ClassName Win32_Process -MethodName Create `
 
 For fully fileless output capture, combine with a SMB-less channel (write to `HKLM:\SOFTWARE\...` and read back via a second WMI query of `StdRegProv`). Permanent-event subscription (`mofcomp evil.mof`) executes when the chosen filter fires (logon, time, process create) — quieter than interactive.
 
+The legacy `wmic` one-liner — `wmic /node:10.0.0.6 /user:administrator /password:<pw> process call create "cmd.exe /c calc"` — is still useful on older hosts and AppLocker-constrained shells where `wmic.exe` is whitelisted but PowerShell is not. It generates a 4648 explicit-logon on the source plus 4624 + 4648 on the target, so plan source-side telemetry accordingly; Microsoft has deprecated `wmic.exe` from Windows 11 23H2 onward, so on modern fleets fall back to `Invoke-CimMethod` over WSMan instead of DCOM.
+
 ## Detection and defence
 - Sysmon EID 19/20/21 (WMI activity) capture filter/consumer/binding creation — the highest-signal WMI hunt.
 - 4688 / Sysmon EID 1 with parent `WmiPrvSE.exe` spawning `cmd.exe` / `powershell.exe` — `wmiexec` signature.
@@ -43,3 +45,4 @@ For fully fileless output capture, combine with a SMB-less channel (write to `HK
 - [Impacket wmiexec.py](https://github.com/fortra/impacket/blob/master/examples/wmiexec.py) — protocol + output-channel mechanics.
 - [WMI as an attack vector — Mandiant](https://www.mandiant.com/resources/blog/windows-management-instrumentation-wmi-offense-defense-and-forensics) — canonical research paper.
 - [WMI lateral movement — HackTricks](https://book.hacktricks.wiki/en/windows-hardening/lateral-movement/wmiexec.html) — variants and detections.
+- [ired.team — WMI for lateral movement](https://www.ired.team/offensive-security/lateral-movement/t1047-wmi-for-lateral-movement) — `wmic /node` syntax and 4648/4624 event chain.

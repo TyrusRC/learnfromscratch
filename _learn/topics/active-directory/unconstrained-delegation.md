@@ -46,6 +46,8 @@ mimikatz # lsadump::dcsync /domain:corp.local /user:krbtgt
 
 DCs themselves are unconstrained-delegation-trusted; if you can run code as SYSTEM on a DC the technique is moot (you already have DCSync). The real prize is a non-DC server whose admins are also DC machine-account-equivalent via this trick.
 
+OPSEC nuance: any inbound auth that touches the host caches a TGT — even a one-shot CIFS connection to a hidden share like `\\WEB01\IPC$` is enough to populate LSASS, so you do not need an interactive logon to harvest. When extracting manually with `sekurlsa::tickets /export`, the dropped `.kirbi` files include both TGTs and TGS entries; filter by service name (`krbtgt/`) to avoid wasting time on already-scoped service tickets, and snapshot LSASS with `procdump -ma lsass.exe` then parse offline if EDR is in front of mimikatz on-host.
+
 ## Detection and defence
 - Audit `userAccountControl` change events (5136) flipping the `TRUSTED_FOR_DELEGATION` bit — should be zero in modern environments
 - Replace unconstrained with constrained or RBCD wherever feasible; add Tier-0 / sensitive users to Protected Users and mark them `Account is sensitive and cannot be delegated`
@@ -56,4 +58,5 @@ DCs themselves are unconstrained-delegation-trusted; if you can run code as SYST
 - [HackTricks — unconstrained delegation](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/unconstrained-delegation.html) — practical walkthrough
 - [Hacker Recipes — Unconstrained delegation](https://www.thehacker.recipes/a-d/movement/kerberos/delegations/unconstrained) — protocol detail
 - [Harmj0y — S4U2Pwnage](https://blog.harmj0y.net/activedirectory/s4u2pwnage/) — delegation primer
+- [ired.team — Kerberos unconstrained delegation](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/domain-compromise-via-unrestricted-kerberos-delegation) — lab walkthrough of TGT caching and extraction
 - See also: [[constrained-delegation]], [[resource-based-constrained-delegation]], [[ms-rpc-abuse]], [[kerberos]]

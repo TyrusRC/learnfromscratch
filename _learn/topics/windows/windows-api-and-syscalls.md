@@ -18,7 +18,7 @@ Every documented call (`CreateFileW`, `VirtualAllocEx`, `OpenProcess`) eventuall
 Find the SSN — three common approaches:
 
 1. **Static map** (Hell's Gate / Halo's Gate): walk the EAT of `ntdll.dll`, find each `Nt*` export, parse the first bytes of the stub. Unhooked stub: `4C 8B D1 B8 ?? ?? 00 00` — bytes 4-7 are the SSN. If hooked (first byte `e9` jmp), walk neighbouring exports whose SSN is known and infer by ordinal (Halo's Gate).
-2. **Fresh ntdll** (Perun's Fart / refreshing): map `\KnownDlls\ntdll.dll` or read from disk into your own memory and parse SSNs from there — bypasses runtime hooks entirely.
+2. **Fresh ntdll** (Perun's Fart / refreshing): map `\KnownDlls\ntdll.dll` or read from disk into your own memory and parse SSNs from there — bypasses runtime hooks entirely. The disk-read variant is concrete and minimal: `CreateFileA("C:\\Windows\\System32\\ntdll.dll", GENERIC_READ, FILE_SHARE_READ, ...)` → `ReadFile` into heap → parse `.text`/`.rdata` to locate the export by name → copy out the 23-byte stub starting `4C 8B D1 B8 <SSN-LE> 00 00`, mark it `PAGE_EXECUTE_READWRITE` with `VirtualProtect`, then invoke via a typed function pointer. EDRs that only hook the in-memory ntdll never see the syscall because it never traverses the hooked stub.
 3. **Syswhispers3** code-gen: produces per-Windows-build stubs with hardcoded SSNs at compile time.
 
 Direct syscall — execute `syscall` from your own `.text`:
@@ -48,3 +48,4 @@ Indirect syscall — keep the `syscall` instruction inside ntdll. Locate any unh
 - [Microsoft — Calling conventions / syscall ABI](https://learn.microsoft.com/en-us/cpp/build/x64-calling-convention) — register usage for `syscall`
 - [j00ru — Windows X86-64 system call table](https://j00ru.vexillium.org/syscalls/nt/64/) — historical SSN reference
 - [SafeBreach — Hell's Gate paper](https://github.com/am0nsec/HellsGate) — dynamic SSN resolution primer
+- [ired.team — Retrieving ntdll Syscall Stubs from Disk at Run-time](https://www.ired.team/offensive-security/defense-evasion/retrieving-ntdll-syscall-stubs-at-run-time) — concrete CreateFile + ReadFile fresh-stub extraction walkthrough

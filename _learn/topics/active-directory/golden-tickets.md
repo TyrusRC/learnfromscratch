@@ -39,6 +39,8 @@ Important fields:
 
 For forest-wide reach, see [[child-to-forest-root]]: forge a child-domain golden ticket with an extra SID in `ExtraSids` pointing at Enterprise Admins.
 
+Extracting the krbtgt hash on the DC itself does not strictly require an LSASS dump — Mimikatz `lsadump::lsa /inject /name:krbtgt` injects into LSASS, pulls the secret, and exits, leaving a much smaller forensic footprint than a `sekurlsa::logonpasswords` sweep. The accompanying domain SID is the user SID minus the last RID; many forgers slip up by including the trailing `-500` in `/sid:`, which produces a TGT that authenticates but fails PAC validation on patched DCs (KB5008380) — strip the final dash-RID before forging.
+
 ## Detection and defence
 - **Rotate krbtgt twice**, 10+ hours apart, on any DA-compromise assumption. One rotation only invalidates *new* TGTs; the second invalidates the in-flight ones from the first.
 - Alert on 4769 TGS-REQ where `TicketEncryptionType=0x17` (RC4) on AES-only domains, or where the account name doesn't exist in AD ("PAC for ghost user").
@@ -52,3 +54,4 @@ For forest-wide reach, see [[child-to-forest-root]]: forge a child-domain golden
 - [HackTricks — Golden ticket](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/kerberos-tickets.html) — tool examples
 - [Microsoft — Kerberos PAC validation](https://learn.microsoft.com/openspecs/windows_protocols/ms-pac/) — PAC structure
 - [SpecterOps — Golden ticket detection](https://posts.specterops.io/) — telemetry hunting
+- [ired.team — Kerberos Golden Tickets](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/kerberos-golden-tickets) — lsadump::lsa /inject extraction and kerberos::golden parameter reference

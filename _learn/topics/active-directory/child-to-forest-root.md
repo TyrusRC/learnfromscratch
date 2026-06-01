@@ -46,6 +46,8 @@ Rubeus equivalent on Windows: `Rubeus.exe golden /user:Administrator /domain:chi
 
 mimikatz' `lsadump::trust /patch` plus a forged inter-realm TGT (the "trust-key" variant) is the alternative when child `krbtgt` is unavailable — abusing the trust account `CHILD$` against the root.
 
+The SID-substitution trick is mechanical: take the parent-domain SID you already enumerated, and swap the trailing RID from `-502` (krbtgt) to `-519` (Enterprise Admins) — that becomes the `sids`/`extra-sid` value in the forge command. mimikatz equivalent: `kerberos::golden /user:Administrator /domain:child.corp.local /sid:<child-SID> /sids:<root-SID>-519 /krbtgt:<child_krbtgt_nt> /ptt`. The forged ticket grants Enterprise Admin only when consumed by a parent-domain service (the parent DC honours the extra SID via the trust); against unrelated forests you need an actual inter-forest trust without SID filtering, which is rare.
+
 ## Detection and defence
 - Enable SID filtering / quarantine on the child→parent trust (Microsoft's tightened guidance post-2022 supports this even intra-forest)
 - Detect anomalous `extraSids` on inbound cross-domain TGS; ETW `Microsoft-Windows-Kerberos-Key-Distribution-Center` exposes PAC contents
@@ -56,4 +58,5 @@ mimikatz' `lsadump::trust /patch` plus a forged inter-realm TGT (the "trust-key"
 - [HackTricks — child-to-parent SID History](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/sid-history-injection.html) — step-by-step
 - [Hacker Recipes — intra-forest trust abuse](https://www.thehacker.recipes/a-d/movement/trusts) — protocol background
 - [SpecterOps — A guide to attacking domain trusts](https://posts.specterops.io/a-guide-to-attacking-domain-trusts-ef5cbe06e2e2) — foundational reading
+- [ired.team — child DA to Enterprise Admin](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/child-domain-da-to-ea-in-parent-domain) — mimikatz forge + SID-history walkthrough
 - See also: [[golden-tickets]], [[dcsync]], [[cross-forest-trust-abuse]]

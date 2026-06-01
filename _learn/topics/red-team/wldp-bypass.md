@@ -36,6 +36,8 @@ In a Constrained Language Mode breakout you typically patch the trio: `AmsiScanB
 
 **Script policy bypass classics:** Casey Smith / Matt Graeber catalogued multiple historic bypasses where a signed Microsoft script (XSL, MSBuild, InstallUtil) was the gate's blind spot. With newer Microsoft block-rule policies most of these are addressed, but the WLDP-patch pattern survives because it operates below the policy decision.
 
+**ACG interaction.** Arbitrary Code Guard (`ProcessDynamicCodePolicy`) hardens the *same* surface from a different angle: with ACG opted into your own process, existing pages cannot be flipped to writable and new RWX allocations are refused, which kills the inline WLDP patch from inside that process. The caveat defenders forget is that ACG does not block a *remote* process from calling `VirtualAllocEx` + `WriteProcessMemory` into an ACG-protected target — so an attacker who already has another foothold can still drop the WLDP patch from the outside.
+
 ## Detection and defence
 - ETW-TI emits the same write-virtual-memory / protect-virtual-memory signal as AMSI patching — combined with the function name resolution beforehand, that's a high-confidence indicator
 - WDAC, when enforced kernel-side for kernel-mode code, isn't affected by userland WLDP patches — only the script side weakens
@@ -46,4 +48,5 @@ In a Constrained Language Mode breakout you typically patch the trio: `AmsiScanB
 - [Microsoft Docs — WDAC](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/wdac) — overview
 - [bohops blog](https://bohops.com/) — historic WLDP / script policy bypass research
 - [Microsoft — recommended block rules](https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/microsoft-recommended-block-rules) — what defenders should block
+- [ired.team — ACG / ProcessDynamicCodePolicy](https://www.ired.team/offensive-security/defense-evasion/acg-arbitrary-code-guard-processdynamiccodepolicy) — the dynamic-code mitigation that overlaps WLDP and its remote-injection gap
 - [[amsi-bypass]] [[etw-bypass]] [[living-off-the-land]]

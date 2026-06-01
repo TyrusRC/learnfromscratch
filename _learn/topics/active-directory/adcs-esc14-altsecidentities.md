@@ -41,6 +41,8 @@ If the victim already has a UPN you can write, simpler variant: set victim's UPN
 
 Result: tier-0 ticket without ever knowing the victim's password and surviving a password reset.
 
+For the final logon Rubeus accepts the cert directly without needing Certipy: `Rubeus.exe asktgt /user:victim /certificate:me.pfx /password:<pfx-pw> /getcredentials /show /ptt` — `/getcredentials` triggers the U2U exchange that returns the victim's NT hash inside the PAC_CREDENTIAL_INFO, so you walk away with both a usable TGT and an offline credential for later. Pair with `s4u /self /altservice` against a [[constrained-delegation]] target if the victim cannot directly hit the resource you need.
+
 ## Detection and defence
 - Audit 4662 on `altSecurityIdentities` and `userPrincipalName` writes — there should be near-zero legitimate writers.
 - Use the new event 39 / 41 on the KDC: certificate-mapping diagnostics log the issuer + serial used and the mapped account.
@@ -53,3 +55,4 @@ Result: tier-0 ticket without ever knowing the victim's password and surviving a
 - [Microsoft KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16) — strong mapping background
 - [SpecterOps — ADCS attack research](https://posts.specterops.io/certified-pre-owned-d95910965cd2) — foundational AD CS paper
 - [Certipy README — ESC14](https://github.com/ly4k/Certipy) — automation
+- [ired.team — Shadow Credentials](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/shadow-credentials) — sibling primitive abusing `msDS-KeyCredentialLink` for cert-based logon

@@ -24,6 +24,8 @@ Spartacus.exe --mode proxy --pml procmon.pml --solution C:\out
 # It generates a Visual Studio project with #pragma comment(linker, "/export:...=forward...")
 ```
 
+A lightweight alternative to a full DEF file is the linker pragma — `#pragma comment(linker, "/export:exportedFunction1=legit1.exportedFunction1")` per export — which emits forwarders straight from the C source, so the proxy's import table looks identical to the original and you do not have to maintain a separate `.def`. Rename the original DLL (e.g. `legit1.dll` → `legit1_orig.dll`) and forward to that, so DllMain runs your payload while every legitimate call is satisfied transparently and the host process never notices a missing export.
+
 Minimal proxy `DllMain`:
 
 ```c
@@ -51,4 +53,5 @@ Bonus: many vendor installers extract a temp folder, drop a DLL, and load it. If
 - [LOLBAS](https://lolbas-project.github.io/) — signed binaries usable for living-off-the-land
 - [Spartacus tool](https://github.com/Accenture/Spartacus) — automated proxy DLL generation
 - [Wietze Beukema research](https://wietze.github.io/) — DLL hijacking research and methodology
+- [ired.team — DLL proxying for persistence](https://www.ired.team/offensive-security/persistence/dll-proxying-for-persistence) — linker-pragma forwarder pattern reused for long-lived side-load persistence
 - [[com-hijacking]] [[living-off-the-land]] [[parent-pid-spoofing]]

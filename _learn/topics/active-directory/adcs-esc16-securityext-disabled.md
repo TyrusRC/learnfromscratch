@@ -49,6 +49,8 @@ certipy auth -pfx patsy.pfx -domain corp -dc-ip 10.0.0.1
 
 Same primitive applies to any privileged target whose UPN you can spoof through a patsy.
 
+OPSEC: when ptt'ing the resulting TGT, spawn an isolated logon context first (`runas /netonly /user:fake powershell`) and inject there — otherwise the imported Administrator ticket clobbers your existing TGTs and breaks the rest of your session. If the patsy is a computer account, the UPN flip can also be done via SMB-relayed LDAP signing-not-enforced binds without ever needing the patsy's password.
+
 ## Detection and defence
 - Hunt `DisableExtensionList` set across all CAs — it should be empty.
 - Audit cert template flag `CT_FLAG_NO_SECURITY_EXTENSION` (0x80000) on `msPKI-Enrollment-Flag`.
@@ -61,3 +63,4 @@ Same primitive applies to any privileged target whose UPN you can spoof through 
 - [Microsoft KB5014754](https://support.microsoft.com/topic/kb5014754-certificate-based-authentication-changes-on-windows-domain-controllers-ad2c23b0-15d8-4340-a468-4d4f3b188f16) — extension behaviour
 - [SpecterOps — Certified Pre-Owned](https://posts.specterops.io/certified-pre-owned-d95910965cd2) — original AD CS abuse paper
 - [HackTricks — AD CS](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/ad-certificates/index.html) — ESC catalogue
+- [ired.team — ADCS + PetitPotam relay](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/adcs-+-petitpotam-ntlm-relay-obtaining-krbtgt-hash-with-domain-controller-machine-certificate) — sacrificial logon context tip for handling PKINIT TGTs

@@ -36,6 +36,8 @@ Generic flow regardless of variant:
 3. Trigger a SYSTEM-owned service to authenticate to that endpoint via RPC/DCOM/Spooler coercion.
 4. On the incoming connection call `ImpersonateNamedPipeClient` → `OpenThreadToken` → `DuplicateTokenEx(TokenPrimary)` → `CreateProcessWithTokenW`.
 
+Watch out for `ERROR_BAD_IMPERSONATION_LEVEL (1346)` from `DuplicateTokenEx` — it means the server thread did not actually carry SeImpersonatePrivilege when the duplication attempt happened, usually because the call ran before `ImpersonateNamedPipeClient` returned or in a thread whose token had been reverted. Pass `SecurityImpersonation` (not `SecurityDelegation`) as the impersonation level for local SYSTEM spawns — `SecurityDelegation` is only needed if you intend to forward the token over the network and will be rejected for non-network logon types. Enumerate live pipes ahead of time with `(Get-ChildItem \\.\pipe\).name` so your pipe name does not collide with a legitimate one (Meterpreter's `getsystem` historically used predictable names that Sysmon Event 17/18 rules now flag).
+
 The historical timeline matters: RottenPotato/JuicyPotato (DCOM loopback marshalling) → patched 2019 → RoguePotato (OXID resolver redirect) → PrintSpoofer/SeBatchLogonRight bypasses → JuicyPotatoNG, GodPotato, EfsPotato, DCOMPotato. Microsoft hardens specific RPC interfaces each round; a new variant pops within months.
 
 ## Detection and defence
@@ -50,3 +52,4 @@ The historical timeline matters: RottenPotato/JuicyPotato (DCOM loopback marshal
 - [HackTricks — RoguePotato/PrintSpoofer](https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/roguepotato-and-printspoofer.html) — variants and usage
 - [itm4n — PrintSpoofer writeup](https://itm4n.github.io/printspoofer-abusing-impersonate-privileges/) — original technique post
 - [GodPotato — BeichenDream/GodPotato](https://github.com/BeichenDream/GodPotato) — current-gen variant
+- [ired.team — Windows NamedPipes 101 + Privilege Escalation](https://www.ired.team/offensive-security/privilege-escalation/windows-namedpipes-privilege-escalation) — pipe server flow with ImpersonateNamedPipeClient and the ERROR_BAD_IMPERSONATION_LEVEL gotcha

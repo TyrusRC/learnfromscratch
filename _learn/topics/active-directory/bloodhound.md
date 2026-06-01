@@ -42,6 +42,8 @@ Mark your foothold objects `owned`. Mark sensitive targets `highvalue`. The "Out
 
 For Tier-0 audit on the defender side, run with no `owned` set and look for any non-tier-0 principal with a path to tier-0.
 
+If the Neo4j backend is running but you cannot reach the BloodHound UI, the raw JSON drop is also queryable directly: `neo4j console` exposes 7474 for the browser, and the default `neo4j:neo4j` first-login forces a credential change before BloodHound itself will authenticate. On Linux engagements that means one extra step before ingest works, and on multi-user lab boxes it's a giveaway when someone else has already set those creds. SharpHound in PowerShell-script form (`Invoke-BloodHound -CollectionMethod All -JSONFolder C:\temp`) avoids dropping the .NET assembly on disk and is often the difference between AMSI hitting your collection and not.
+
 ## Detection and defence
 - LDAP query volumes from SharpHound/CE are huge — alert on a single account pulling >100k LDAP results in minutes, or on SAMR enumeration of all local groups across many hosts.
 - Honeyobjects: users with juicy SPNs or KeyCredentialLink attributes that BloodHound flags as attack paths but that nobody legitimately touches.
@@ -53,3 +55,4 @@ For Tier-0 audit on the defender side, run with no `owned` set and look for any 
 - [SpecterOps blog](https://posts.specterops.io/tagged/bloodhound) — methodology and edge research
 - [HackTricks — BloodHound](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/bloodhound.html) — common queries
 - [GitHub — bloodhound-ce-python](https://github.com/dirkjanm/BloodHound.py) — Linux collector
+- [ired.team — BloodHound on Kali](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-with-bloodhound-on-kali-linux) — Neo4j first-run + PowerShell `Invoke-BloodHound` workflow

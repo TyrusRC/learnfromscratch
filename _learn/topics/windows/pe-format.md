@@ -41,6 +41,8 @@ invoke TLS callbacks, then DllMain(DLL_PROCESS_ATTACH)
 
 Quick triage with `dumpbin /headers`, `pe-bear`, `CFF Explorer`, or `radare2 -A`.
 
+Relocation patching detail: each `IMAGE_BASE_RELOCATION` block is followed by an array of 16-bit entries where the top 4 bits encode the type (`IMAGE_REL_BASED_DIR64` = 0xA on x64, `IMAGE_REL_BASED_HIGHLOW` = 3 on x86) and the bottom 12 bits encode the offset into the page named by `VirtualAddress`. Compute `delta = actualBase - OptionalHeader.ImageBase` once, then for every entry add `delta` to the QWORD/DWORD at `base + block->VirtualAddress + (entry & 0xFFF)`. Stop iterating the block list when `SizeOfBlock == 0`. Skip entries of type `IMAGE_REL_BASED_ABSOLUTE` (0) — they exist purely as 8-byte alignment padding and patching them corrupts the next code page.
+
 ## Detection and defence
 - EDRs hash known-good `.text` of ntdll/kernel32 and detect tampering — module stomping that overwrites sections shows up here
 - Loaded modules absent from the PEB `InLoadOrderModuleList` (manual map) are flagged by tools like Moneta / Pe-Sieve
@@ -52,3 +54,4 @@ Quick triage with `dumpbin /headers`, `pe-bear`, `CFF Explorer`, or `radare2 -A`
 - [Microsoft — PE Format spec](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format) — authoritative field-by-field reference
 - [HackTricks — PE binaries](https://book.hacktricks.wiki/en/reversing/common-api-used-in-malware.html) — offensive-lens summary
 - [Corkami PE poster](https://github.com/corkami/pics/blob/master/binary/pe101/pe101.pdf) — one-page visual map of the format
+- [ired.team — PE Injection: Executing PEs inside Remote Processes](https://www.ired.team/offensive-security/code-injection-process-injection/pe-injection-executing-pes-inside-remote-processes) — manual map walkthrough with IMAGE_BASE_RELOCATION block iteration and delta patching

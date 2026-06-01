@@ -24,6 +24,8 @@ rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump <PID_of_lsass> C:\Windows
 
 Then parse offline with pypykatz or Mimikatz `sekurlsa::minidump`.
 
+For better OPSEC than `comsvcs.dll` (now signature-flagged), call `PssCaptureSnapshot` first and dump the snapshot handle — `procdump.exe -r <pid>` does exactly this, and EDRs that hook only `MiniDumpWriteDump` reading directly from lsass.exe miss it because the dump reads from the snapshot clone. Use a `MINIDUMP_CALLBACK_INFORMATION` routine to keep the ~50-100 MB dump in heap memory (encrypt + exfil over the network) instead of touching disk, which removes the most reliable IoC. Magic bytes at the start of any minidump are `MDMP` — strip or XOR them in transit if you must drop the file.
+
 SAM + SYSTEM hives — local account NT hashes live in the SAM hive, decrypted with the SYSKEY from SYSTEM.
 
 ```cmd
@@ -51,3 +53,4 @@ NTDS.dit — on a DC, dump the AD database via `ntdsutil "ac i ntds" "ifm" "cr f
 - [MITRE ATT&CK T1003](https://attack.mitre.org/techniques/T1003/) — credential access techniques
 - [HackTricks — credentials protections](https://book.hacktricks.wiki/en/windows-hardening/stealing-credentials/credentials-protections.html) — overview of LSA / Credential Guard
 - [Impacket secretsdump](https://github.com/fortra/impacket/blob/master/examples/secretsdump.py) — canonical offline parser
+- [ired.team — Dumping LSASS without Mimikatz (MiniDumpWriteDump)](https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dumping-lsass-passwords-without-mimikatz-minidumpwritedump-av-signature-bypass) — custom dumper + PssCaptureSnapshot for AV-signature evasion

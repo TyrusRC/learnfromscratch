@@ -40,6 +40,8 @@ smbclient.py -k -no-pass dc01.corp.local
 
 Key etypes: 23 (RC4-HMAC) — fast to crack, legacy; 17/18 (AES128/256) — modern default. Force RC4 when roasting (`-e rc4` in many tools) to speed cracking. The PAC is signed twice: server signature (key of target service) and KDC signature (`krbtgt`) — bypassing one without the other is the Bronze Bit (CVE-2020-17049) and noPac/sAMAccountName (CVE-2021-42278/42287) class.
 
+In-memory Kerberos primitives are scriptable without Mimikatz: `Add-Type -AssemblyName System.IdentityModel` then `New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "HTTP/host.corp.local"` triggers a normal TGS-REQ that lands the ticket in the current logon session — Mimikatz `kerberos::list /export` then writes it out as a `.kirbi`. This dual-step pattern (managed AD assembly invocation followed by 4769) is the cleanest host-side telemetry for behavioural detections.
+
 ## Detection and defence
 - Disable RC4 domain-wide once compatibility is verified; require AES via msDS-SupportedEncryptionTypes
 - Rotate `krbtgt` twice on a schedule (otherwise Golden Tickets survive password resets)
@@ -50,4 +52,5 @@ Key etypes: 23 (RC4-HMAC) — fast to crack, legacy; 17/18 (AES128/256) — mode
 - [RFC 4120](https://www.rfc-editor.org/rfc/rfc4120) — protocol specification
 - [Hacker Recipes — Kerberos](https://www.thehacker.recipes/a-d/movement/kerberos) — attack-oriented walkthrough
 - [HackTricks — Kerberos auth](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-kerberos-88/index.html) — practical command reference
+- [ired.team — AD & Kerberos abuse index](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse) — curated lab walkthroughs for each Kerberos primitive
 - See also: [[asreproast]], [[kerberoasting]], [[golden-tickets]], [[silver-tickets]]

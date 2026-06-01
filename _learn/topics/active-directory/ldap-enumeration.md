@@ -52,6 +52,8 @@ The bitwise OID `1.2.840.113556.1.4.803` is "and" against `userAccountControl`; 
 
 Don't forget the Configuration NC (`CN=Configuration,DC=corp,DC=lab`) — it holds sites, services, the `Public Key Services` container with AD CS templates and CAs, and the `Partitions` container listing trusts.
 
+On a Windows foothold without RSAT or admin rights you can still get the full `Get-ADUser`/`Get-ADComputer` cmdlet surface by side-loading the AD management DLL — copy `Microsoft.ActiveDirectory.Management.dll` from any machine that has RSAT (it lives under `C:\Windows\Microsoft.NET\assembly\GAC_64\Microsoft.ActiveDirectory.Management\`) and run `Import-Module .\Microsoft.ActiveDirectory.Management.dll`. This avoids dropping PowerView's well-known signatures while giving you the same filter expressivity, and the underlying LDAP queries blend in with normal admin tooling.
+
 ## Detection and defence
 - 1644 (LDAP search statistics) when enabled logs query, filter, attributes — noisy but invaluable for hunting.
 - Defender for Identity alerts on broad enumeration patterns (SAMR + LDAP combos).
@@ -63,3 +65,4 @@ Don't forget the Configuration NC (`CN=Configuration,DC=corp,DC=lab`) — it hol
 - [the.hacker.recipes — LDAP](https://www.thehacker.recipes/ad/movement/dacl/grant-rights) — enumeration in context
 - [Microsoft — useraccountcontrol values](https://learn.microsoft.com/troubleshoot/windows-server/active-directory/useraccountcontrol-manipulate-account-properties) — UAC bit reference
 - [GitHub — ldapdomaindump](https://github.com/dirkjanm/ldapdomaindump) — automated dumper
+- [ired.team — AD enumeration without RSAT](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/active-directory-enumeration-with-ad-module-without-rsat-or-admin-privileges) — AD module DLL side-load technique

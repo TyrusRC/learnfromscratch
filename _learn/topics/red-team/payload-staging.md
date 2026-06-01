@@ -30,6 +30,7 @@ Choose:
 - *DLL stager:* drops a DLL, loaded via LOLBin (rundll32, regsvr32)
 - *Shellcode loader:* PE → shellcode (Donut, sRDI, pe2shc) → injector → memory
 - *Self-contained EXE:* signed via stolen cert, packed, anti-emulation
+- *HTML-smuggled stageless:* base64-encode the stageless artifact into a JS `Blob` with MIME `octet/stream` and trigger download client-side via `msSaveOrOpenBlob` or a synthesised `<a>` click. Only `text/html` traverses the proxy, so MIME/extension blocks on the perimeter never see the executable; the file materialises from a `blob:` URL with no fetch event in most network monitors. Splitting the base64 across multiple `<script>` chunks or gzip-pre-compressing it further defeats inline content scanners that timeout on large inline strings.
 
 ## Detection and defence
 - Stagers: deterministic URI patterns, fixed sizes, fixed cipher results — Suricata rules catch them within hours of public release
@@ -41,4 +42,5 @@ Choose:
 - [Cobalt Strike blog](https://www.cobaltstrike.com/blog/) — staging/stageless rationale
 - [Outflank blog](https://www.outflank.nl/blog/) — in-proc post-ex BOF design notes
 - [TrustedSec blog](https://www.trustedsec.com/blog/) — sacrificial processes and OPSEC guidance
+- [ired.team — HTML/JS file smuggling](https://www.ired.team/offensive-security/defense-evasion/file-smuggling-with-html-and-javascript) — Blob-based client-side delivery that pairs cleanly with a stageless beacon
 - [[c2-protocol-design]] [[process-injection-techniques]]

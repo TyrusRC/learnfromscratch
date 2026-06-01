@@ -97,7 +97,7 @@ aliases: [refs, external-references, sources]
   Academy, Offensive AI Security track.
 - [pwn.college](https://pwn.college/) — free ASU binary-exploitation
   curriculum + CTF Archive of replayable challenges.
-- [OffSec Proving Grounds](https://www.offsec.com/labs/) — paid lab
+- [Proving Grounds](https://www.offsec.com/labs/) — paid lab
   environment.
 - [GOAD](https://github.com/Orange-Cyberdefense/GOAD) — AD lab.
 - [HackingHub](https://www.hackinghub.io/) — paid bug-bounty practice.

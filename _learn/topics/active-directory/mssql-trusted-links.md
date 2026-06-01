@@ -47,6 +47,8 @@ Get-SQLServerLinkCrawl -Instance SRV1 -Query 'EXEC xp_cmdshell ''whoami'''
 
 If a link is `LocalLogin=NULL, RmtUser='sa'`, every login crosses as sa. If it's "current security context" + delegation, you need [[unconstrained-delegation]] or [[constrained-delegation]] mechanics for the cross to succeed.
 
+When the SQL service account has constrained delegation rights you can short-circuit the chain entirely: request an S4U TGS with Rubeus's `/altservice:MSSQLSvc/srv3.corp.local:1433` switch against the delegating account's TGT, inject it, and connect with `mssqlclient.py -k -no-pass` for direct sysadmin-level access. This bypasses the link graph and produces no `sysservers` enumeration noise on the originating SQL host.
+
 Privilege escalation primitives once on a target SQL instance:
 - `EXECUTE AS LOGIN = 'sa'` if impersonation grants exist.
 - Trustworthy databases owned by `sa` — known privesc path.
@@ -65,3 +67,4 @@ Privilege escalation primitives once on a target SQL instance:
 - [NetSPI — SQL Server link crawling](https://www.netspi.com/blog/technical/network-penetration-testing/hacking-sql-server-stored-procedures-part-1-sub-rosa/) — chain methodology
 - [HackTricks — MSSQL injection / linked servers](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-mssql-microsoft-sql-server/index.html) — payloads
 - [Microsoft docs — sp_addlinkedserver](https://learn.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addlinkedserver-transact-sql) — configuration reference
+- [ired.team — Kerberos constrained delegation](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-kerberos-constrained-delegation) — `/altservice:MSSQLSvc` S4U pivot

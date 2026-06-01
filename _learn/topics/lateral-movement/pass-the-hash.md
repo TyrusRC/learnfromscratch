@@ -32,6 +32,8 @@ nxc winrm 10.0.0.0/24 -u alice -H <NThash>
 
 From Windows, Mimikatz `sekurlsa::pth` plants the hash in a new logon session (see [[overpass-the-hash]] for the Kerberos variant). RID 500 (built-in Administrator) bypasses UAC remote restrictions even on workgroup-mode hosts — high-value reuse target after local SAM dumps.
 
+PowerShell-only operators can use `Invoke-WMIExec -target <host> -hash <NThash> -username administrator -command <cmd>` to PtH without dropping Impacket — useful on EDR-instrumented jump hosts where Python is missing. Edge case: non-RID-500 local admin hashes silently fail with `access denied` from token filtering unless `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\LocalAccountTokenFilterPolicy = 0x1` is set on the target — query that key first via reg.py over a SOCKS pivot before burning attempts.
+
 ## Detection and defence
 - 4624 logon type 3 with `AuthenticationPackageName=NTLM` for a domain account that normally uses Kerberos — classic anomaly.
 - 4776 (NTLM authentication) on a DC from unusual source workstations.
@@ -42,3 +44,4 @@ From Windows, Mimikatz `sekurlsa::pth` plants the hash in a new logon session (s
 - [Pass the Hash — the.hacker.recipes](https://www.thehacker.recipes/ad/movement/ntlm/pth) — protocol explainer.
 - [Mitigating Pass-the-Hash — Microsoft (whitepaper)](https://www.microsoft.com/en-us/download/details.aspx?id=36036) — the canonical defender doc.
 - [PtH with Impacket — HackTricks](https://book.hacktricks.wiki/en/windows-hardening/ntlm/index.html) — tool matrix.
+- [ired.team — PtH privilege escalation with Invoke-WMIExec](https://www.ired.team/offensive-security/privilege-escalation/pass-the-hash-privilege-escalation-with-invoke-wmiexec) — RID 500 vs `LocalAccountTokenFilterPolicy` edge case walkthrough.

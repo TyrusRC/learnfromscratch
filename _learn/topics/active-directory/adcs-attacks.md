@@ -31,6 +31,8 @@ certipy auth -pfx administrator.pfx -dc-ip 10.0.0.10
 
 PKINIT yields a TGT with the user's NT hash inside (`UnPAC-the-hash`) — useful for further lateral movement.
 
+When Certipy is off the table, the same enrollment can be done by hand: build an OpenSSL CSR whose `subjectAltName` includes `otherName:1.3.6.1.4.1.311.20.2.3;UTF8:administrator@corp.local` (the Microsoft UPN OID), submit it via `/certsrv` advanced enrollment, and convert the response with `openssl pkcs12 -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export` so the resulting PFX is consumable by Rubeus's `asktgt /certificate /ptt`. The CSP string matters — without it Windows refuses to use the cert for PKINIT.
+
 ## Detection and defence
 - Audit template ACLs and the `mspki-enrollment-flag` / `mspki-certificate-name-flag` bits; remove `ENROLLEE_SUPPLIES_SUBJECT` from client-auth templates
 - Enable EPA + signing-only on `/certsrv` and disable NTLM on the CA web role; patch KB5014754 and confirm `StrongCertificateBindingEnforcement = 2`
@@ -41,4 +43,5 @@ PKINIT yields a TGT with the user's NT hash inside (`UnPAC-the-hash`) — useful
 - [Certified Pre-Owned (SpecterOps)](https://posts.specterops.io/certified-pre-owned-d95910965cd2) — original ESC1–ESC8 paper
 - [Certipy wiki](https://github.com/ly4k/Certipy/wiki) — current ESC catalogue and command reference
 - [HackTricks — AD CS abuse](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/ad-certificates/domain-escalation.html) — concise per-ESC playbook
+- [ired.team — Misconfigured cert template to DA](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-misconfigured-certificate-template-to-domain-admin) — Certify + manual OpenSSL CSR workflow for ESC1
 - See also: [[adcs-esc14-altsecidentities]], [[adcs-esc15-ekuwu]], [[adcs-esc16-securityext-disabled]], [[shadow-credentials]]

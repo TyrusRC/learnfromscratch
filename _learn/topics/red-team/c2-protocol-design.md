@@ -44,6 +44,8 @@ http-get {
 
 **Backup channels.** Always have a different transport for fallback (HTTPS primary, DNS secondary). Single-channel beacons die when the egress proxy blocks the category.
 
+**Redirector plumbing matters as much as the profile.** A throwaway VPS in front of the team server should run iptables PREROUTING DNAT with MASQUERADE on POSTROUTING (`iptables -t nat -A PREROUTING -p tcp --dport 443 -j DNAT --to-destination <team-server>:443; iptables -t nat -A POSTROUTING -j MASQUERADE` plus `sysctl net.ipv4.ip_forward=1`) or a `socat TCP4-LISTEN:443,fork TCP4:<team-server>:443` forwarder. Apache `mod_rewrite` redirectors are stronger because they can drop non-beacon URIs to a decoy site based on User-Agent and URI regex, so an analyst poking the redirector domain in a browser sees a legitimate-looking page rather than a transparent 404 from the beacon listener.
+
 ## Detection and defence
 - JA3/JA4 client fingerprints — match your beacon's TLS stack to the impersonated product, not to whatever C runtime your dropper used
 - Domain age and category — newly-registered, uncategorised domains light up DNS analytics
@@ -55,4 +57,5 @@ http-get {
 - [Cobalt Strike Malleable C2 reference](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/malleable-c2_main.htm) — full profile DSL
 - [Offensive Defence blog](https://offensivedefence.co.uk/) — sleep mask and tradecraft deep dives
 - [Active Countermeasures — RITA](https://www.activecountermeasures.com/free-tools/rita/) — beacon analysis defenders run
+- [ired.team — HTTP forwarders / redirectors](https://www.ired.team/offensive-security/red-team-infrastructure/redirectors-forwarders) — iptables and socat recipes for C2 redirectors
 - [[c2-frameworks]] [[infrastructure-design]] [[opsec-fundamentals]]

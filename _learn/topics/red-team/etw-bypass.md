@@ -38,6 +38,8 @@ Stops the in-process .NET runtime from logging assembly loads, JIT events, excep
 
 **Hardware breakpoints variant.** Same idea as AMSI — set Dr-register on `EtwEventWrite`, VEH catches and skips the call. No `.text` write.
 
+**Tamper the tracing session itself.** If you are already SYSTEM (or otherwise hold trace-session rights), you do not need to patch anything in your own process — instead surgically detach the noisy provider from the defender's session, e.g. `logman update trace <session-name> --p Microsoft-Windows-Kernel-Process 0x0 -ets` zeros the keyword mask for that provider, or `logman stop <session-name> -ets` tears the session down outright. This leaves the on-disk ETL chain looking healthy while events for your activity quietly stop arriving, and it does not touch `ntdll` so the ETW-TI write-virtual-memory tripwire never fires.
+
 ## Detection and defence
 - ETW-TI (kernel) still emits write-virtual-memory and protect-virtual-memory events when you patch ntdll — high-fidelity signal
 - Defender for Endpoint correlates abrupt drops in expected provider rates per-process
@@ -49,4 +51,5 @@ Stops the in-process .NET runtime from logging assembly loads, JIT events, excep
 - [Microsoft Docs — ETW providers](https://learn.microsoft.com/en-us/windows/win32/etw/event-tracing-portal) — official architecture
 - [Outflank blog](https://www.outflank.nl/blog/) — research on ETW and AMSI disablement detection
 - [WithSecure Labs](https://labs.withsecure.com/) — provider-level bypass notes
+- [ired.team — ETW 101](https://www.ired.team/miscellaneous-reversing-forensics/windows-kernel-internals/etw-event-tracing-for-windows-101) — provider/session model plus the `logman update trace` keyword-mask trick attackers reuse
 - [[amsi-bypass]] [[edr-hooks-and-unhooking]]

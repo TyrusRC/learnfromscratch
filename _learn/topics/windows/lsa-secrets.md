@@ -48,6 +48,8 @@ Output sections to harvest:
 
 Cached domain logons live under `HKLM\SECURITY\Cache\NL$<n>` and are gated by `CachedLogonsCount` (default 10).
 
+When parsing offline, point Mimikatz at the exported hives in a single command rather than loading them into the live registry: `lsadump::secrets /system:sys.sav /security:sec.sav`. Skipping the registry-load step means no `HKEY_USERS\TempHive` artefacts and no `RegLoadKey` audit event (4657 with `HKLM\SECURITY` on a workstation that should never have anyone touching that hive is the loudest possible alarm). The `NL$KM` secret is the prerequisite for decrypting cached domain logons — without it, the `NL$1`..`NL$10` blobs are opaque, which is why secretsdump always emits LSA secrets before mscash output.
+
 ## Detection and defence
 - `reg save` of HKLM\SECURITY or HKLM\SYSTEM by non-admin tooling — easy SACL/Sysmon-13 hit
 - LSA querying via `LsaRetrievePrivateData` from unexpected processes
@@ -59,3 +61,4 @@ Cached domain logons live under `HKLM\SECURITY\Cache\NL$<n>` and are gated by `C
 - [HackTricks — credentials protections](https://book.hacktricks.wiki/en/windows-hardening/stealing-credentials/credentials-protections.html) — LSA/LSASS hardening summary
 - [Impacket secretsdump](https://github.com/fortra/impacket/blob/master/examples/secretsdump.py) — offline LSA secret parser
 - [MITRE ATT&CK T1003.004](https://attack.mitre.org/techniques/T1003/004/) — LSA secrets technique entry
+- [ired.team — Dumping LSA Secrets](https://www.ired.team/offensive-security/credential-access-and-credential-dumping/dumping-lsa-secrets) — live `token::elevate` + offline `lsadump::secrets /system /security` walkthrough

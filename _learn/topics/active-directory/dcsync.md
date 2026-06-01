@@ -42,6 +42,8 @@ Subtle variants:
 - **DCSync against a child** to grab the child's krbtgt → forge inter-realm referral with SID History → forest compromise ([[child-to-forest-root]]).
 - **DCShadow** writes attributes back through replication — see [[ad-persistence]].
 
+For surgical use on-host, `lsadump::dcsync /user:krbtgt` alone is enough — Mimikatz picks the local domain and a DC automatically via the standard DC locator, so a single-line invocation against just the krbtgt principal stays well under the noise threshold of a `/all /csv` sweep and produces the exact AES + RC4 keys needed for an immediate golden ticket forge. From an unprivileged shell where the operator only just granted themselves the rights, sleep at least 5–15 minutes before pulling: the DC RPC interface caches DACL evaluations and a sub-minute `WriteDACL → DCSync` chain is a high-fidelity Defender for Identity signature.
+
 ## Detection and defence
 - Microsoft event 4662 with the GUIDs above is the gold-standard signal. Properties `{1131f6aa-9c07-11d1-f79f-00c04fc2dcd2}` and `{1131f6ad-9c07-11d1-f79f-00c04fc2dcd2}` on a non-DC source are anomalous.
 - Defender for Identity and most XDRs detect DCSync on DRSR traffic patterns from non-DC hosts.
@@ -54,3 +56,4 @@ Subtle variants:
 - [the.hacker.recipes — DCSync](https://www.thehacker.recipes/ad/movement/credentials/dumping/dcsync) — primitive reference
 - [Microsoft — MS-DRSR](https://learn.microsoft.com/openspecs/windows_protocols/ms-drsr/) — replication protocol spec
 - [SpecterOps — DCSync detection](https://posts.specterops.io/) — 4662 hunting patterns
+- [ired.team — DCSync](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/dump-password-hashes-from-domain-controller-with-dcsync) — lsadump::dcsync krbtgt extraction lab

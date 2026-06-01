@@ -34,6 +34,8 @@ evil-winrm -i 10.0.0.5 -u alice -H <NThash>
 
 Impacket alternative for scripted batches: `wmiexec.py -shell-type powershell` is similar in shape but uses WMI; for actual WinRM use `pypsrp` or `crackmapexec winrm`. `nxc winrm <subnet> -u user -H hash` is the fastest sweep.
 
+Forensic correlation gap worth knowing: the `Microsoft-Windows-WinRM/Operational` log on the source records an `ActivityID` GUID that matches the `ShellID` written to the remote `wsmprovhost.exe` shell logs — a hunter joining those two fields can pin source-to-target across an entire estate even when source IPs are NATed. `Invoke-Command -Authentication Kerberos -SessionOption (New-PSSessionOption -NoMachineProfile)` skips loading the user profile on the target (no `C:\Users\<acct>` directory created), shaving an obvious filesystem artefact that defenders triage after suspected WinRM abuse.
+
 ## Detection and defence
 - Event log `Microsoft-Windows-WinRM/Operational` 91/142/161 — session create from remote IP.
 - 4624 logon type 3 with `LogonProcessName=Kerberos|NTLM` and `ProcessName=…\wsmprovhost.exe` — WinRM session host.
@@ -44,3 +46,4 @@ Impacket alternative for scripted batches: `wmiexec.py -shell-type powershell` i
 - [PowerShell Remoting docs — Microsoft](https://learn.microsoft.com/en-us/powershell/scripting/learn/remoting/running-remote-commands) — protocol + config.
 - [evil-winrm](https://github.com/Hackplayers/evil-winrm) — features and hash-auth syntax.
 - [WinRM lateral movement — HackTricks](https://book.hacktricks.wiki/en/network-services-pentesting/5985-5986-pentesting-winrm.html) — operator notes.
+- [ired.team — WinRM for lateral movement](https://www.ired.team/offensive-security/lateral-movement/t1028-winrm-for-lateral-movement) — `ActivityID`/`ShellID` correlation and 4648 source-side telemetry.

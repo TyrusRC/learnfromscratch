@@ -33,6 +33,8 @@ psexec.py -k -no-pass corp.local/alice@target
 
 Prefer AES keys when available — RC4-HMAC tickets are a high-signal hunt query (`Ticket Encryption Type 0x17` on 4768/4769).
 
+Machine-account hashes (the `WS01$` family pulled from `HKLM\SECURITY\Policy\Secrets\$MACHINE.ACC`) are valid overpass material too — `sekurlsa::pth /user:ws01$ /domain:corp.local /ntlm:<hash> /run:cmd.exe` lets you Kerberos-auth as the computer object, which is often a member of unexpected privileged groups (legacy "all computers can read X" ACLs, MSSQL service hosts added to Domain Admins for convenience). Computer-account passwords also rotate on a 30-day schedule by default, so a stale `$MACHINE.ACC` extracted from an offline backup may still be live.
+
 ## Detection and defence
 - 4768 (AS-REQ) with `Ticket Encryption Type 0x17` for accounts whose `msDS-SupportedEncryptionTypes` is AES-only.
 - 4624 logon type 9 with `LogonProcessName=seclogo` and `AuthenticationPackageName=Negotiate` — Mimikatz `pth` signature.
@@ -43,3 +45,4 @@ Prefer AES keys when available — RC4-HMAC tickets are a high-signal hunt query
 - [Overpass-the-hash — the.hacker.recipes](https://www.thehacker.recipes/ad/movement/kerberos/pass-the-key) — protocol-level walkthrough.
 - [Mimikatz sekurlsa::pth — GitHub wiki](https://github.com/gentilkiwi/mimikatz/wiki/module-~-sekurlsa) — flag reference.
 - [Detecting Overpass-the-Hash — SpecterOps](https://posts.specterops.io/) — RC4-vs-AES hunting heuristics.
+- [ired.team — Pass-the-hash with machine accounts](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/pass-the-hash-with-machine-accounts) — abusing `$MACHINE.ACC` hashes via `sekurlsa::pth`.
