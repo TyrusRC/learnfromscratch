@@ -56,5 +56,5 @@ Rate-limit middleware counts HTTP requests; batch packs 1000 calls into one requ
 
 ## References
 - [JSON-RPC 2.0 spec](https://www.jsonrpc.org/specification) — protocol reference
-- [XML-RPC spec](http://xmlrpc.com/spec.md) — protocol reference
+- [XML-RPC spec](https://xmlrpc.com/spec.md) — protocol reference
 - [HackTricks: XML-RPC](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/xml-rpc.html) — WordPress pingback / multicall abuse

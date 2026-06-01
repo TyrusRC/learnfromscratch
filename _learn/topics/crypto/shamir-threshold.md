@@ -55,4 +55,4 @@ Real-world deployments: AWS KMS custom key store, HashiCorp Vault auto-unseal re
 ## References
 - [Shamir 1979 — How to share a secret](https://dl.acm.org/doi/10.1145/359168.359176) — the original paper.
 - [Feldman VSS](https://www.cs.umd.edu/~gasarch/TOPICS/secretsharing/feldmanVSS.pdf) — verifiable variant.
-- [ssss](http://point-at-infinity.org/ssss/) — reference CLI implementation.
+- [ssss](https://point-at-infinity.org/ssss/) — reference CLI implementation.

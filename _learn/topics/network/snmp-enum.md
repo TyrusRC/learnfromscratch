@@ -54,6 +54,6 @@ SNMPv3 introduces user-based auth and encryption; brute-forcing v3 is largely im
 
 ## References
 - [HackTricks — pentesting SNMP](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-snmp/index.html) — OID cookbook and tooling.
-- [Net-SNMP — snmpwalk manpage](http://www.net-snmp.org/docs/man/snmpwalk.html) — query semantics.
+- [Net-SNMP — snmpwalk manpage](https://www.net-snmp.org/docs/man/snmpwalk.html) — query semantics.
 - [onesixtyone](https://github.com/trailofbits/onesixtyone) — fast community-string brute forcer.
 - [Cisco — SNMPv3 configuration guide](https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/snmp/configuration/15-mt/snmp-15-mt-book/nm-snmp-snmpv3.html) — secure deployment reference.

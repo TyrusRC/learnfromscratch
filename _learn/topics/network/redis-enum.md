@@ -71,4 +71,4 @@ SSRF→Redis works because the protocol is line-based: a `gopher://` or CRLF-inj
 ## References
 - [HackTricks — 6379 Redis](https://book.hacktricks.wiki/en/network-services-pentesting/6379-pentesting-redis.html) — SSH-key, cron, module, and rogue-master chains.
 - [Redis Security](https://redis.io/docs/management/security/) — upstream hardening guide.
-- [Antirez — A few things about Redis security](http://antirez.com/news/96) — why the default bind/auth were dangerous and what changed.
+- [Antirez — A few things about Redis security](https://antirez.com/news/96) — why the default bind/auth were dangerous and what changed.

@@ -37,6 +37,6 @@ Universal toolkits: [CyberChef](https://gchq.github.io/CyberChef/), [dCode](http
 - For obfuscation use case (e.g. cookies, config), classical ciphers are trivially reversed offline; even simple frequency analysis on captured tokens breaks them.
 
 ## References
-- [Practical Cryptography — Cipher list](http://practicalcryptography.com/ciphers/) — concise descriptions per cipher.
+- [Practical Cryptography — Cipher list](https://practicalcryptography.com/ciphers/) — concise descriptions per cipher.
 - [dCode](https://www.dcode.fr/cipher-identifier) — auto-identifier for unknown ciphertexts.
 - [CryptoHack — Introduction](https://cryptohack.org/challenges/introduction/) — guided exposure to the classic families.
