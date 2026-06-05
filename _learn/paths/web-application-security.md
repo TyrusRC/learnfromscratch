@@ -40,11 +40,14 @@ and exploit a textbook example of each in a lab.
 Goal: chain bugs, recognise auth-layer flaws, attack real frameworks.
 
 - AuthN/Z deep dives: [[jwt]], [[oauth-flows]], [[saml-attacks]],
-  [[session-fixation]], [[2fa-bypass]].
+  [[session-fixation]], [[2fa-bypass]],
+  [[pkce-downgrade-and-bypass]], [[oauth-authorization-code-injection]],
+  [[cookie-prefix-and-attribute-attacks]].
 - [[ssrf]] (incl. cloud metadata pivot — see [[ssrf-to-cloud]]).
 - [[xxe]] · [[ssti]] · [[command-injection]].
 - Modern JS surface: [[prototype-pollution]],
   [[dom-clobbering]], [[postmessage-bugs]].
+- Advanced CORS — [[cors-acam-credential-bypass-patterns]].
 - PortSwigger Academy practitioner tier.
 - Read [*The Web Application Hacker's Handbook* — chapters on
   application logic, encoding, and attack chaining].
@@ -56,12 +59,16 @@ Goal: invent new chains, weaponise primitives no scanner catches.
 - [[http-request-smuggling]] (CL.TE, TE.CL, TE.TE, H2.CL).
 - [[deserialisation]] — Java, .NET, PHP, Python, Node.
 - [[race-conditions]] — single-packet attacks.
-- [[websocket-attacks]] · [[graphql-attacks]] (see [[api-security]]).
+- [[websocket-attacks]] · [[websocket-state-sync-bugs]] ·
+  [[graphql-attacks]] (see [[api-security]]).
 - [[cache-poisoning]] · [[cache-deception]].
 - Browser-side: [[content-security-policy-bypass]],
   [[xs-leaks]], [[trusted-types-bypass]].
-- Source-code review — pick one stack (PHP, Spring, Rails, Express) and
-  audit a real open-source app.
+- Modern stack appsec — [[nextjs-server-actions-audit]],
+  [[htmx-server-side-injection]], [[server-sent-events-injection]].
+- Source-code review — pick one stack (PHP, Spring, Rails, Express,
+  Django, .NET) and audit a real open-source app. See
+  [[whitebox-source-review]] for the OSWE-flavoured ordering.
 - HackTricks pentesting-web index:
   <https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/index.html>.
 

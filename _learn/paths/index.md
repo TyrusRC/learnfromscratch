@@ -15,7 +15,8 @@ training ground.
 - [[web-application-security]] — fundamentals to advanced web bugs.
 - [[api-security]] — REST and GraphQL, auth flaws, BOLA / BFLA.
 - [[bug-bounty-methodology]] — how to turn knowledge into reports.
-- [[code-auditing]] — source-driven bug hunting in PHP and Java.
+- [[code-auditing]] — source-driven bug hunting across language stacks.
+- [[whitebox-source-review]] — OSWE-shaped chain-building from source.
 
 ## Network and infrastructure
 
