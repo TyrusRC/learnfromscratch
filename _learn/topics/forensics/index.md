@@ -58,3 +58,9 @@ Steganography, traffic / memory / disk forensics. Paired with the
 - [[case-study-equifax-2017]] — patch-management failure at scale
 - [[case-study-moveit-2023]] — MFT-class mass extortion
 - [[case-study-lastpass-2022]] — vault-vendor breach
+
+## Industry defender playbooks
+- [[financial-sector-defender-playbook]]
+- [[healthcare-sector-defender-playbook]]
+- [[manufacturing-ot-defender-playbook]]
+- [[retail-ecommerce-defender-playbook]]

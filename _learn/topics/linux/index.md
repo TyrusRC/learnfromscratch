@@ -38,3 +38,7 @@ ordering.
 
 ## Post-exploitation tradecraft
 - [[userland-and-kernel-rootkit-primer]]
+
+## Kernel internals deep
+- [[linux-lsm-and-kernel-security-modules]]
+- [[linux-kernel-debugging-deep]]

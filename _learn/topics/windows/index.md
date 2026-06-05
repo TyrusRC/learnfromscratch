@@ -13,6 +13,7 @@ Windows internals primitives and post-exploitation notes. See
 - [[windows-api-and-syscalls]]
 - [[windows-enumeration]] · [[winpeas-enumeration-flow]]
 - [[windows-privesc-checklist]]
+- [[windows-kernel-objects-deep]] · [[windows-kernel-debugging-deep]]
 
 ## Credential primitives
 - [[credential-dumping]] · [[token-impersonation]]

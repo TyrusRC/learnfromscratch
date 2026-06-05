@@ -23,6 +23,12 @@ Cyber threat intelligence and detection engineering. Focus on tradecraft attribu
 - [[time-series-anomaly-for-security]]
 - [[ml-for-detection-tradeoffs]]
 
+## SOC operations
+- [[soc-shift-handoff-runbook]]
+- [[soc-runbook-design]]
+- [[soc-ticket-hygiene-mttr]]
+- [[soc-tier-1-tier-2-tier-3-progression]]
+
 ## CTI process
 - [[cti-collection-management]] — feeding the SOC
 
