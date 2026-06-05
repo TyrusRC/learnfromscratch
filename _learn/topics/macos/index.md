@@ -15,3 +15,9 @@ ordering.
 - [[macos-sandbox-escape]] · [[macos-privesc]]
 - [[macos-kernel-debugging]] · [[iokit-attack-surface]]
 - [[apple-mitigations]] · [[ios-vs-macos-divergence]]
+
+## Internals deep dives
+- [[macos-sip-deep]]
+- [[macos-amfi-and-codesigning-deep]]
+- [[macos-xpc-internals]]
+- [[macos-launchd-deep]]

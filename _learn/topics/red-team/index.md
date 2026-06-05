@@ -51,6 +51,13 @@ ordering.
 ## Reporting
 - [[report-writing-for-pentesters]]
 
+## Engagement lifecycle
+- [[pentest-proposal-and-scoping]]
+- [[pentest-engagement-execution]]
+- [[pentest-report-writing-deep]]
+- [[pentest-debrief-and-followup]]
+- [[red-team-vs-pentest-engagement-shape]]
+
 ## Evasion
 - [[amsi-bypass]] · [[amsi-providers-tampering]]
 - [[etw-bypass]] · [[wldp-bypass]]

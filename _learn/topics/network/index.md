@@ -71,6 +71,11 @@ Network and infrastructure attack-surface notes. See
 - [[gps-gnss-spoofing]]
 - [[satellite-modem-attacks]]
 
+## Cellular (4G / 5G)
+- [[lte-nas-rrc-attacks]]
+- [[5g-nr-attacks]]
+- [[cellular-femtocell-attacks]]
+
 ## OT / ICS protocol deep dives
 - [[dnp3-attacks-deep]]
 - [[modbus-attacks-deep]]

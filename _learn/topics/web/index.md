@@ -120,6 +120,17 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[esi-injection]]
 - [[http-pipelining-keepalive-abuse]]
 
+## WAF / CDN bypass research
+- [[waf-bypass-research-deep]]
+- [[cdn-trust-chain-bypass]]
+- [[cloudflare-and-akamai-research]]
+
+## Email authentication / anti-phishing
+- [[dmarc-spf-dkim-deep]]
+- [[arc-and-mail-forwarding]]
+- [[bimi-and-mail-authenticity-ux]]
+- [[email-gateway-bypass-techniques]]
+
 ## Client-side storage
 - [[client-side-storage-attacks]]
 

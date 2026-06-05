@@ -18,6 +18,11 @@ Cyber threat intelligence and detection engineering. Focus on tradecraft attribu
 - [[atomic-red-team-emulation-deep]] — testing detections
 - [[siem-detection-use-case-catalog]] (cross-link)
 
+## Behavioral analytics / ML detection
+- [[ueba-detection-ml-primer]]
+- [[time-series-anomaly-for-security]]
+- [[ml-for-detection-tradeoffs]]
+
 ## CTI process
 - [[cti-collection-management]] — feeding the SOC
 

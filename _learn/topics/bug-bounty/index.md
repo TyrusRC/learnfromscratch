@@ -55,6 +55,19 @@ for path ordering.
 - [[building-a-research-home-lab]] — lab setup by research area
 - [[responsible-disclosure-across-jurisdictions]] — legal landscape
 
+## Lab / CTF / certification walkthroughs
+- [[htb-machine-walkthrough-methodology]]
+- [[pwn-college-walkthrough-methodology]]
+- [[oscp-style-box-attack-pattern]]
+- [[vulnhub-walkthrough-pattern]]
+- [[ctf-jeopardy-pwn-strategy]]
+
+## Conference research summaries
+- [[blackhat-2024-2025-research-roundup]]
+- [[defcon-2024-2025-research-roundup]]
+- [[usenix-ndss-research-summary]]
+- [[portswigger-top-10-by-year]]
+
 ## Case studies — public disclosures
 - [[case-study-h1-top-disclosed-2024-2025]] — recent H1 patterns
 - [[case-study-orange-tsai-research-pattern]] — Devcore / Orange Tsai method
