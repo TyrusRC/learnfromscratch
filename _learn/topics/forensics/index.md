@@ -43,6 +43,12 @@ Steganography, traffic / memory / disk forensics. Paired with the
 - [[cloud-ir-gcp-audit-logs]] — GCP audit-log IR
 - [[cloud-ir-k8s-audit-logs]] — Kubernetes IR
 
+## macOS / iOS forensics
+- [[macos-forensics-fsevents-spotlight]] — file activity timeline
+- [[macos-tcc-forensics]] — privacy / permission auditing
+- [[macos-unified-logs-forensics]] — Unified Logs / tracev3
+- [[ios-mobile-device-forensics]] — iOS device acquisition + analysis
+
 ## IR case studies
 - [[case-study-snowflake-2024]] — SaaS tenant + infostealer
 - [[case-study-3cx-supply-chain]] — cascading supply chain

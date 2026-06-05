@@ -59,3 +59,8 @@ Network and infrastructure attack-surface notes. See
 ## Automotive
 - [[can-bus-attacks]]
 - [[obd2-uds-attacks]]
+
+## Internet routing / DNS / anonymity
+- [[bgp-hijack-attacks]]
+- [[dnssec-misconfig-attacks]]
+- [[tor-hidden-service-attacks]]

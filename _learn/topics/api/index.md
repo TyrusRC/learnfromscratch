@@ -28,6 +28,7 @@ API-specific surfaces. See [[api-security]] for path ordering.
 - [[apollo-server-audit-patterns]]
 - [[hasura-audit-patterns]]
 - [[graphql-field-permissions-introspection]]
+- [[graphql-persisted-query-bypass]]
 
 ## Bug classes
 - [[cross-api-scripting-xas]]

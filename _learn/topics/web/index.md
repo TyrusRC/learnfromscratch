@@ -41,7 +41,9 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[2fa-bypass]] · [[account-recovery-attacks]] · [[remember-me-flaws]]
 - [[captcha-bypass]]
 - [[webauthn-api-hijacking-downgrade]] · [[passkey-mobile-ble-phish]]
+- [[fedcm-attacks]] · [[cred-management-api-attacks]]
 - [[cookie-prefix-and-attribute-attacks]]
+- [[server-actions-rsc-csrf]]
 
 ## Authorisation and logic
 - [[broken-access-control]] · [[idor]]

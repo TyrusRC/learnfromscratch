@@ -39,3 +39,6 @@ paths]] when you want a sequenced route.
 - [[blockchain-index|Blockchain / smart contracts]]
 - [[code-audit-index|Code auditing]]
 - [[awd-index|AWD]]
+
+## Governance
+- [[compliance-index|Compliance & regulation]]

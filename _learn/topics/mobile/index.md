@@ -55,3 +55,10 @@ Android and iOS-side reverse + pentest primitives. See
 - [[ios-jailbreak-detection-bypass]]
 - [[ios-keychain-extraction]]
 - [[dyld-shared-cache-extraction]]
+
+## Platform deep dives
+- [[android-mali-gpu-exploitation]]
+- [[android-baseband-attacks]]
+- [[android-trusty-tee-attacks]]
+- [[ios-baseband-attacks]]
+- [[ios-bootrom-checkm8]]

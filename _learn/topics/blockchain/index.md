@@ -32,5 +32,12 @@ ordering.
 - [[l2-rollup-sequencer-attacks]] — Arbitrum / Optimism / ZK surfaces
 - [[stablecoin-depeg-attacks]] — peg-mechanism failure classes
 
+## Non-EVM chains
+- [[solana-program-attacks]] — Solana / Anchor program bugs
+- [[move-language-audit]] — Sui / Aptos Move audit
+- [[cosmos-ibc-attacks]] — Cosmos SDK + IBC
+- [[bitcoin-script-and-taproot-attacks]] — Bitcoin / Lightning surface
+- [[cross-chain-multi-vm-attacks]] — multi-VM seam patterns
+
 ## Tooling
 - [[remix-tool]] · [[foundry-toolkit]]

@@ -51,6 +51,12 @@ ordering.
 - [[membership-inference]]
 - [[supply-chain-attacks-on-models]]
 - [[slopsquatting]]
+- [[ai-model-watermark-bypass]]
+- [[llm-eval-pipeline-poisoning]]
+
+## Multi-agent and voice
+- [[multi-agent-collusion-attacks]]
+- [[voice-cloning-liveness-bypass]]
 
 ## Infrastructure
 - [[infrastructure-around-llms]]
