@@ -66,5 +66,11 @@ Source-review notes for PHP, Java, and ASP.NET stacks. See
 - [[go-module-substitution-audit]]
 - [[secrets-in-code-detection-patterns]]
 
+## AppSec discipline
+- [[appsec-threat-modeling]]
+- [[sast-dast-ci-integration]]
+- [[authorization-patterns-rebac-abac]]
+- [[appsec-maturity-checklist]]
+
 ## Source-provenance
 - [[ghost-commit-smuggling]]
