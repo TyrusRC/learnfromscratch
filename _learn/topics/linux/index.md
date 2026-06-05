@@ -7,6 +7,9 @@ aliases: [linux-topics]
 Linux internals and post-exploitation. See [[linux-internals]] for
 ordering.
 
+## Zero-knowledge primers
+- [[kali-linux-primer]] · [[bash-and-shell-primer]]
+
 ## Privilege model
 - [[linux-capabilities]] · [[setuid-setgid-sticky]]
 - [[suid-sgid-binaries]]
@@ -31,3 +34,6 @@ ordering.
 ## Container escape
 - [[user-namespace-attacks]]
 - [[container-escape-techniques]]
+
+## Post-exploitation tradecraft
+- [[userland-and-kernel-rootkit-primer]]

@@ -22,6 +22,7 @@ Network and infrastructure attack-surface notes. See
 ## Initial access
 - [[password-spraying]] · [[exposed-services]]
 - [[known-cve-triage]]
+- [[searchsploit-and-public-exploit-workflow]]
 
 ## Pivoting and tunneling
 - [[port-forwarding]] · [[ssh-tunneling]]

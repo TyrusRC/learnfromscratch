@@ -7,6 +7,9 @@ aliases: [web-topics]
 Atomic web-app vulnerability and primitive notes. Pair with the
 [[web-application-security]] learning path for ordering.
 
+## Zero-knowledge primer
+- [[http-and-web-primer]]
+
 ## Injection
 - [[sql-injection]] · [[sql-injection-by-database]]
 - [[nosql-injection]] · [[command-injection]]

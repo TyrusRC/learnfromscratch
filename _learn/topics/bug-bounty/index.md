@@ -49,3 +49,6 @@ for path ordering.
 - [[disclosure-and-comms]]
 - [[dupe-mental-model]]
 - [[burnout-and-pipeline]]
+
+## Certification exam methodology
+- [[oscp-exam-methodology]]
