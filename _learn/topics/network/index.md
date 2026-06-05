@@ -47,3 +47,11 @@ Network and infrastructure attack-surface notes. See
 - [[wifi-and-802-11-primer]]
 - [[wpa-and-wpa2-cracking]]
 - [[evil-twin-and-karma-attacks]]
+- [[ble-and-bluetooth-low-energy-attacks]]
+- [[nfc-and-rfid-cloning]]
+- [[sdr-and-radio-recon]]
+- [[zigbee-and-zwave-attacks]]
+- [[lorawan-attacks]]
+
+## ICS / OT
+- [[ics-scada-protocols-attacks]]
