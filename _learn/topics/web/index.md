@@ -83,6 +83,25 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[websocket-state-sync-bugs]]
 - [[server-sent-events-injection]]
 
+## SSR / hydration audit
+- [[react-ssr-hydration-bugs]]
+- [[sveltekit-form-actions-audit]]
+- [[vue-ssr-audit]]
+- [[astro-server-islands-audit]]
+
+## Edge runtime appsec
+- [[cloudflare-workers-audit]]
+- [[vercel-edge-and-middleware-audit]]
+- [[deno-and-bun-audit]]
+- [[service-worker-attack-surface]]
+- [[serverless-cold-start-side-channels]]
+
+## Advanced bug-class deepening
+- [[unicode-normalization-bypasses]]
+- [[waf-bypass-advanced-techniques]]
+- [[esi-injection]]
+- [[http-pipelining-keepalive-abuse]]
+
 ## Client-side storage
 - [[client-side-storage-attacks]]
 
