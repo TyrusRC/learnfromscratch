@@ -11,6 +11,12 @@ ordering.
 - [[llm-threat-model]]
 - [[output-filtering-and-its-bypasses]]
 
+## Source-review angle
+- [[llm-application-source-review]]
+- [[prompt-injection-sinks-in-source]]
+- [[rag-pipeline-injection-points]]
+- [[llm-tool-call-validation]]
+
 ## Prompt-layer
 - [[direct-prompt-injection]] · [[indirect-prompt-injection]]
 - [[jailbreaks]] · [[adversarial-suffixes]]
