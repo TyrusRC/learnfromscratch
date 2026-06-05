@@ -64,3 +64,16 @@ Network and infrastructure attack-surface notes. See
 - [[bgp-hijack-attacks]]
 - [[dnssec-misconfig-attacks]]
 - [[tor-hidden-service-attacks]]
+
+## Space / satellite
+- [[cubesat-attacks]]
+- [[ground-station-attacks]]
+- [[gps-gnss-spoofing]]
+- [[satellite-modem-attacks]]
+
+## OT / ICS protocol deep dives
+- [[dnp3-attacks-deep]]
+- [[modbus-attacks-deep]]
+- [[iec61850-attacks]]
+- [[opc-ua-attacks]]
+- [[profinet-ethercat-attacks]]

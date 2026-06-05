@@ -58,5 +58,8 @@ ordering.
 - [[multi-agent-collusion-attacks]]
 - [[voice-cloning-liveness-bypass]]
 
+## Agent platform / defence
+- [[ai-agent-sandbox-design]]
+
 ## Infrastructure
 - [[infrastructure-around-llms]]

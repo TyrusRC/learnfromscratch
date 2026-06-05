@@ -38,3 +38,6 @@ CTF-style and applied-cryptography attack notes. See
 ## Post-quantum
 - [[post-quantum-crypto-attack-surface]]
 - [[pqc-migration-risk]]
+
+## Side-channels
+- [[cryptography-side-channels-survey]]

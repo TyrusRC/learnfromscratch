@@ -42,3 +42,8 @@ paths]] when you want a sequenced route.
 
 ## Governance
 - [[compliance-index|Compliance & regulation]]
+
+## Hardware / embedded / threat intel
+- [[hardware-index|Hardware security]]
+- [[embedded-index|Embedded / RTOS]]
+- [[cti-index|CTI / threat intelligence]]

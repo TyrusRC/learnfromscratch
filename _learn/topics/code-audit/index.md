@@ -60,6 +60,12 @@ Source-review notes for PHP, Java, and ASP.NET stacks. See
 - [[rails-audit-patterns]]
 - [[express-nestjs-audit-patterns]]
 
+## Framework deep dives
+- [[spring-deserialisation-deep]]
+- [[dotnet-deserialisation-deep]]
+- [[rails-advanced-audit]]
+- [[django-advanced-audit]]
+
 ## Supply chain and secrets
 - [[npm-postinstall-and-typosquat-audit]]
 - [[python-pypi-supply-chain-audit]]
