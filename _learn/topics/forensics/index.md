@@ -32,3 +32,7 @@ Steganography, traffic / memory / disk forensics. Paired with the
 
 ## Incident response — defender's whitebox
 - [[ir-from-source-signals]]
+
+## Detection engineering
+- [[siem-detection-use-case-catalog]]
+- [[deception-and-honeypot-strategy]]

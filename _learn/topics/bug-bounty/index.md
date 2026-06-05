@@ -52,3 +52,7 @@ for path ordering.
 
 ## Certification exam methodology
 - [[oscp-exam-methodology]]
+
+## Modern bug-bounty patterns
+- [[account-takeover-modern-chains]]
+- [[third-party-saas-misconfig-patterns]]

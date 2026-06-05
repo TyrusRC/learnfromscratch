@@ -86,6 +86,19 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[websocket-state-sync-bugs]]
 - [[server-sent-events-injection]]
 
+## Modern protocol attack surface
+- [[http3-quic-attack-surface]]
+- [[tls-1-3-attacks-and-misuse]]
+- [[cache-poisoning-modern-chains]]
+- [[http-smuggling-modern-variants]]
+- [[oauth-modern-attacks]]
+- [[2fa-bypass-deep]]
+- [[ssrf-to-cloud-advanced-chains]]
+
+## CTF and CVE reference
+- [[ctf-web-modern-tricks]]
+- [[recent-cve-class-overview]]
+
 ## SSR / hydration audit
 - [[react-ssr-hydration-bugs]]
 - [[sveltekit-form-actions-audit]]

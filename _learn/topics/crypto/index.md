@@ -31,3 +31,6 @@ CTF-style and applied-cryptography attack notes. See
 ## Other
 - [[hash-length-extension]]
 - [[shamir-threshold]]
+
+## CTF advanced
+- [[lattice-attacks-crypto-ctf]]

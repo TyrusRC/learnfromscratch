@@ -10,6 +10,13 @@ ordering.
 ## Foundations
 - [[llm-threat-model]]
 - [[output-filtering-and-its-bypasses]]
+- [[llm-sdk-bug-classes]]
+
+## Agent attacks
+- [[ai-agent-confusion-attacks]]
+
+## SE-adjacent
+- [[deepfake-assisted-phishing]]
 
 ## Source-review angle
 - [[llm-application-source-review]]
