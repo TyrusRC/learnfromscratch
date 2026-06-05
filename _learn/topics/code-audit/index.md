@@ -78,6 +78,19 @@ Source-review notes for PHP, Java, and ASP.NET stacks. See
 - [[authorization-patterns-rebac-abac]]
 - [[appsec-maturity-checklist]]
 
+## Threat modelling deep
+- [[threat-modelling-stride-deep]]
+- [[threat-modelling-pasta]]
+- [[threat-modelling-linddun-privacy]]
+- [[attack-tree-methodology]]
+
+## DevSecOps platform / culture
+- [[devsecops-platform-engineering]]
+- [[paved-road-pattern-platform]]
+- [[appsec-champions-program]]
+- [[sast-dast-iast-vendor-selection]]
+- [[sbom-and-software-supply-chain-attestation]]
+
 ## CI/CD and IaC source audit
 - [[github-actions-workflow-source-audit]]
 - [[terraform-and-iac-source-audit]]

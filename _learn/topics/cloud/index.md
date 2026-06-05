@@ -75,3 +75,10 @@ ordering.
 - [[gha-oidc-sub-claim-wildcards]]
 - [[tj-actions-tag-mutation]]
 - [[gitlab-ci-attacks]] · [[jenkins-attacks]]
+
+## Zero Trust + cloud security tooling
+- [[zero-trust-architecture-practitioner]]
+- [[ztna-vs-vpn-migration]]
+- [[identity-aware-proxy-deep]]
+- [[cspm-cnapp-dspm-landscape]]
+- [[service-mesh-security-deep]]

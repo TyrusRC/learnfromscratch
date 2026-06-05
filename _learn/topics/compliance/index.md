@@ -37,6 +37,20 @@ Compliance, regulatory, and audit-framework notes from a practitioner's perspect
 - [[third-party-risk-management-practitioner]]
 - [[tabletop-exercise-design-and-execution]]
 
+## Vulnerability management
+- [[vulnerability-management-lifecycle]]
+- [[cvss-epss-kev-prioritisation]]
+- [[vuln-exception-management]]
+- [[patch-management-program]]
+- [[asset-management-easm-cmdb]]
+
+## Program operations
+- [[running-a-vdp-bug-bounty-program-defender-side]]
+- [[cyber-insurance-practitioner]]
+
+## Maturity models
+- [[cmmi-bsimm-samm-comparison]]
+
 ## Related
 - [[appsec-maturity-checklist]]
 - [[secure-sdlc-rollout-playbook]]

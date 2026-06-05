@@ -28,6 +28,21 @@ Cyber threat intelligence and detection engineering. Focus on tradecraft attribu
 - [[soc-runbook-design]]
 - [[soc-ticket-hygiene-mttr]]
 - [[soc-tier-1-tier-2-tier-3-progression]]
+- [[mssp-mdr-vendor-relationships]]
+
+## Threat hunting
+- [[threat-hunting-methodology]]
+- [[hypothesis-driven-hunting]]
+- [[structured-analytic-techniques-for-hunters]]
+
+## Identity-centric defence
+- [[itdr-identity-threat-detection-response]]
+
+## Coverage frameworks
+- [[mitre-d3fend-coverage]]
+
+## Org-wide culture
+- [[security-training-program-building]]
 
 ## CTI process
 - [[cti-collection-management]] — feeding the SOC
