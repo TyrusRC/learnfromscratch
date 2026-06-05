@@ -135,7 +135,7 @@ A solid practice goal: ship a 100-line LD_PRELOAD that hides a file, a PID, and 
 
 ## References
 - [Symantec — Adore-NG and the LKM history](https://docs.broadcom.com/) (research papers)
-- [Phrack — LKM HACKING](http://phrack.org/issues/61/14.html)
+- [Phrack — LKM HACKING](https://phrack.org/issues/61/14.html)
 - [x-c3ll — PAM backdoor write-up](https://x-c3ll.github.io/posts/PAM-backdoor/)
 - [Bedrock Linux rootkit detector](https://github.com/) (search)
 - See also: [[linux-post-exploitation-tradecraft]], [[ld-preload-abuse]], [[kernel-exploits-linux]], [[osep-roadmap]]
