@@ -47,7 +47,9 @@ training ground.
 
 - [[oscp-roadmap]] — 12-week zero-to-OSCP plan (PEN-200).
 - [[osep-roadmap]] — 16-week OSCP-to-OSEP plan (PEN-300).
-- [[oscp-vs-osep-mindset]] — what changes between the two exams.
+- [[oswe-roadmap]] — 12-week OSCP-to-OSWE plan (WEB-300).
+- [[oscp-vs-osep-mindset]] — what changes between OSCP and OSEP.
+- [[oscp-osep-oswe-track-comparison]] — side-by-side comparison of the three tracks.
 
 ## Applied disciplines
 

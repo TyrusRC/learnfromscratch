@@ -16,6 +16,8 @@ ordering.
 - [[client-side-attacks-primer]]
 - [[office-vba-macros-initial-access]]
 - [[jscript-hta-wsh-initial-access]]
+- [[phishing-infrastructure-design]]
+- [[pretext-design-for-engagements]]
 
 ## Network filter bypass
 - [[dns-c2-and-icmp-c2]]
@@ -70,3 +72,4 @@ ordering.
 ## Adversary feedback
 - [[purple-team-feedback-loop]]
 - [[ad-recon-low-noise]]
+- [[edr-rules-as-code-from-attack-patterns]]
