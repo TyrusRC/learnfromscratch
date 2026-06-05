@@ -23,6 +23,12 @@ API-specific surfaces. See [[api-security]] for path ordering.
 - [[graphql-attacks]] · [[grpc-attacks]]
 - [[soap-attacks]] · [[rpc-attacks]]
 
+## GraphQL deep dive
+- [[graphql-source-review]]
+- [[apollo-server-audit-patterns]]
+- [[hasura-audit-patterns]]
+- [[graphql-field-permissions-introspection]]
+
 ## Bug classes
 - [[cross-api-scripting-xas]]
 - [[api-unsafe-consumption]]
