@@ -63,6 +63,8 @@ ordering.
 - [[k8s-host-mount-escape]] · [[k8s-privileged-pod]]
 - [[k8s-etcd-attacks]] · [[k8s-admission-controllers]]
 - [[k8s-ingressnightmare]]
+- [[k8s-admission-webhook-abuse]]
+- [[opa-rego-policy-bypasses]]
 
 ## Cross-cloud and CI/CD
 - [[multi-cloud-pivoting]]

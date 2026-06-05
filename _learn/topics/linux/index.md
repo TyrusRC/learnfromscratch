@@ -34,6 +34,7 @@ ordering.
 ## Container escape
 - [[user-namespace-attacks]]
 - [[container-escape-techniques]]
+- [[container-runtime-escapes-modern]]
 
 ## Post-exploitation tradecraft
 - [[userland-and-kernel-rootkit-primer]]

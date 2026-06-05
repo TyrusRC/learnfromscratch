@@ -18,6 +18,10 @@ ordering.
 - [[jscript-hta-wsh-initial-access]]
 - [[phishing-infrastructure-design]]
 - [[pretext-design-for-engagements]]
+- [[hardware-implants-and-badusb]]
+
+## Physical and SE
+- [[physical-pentest-tradecraft]]
 
 ## Network filter bypass
 - [[dns-c2-and-icmp-c2]]
@@ -73,3 +77,6 @@ ordering.
 - [[purple-team-feedback-loop]]
 - [[ad-recon-low-noise]]
 - [[edr-rules-as-code-from-attack-patterns]]
+
+## Linux runtime tradecraft
+- [[ebpf-offensive-and-defensive]]
