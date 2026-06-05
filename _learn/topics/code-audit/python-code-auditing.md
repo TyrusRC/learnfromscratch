@@ -39,7 +39,7 @@ rg -n 'marshal\.loads?|shelve\.open' .
 ```
 4. **Pickle.** `pickle.loads(x)` on attacker bytes is RCE — `__reduce__` runs arbitrary code on deserialize. Audit Redis/memcached/queue payloads, session cookies (`itsdangerous` signs but doesn't prevent if key leaks), Celery `pickle` serializer.
 5. **YAML.** `yaml.load(x)` (PyYAML <6.0 default loader) deserialises arbitrary Python objects. `yaml.safe_load` is required. `ruamel.yaml` also has `unsafe` modes.
-6. **SSTI.** Jinja2 `Environment().from_string(user_template).render(context)` — RCE via `{{ ''.__class__.__mro__[1].__subclasses__() }}` chain. Django templates are more sandboxed but `{% raw %}{% include name %}{% endraw %}` with user-controlled `name` is still LFI. See [[ssti]], [[python-ssti-jinja]].
+6. **SSTI.** Jinja2 `Environment().from_string(user_template).render(context)` — RCE via `{{ ''.__class__.__mro__[1].__subclasses__() }}` chain. Django templates are more sandboxed but a `{% include name %}` tag with user-controlled `name` is still LFI. See [[ssti]], [[python-ssti-jinja]].
 7. **SQL injection.** Django ORM `.filter(name=x)` is safe; `.raw("SELECT * FROM users WHERE name='%s'" % x)` is not. SQLAlchemy `text(f"...")` interpolation = SQLi. f-strings in `cursor.execute` are SQLi.
 8. **SSRF.** `requests.get(request.json["url"])` with no allowlist. Django's `URLValidator` is regex-only, doesn't prevent DNS rebinding ([[dns-rebinding]]).
 9. **Mass assignment / Pydantic.** `class Foo(BaseModel): name: str` with `model_config = ConfigDict(extra='allow')` lets attacker add `is_admin` and a downstream `Object.assign`-style update propagates it. Use `extra='forbid'`.
