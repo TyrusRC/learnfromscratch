@@ -52,6 +52,8 @@ Use them when:
   example from external recon to Domain Admin, OSCP-exam pacing.
 - [[osep-full-chain-walkthrough|OSEP-shaped full chain]] — worked
   example from phishing to cross-forest DA under EDR-on conditions.
+- [[secure-sdlc-rollout-playbook|Secure-SDLC rollout]] — six-wave
+  sequence to roll out a secure SDLC without burning team goodwill.
 
 ## How to read a playbook
 

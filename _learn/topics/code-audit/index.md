@@ -72,5 +72,10 @@ Source-review notes for PHP, Java, and ASP.NET stacks. See
 - [[authorization-patterns-rebac-abac]]
 - [[appsec-maturity-checklist]]
 
+## CI/CD and IaC source audit
+- [[github-actions-workflow-source-audit]]
+- [[terraform-and-iac-source-audit]]
+- [[k8s-manifest-source-audit]]
+
 ## Source-provenance
 - [[ghost-commit-smuggling]]

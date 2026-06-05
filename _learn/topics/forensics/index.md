@@ -29,3 +29,6 @@ Steganography, traffic / memory / disk forensics. Paired with the
 ## Memory and network
 - [[memory-image-forensics]] · [[volatility-plugins]]
 - [[traffic-analysis]]
+
+## Incident response — defender's whitebox
+- [[ir-from-source-signals]]
