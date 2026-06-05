@@ -10,7 +10,28 @@ ordering.
 ## Opsec / infra
 - [[opsec-fundamentals]] · [[c2-protocol-design]]
 - [[infrastructure-design]] · [[payload-staging]]
-- [[c2-frameworks]]
+- [[c2-frameworks]] · [[metasploit-fundamentals]]
+
+## Initial access (client-side)
+- [[client-side-attacks-primer]]
+- [[office-vba-macros-initial-access]]
+- [[jscript-hta-wsh-initial-access]]
+
+## Network filter bypass
+- [[dns-c2-and-icmp-c2]]
+- [[domain-fronting-and-cdn-abuse]]
+
+## Allowlisting bypass
+- [[applocker-bypass-techniques]]
+
+## Post-exploitation (Linux)
+- [[linux-post-exploitation-tradecraft]]
+
+## Edge-case scenarios
+- [[kiosk-breakout-techniques]]
+
+## Reporting
+- [[report-writing-for-pentesters]]
 
 ## Evasion
 - [[amsi-bypass]] · [[amsi-providers-tampering]]
