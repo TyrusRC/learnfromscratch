@@ -41,5 +41,5 @@ AD attack primitives. See [[active-directory]] for ordering.
 ## Advanced
 - [[child-to-forest-root]] · [[cross-forest-trust-abuse]]
 - [[ms-rpc-abuse]] · [[ad-persistence]]
-- [[mssql-trusted-links]]
+- [[mssql-trusted-links]] · [[mssql-xp-cmdshell-impersonation-chains]]
 - [[sidhistory-injection]]

@@ -48,6 +48,10 @@ Use them when:
 - [[cloud-foothold-playbook|Cloud foothold playbook]] — "I have AWS
   / Azure / GCP credentials or a token; what's the escalation
   surface?"
+- [[oscp-full-chain-walkthrough|OSCP-shaped full chain]] — worked
+  example from external recon to Domain Admin, OSCP-exam pacing.
+- [[osep-full-chain-walkthrough|OSEP-shaped full chain]] — worked
+  example from phishing to cross-forest DA under EDR-on conditions.
 
 ## How to read a playbook
 

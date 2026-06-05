@@ -43,6 +43,12 @@ training ground.
 - [[red-team-operations]] — opsec, C2, evasion, persistence.
 - [[cloud-red-team]] — AWS, Azure / Entra, GCP, Kubernetes.
 
+## Certification roadmaps
+
+- [[oscp-roadmap]] — 12-week zero-to-OSCP plan (PEN-200).
+- [[osep-roadmap]] — 16-week OSCP-to-OSEP plan (PEN-300).
+- [[oscp-vs-osep-mindset]] — what changes between the two exams.
+
 ## Applied disciplines
 
 - [[applied-crypto|Applied cryptography for attackers]] — symmetric,
