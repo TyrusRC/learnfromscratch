@@ -15,10 +15,11 @@ ordering.
 
 ## AWS — fundamentals
 - [[aws-iam-enum]] · [[aws-instance-metadata]]
-- [[aws-sts-assume-role]]
+- [[aws-sts-assume-role]] · [[aws-assumerole-chains]]
 - [[aws-s3-attacks]] · [[aws-lambda-attacks]]
 - [[aws-secrets-manager]] · [[aws-cross-account]]
 - [[aws-organisations-abuse]]
+- [[aws-imds-ssrf-pivot]]
 
 ## AWS — modern persistence and evasion
 - [[aws-sso-device-code-phishing]]
@@ -28,7 +29,7 @@ ordering.
 
 ## Azure / Entra — fundamentals
 - [[entra-id-enum]] · [[az-cli-tokens]]
-- [[managed-identities]]
+- [[managed-identities]] · [[azure-managed-identity-abuse]]
 - [[azure-key-vault-attacks]]
 - [[service-principal-abuse]]
 - [[app-registration-abuse]]
@@ -45,6 +46,17 @@ ordering.
 - [[gcp-service-account-enum]] · [[gcp-metadata-server]]
 - [[gcs-attacks]] · [[gcp-iam-misconfig]]
 - [[gcp-oauth-app-abuse]]
+- [[gcp-metadata-token-theft]]
+
+## SaaS / IdP control planes
+- [[okta-attacks]]
+- [[google-workspace-attacks]]
+- [[m365-admin-attacks]]
+- [[cloudflare-tenant-attacks]]
+
+## Data / orchestration
+- [[airflow-attacks]]
+- [[terraform-state-extraction]]
 
 ## Kubernetes
 - [[k8s-rbac-abuse]] · [[k8s-service-account-tokens]]
@@ -57,3 +69,4 @@ ordering.
 - [[ci-cd-as-cloud-attack-surface]]
 - [[gha-oidc-sub-claim-wildcards]]
 - [[tj-actions-tag-mutation]]
+- [[gitlab-ci-attacks]] · [[jenkins-attacks]]

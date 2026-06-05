@@ -9,7 +9,7 @@ in [[exploit-dev-index]]).
 
 ## Foundations
 - [[reverse-engineering-overview]]
-- [[executable-files-pe-elf]]
+- [[executable-files-pe-elf]] · [[mach-o-analysis]]
 - [[assembly-basics-x86-64]] · [[assembly-basics-arm]]
 
 ## Static / dynamic
@@ -19,12 +19,15 @@ in [[exploit-dev-index]]).
 
 ## Tooling
 - [[ida-hexrays]] · [[ghidra-decompiler]] · [[binary-ninja]]
+- [[capa-rules]]
 
 ## Counter-measures
 - [[anti-static-analysis]] · [[anti-debugging]] · [[packers]]
 
 ## Modern techniques
 - [[symbolic-execution]] · [[binary-instrumentation]]
+- [[intel-pin-tracing]]
 
-## Per-language
+## Per-language / per-runtime
 - [[rust-go-reverse]] · [[csharp-python-reverse]]
+- [[cpp-mfc-reverse]] · [[wasm-reverse-engineering]]

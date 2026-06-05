@@ -16,6 +16,13 @@ ordering.
 - [[integer-overflow-solidity]]
 - [[access-control-bugs]]
 - [[airdrop-abuse]]
+- [[delegatecall-storage-collision]]
+
+## DeFi-specific attacks
+- [[flash-loan-attacks]]
+- [[oracle-manipulation]]
+- [[mev-sandwich-attacks]]
+- [[erc20-approval-phishing]]
 
 ## Tooling
 - [[remix-tool]] · [[foundry-toolkit]]

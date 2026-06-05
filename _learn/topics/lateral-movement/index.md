@@ -19,5 +19,9 @@ Moving between hosts and identities.
 - [[chisel]] · [[ligolo-ng]]
 - [[socks-proxies]]
 
+## Session hijack
+- [[rdp-session-hijack-tsmuxd]]
+- [[ssh-agent-hijack]]
+
 ## AD lateral
 - See [[active-directory-index]].

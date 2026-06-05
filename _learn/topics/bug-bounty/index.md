@@ -23,6 +23,10 @@ for path ordering.
 - [[endpoint-spidering]] · [[wordlist-fuzzing-tactics]]
 - [[analytics-tag-correlation]] · [[cloud-asset-recon]]
 - [[tech-stack-fingerprinting]]
+- [[cidr-enumeration]] · [[recon-data-services]]
+
+## Tooling
+- [[burp-suite-toolkit]]
 
 ## Methodology workflow
 - [[getting-feel-for-target]] (step 1)
@@ -35,7 +39,7 @@ for path ordering.
 ## Execution patterns
 - [[known-vuln-workflow]] — tech → CVE → PoC → exploit.
 - [[n-day-rapid-exploitation]] — race the patch window.
-- [[login-page-attacks]]
+- [[login-page-attacks]] · [[account-takeover-patterns]]
 - [[automated-fuzzer-vuln-discovery]]
 - [[testing-methodology-checklists]]
 - [[demonstrating-impact]]

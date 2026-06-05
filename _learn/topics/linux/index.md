@@ -13,12 +13,20 @@ ordering.
 - [[namespaces-and-cgroups]]
 
 ## Enumeration and privesc
-- [[linux-enumeration]] · [[linux-privesc-vectors]]
+- [[linux-enumeration]] · [[linpeas-and-enumeration-flow]]
+- [[linux-privesc-vectors]]
 - [[sudo-misconfig]] · [[cron-jobs]]
 - [[path-hijacking]] · [[ld-preload-abuse]]
 - [[writable-passwd-shadow]] · [[nfs-no-root-squash]]
 - [[capabilities-privesc]]
 - [[kernel-exploits-linux]]
+
+## Notable kernel / userland CVEs
+- [[dirty-pipe-cve-2022-0847]]
+- [[pwnkit-polkit-cve-2021-4034]]
+- [[sudo-baron-samedit-cve-2021-3156]]
+- [[looney-tunables-cve-2023-4911]]
+- [[regression-openssh-cve-2024-6387]]
 
 ## Container escape
 - [[user-namespace-attacks]]

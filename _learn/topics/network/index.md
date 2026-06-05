@@ -14,7 +14,7 @@ Network and infrastructure attack-surface notes. See
 ## Service enumeration
 - [[ftp-enum]] · [[ssh-enum]] · [[smtp-enum]]
 - [[dns-enum]] · [[http-enum]]
-- [[smb-enum]] · [[snmp-enum]]
+- [[smb-enum]] · [[snmp-enum]] · [[msrpc-enum]]
 - [[ldap-enum]] · [[kerberos-enum]]
 - [[mssql-enum]] · [[mysql-enum]] · [[redis-enum]]
 - [[rdp-enum]] · [[winrm-enum]]
@@ -26,6 +26,17 @@ Network and infrastructure attack-surface notes. See
 ## Pivoting and tunneling
 - [[port-forwarding]] · [[ssh-tunneling]]
 - [[chisel]] · [[ligolo-ng]]
+
+## Service-specific attacks
+- [[memcache-attacks]] · [[tftp-attacks]]
+- [[mqtt-attacks]] · [[ipmi-cipher-zero]]
+- [[vnc-attacks]] · [[x11-attacks]]
+- [[rmi-java-attacks]]
+
+## Classic MS network bugs
+- [[ms08-067-netapi]]
+- [[ms17-010-eternalblue]]
+- [[ms14-068-kerberos]]
 
 ## Protocol-layer attacks
 - [[tunnelvision-dhcp-opt121]]

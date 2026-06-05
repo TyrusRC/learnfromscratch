@@ -13,14 +13,18 @@ Android and iOS-side reverse + pentest primitives. See
 
 ## Tooling
 - [[apk-reverse-tools]]
+- [[jeb-decompiler]]
 - [[xposed-hook]] · [[frida-hook]]
 
 ## Attack surface
 - [[android-deeplink-abuse]]
+- [[android-intent-redirection]]
+- [[strandhogg-task-affinity]]
 - [[ssl-pinning-bypass]]
 
 ## Anti-analysis
 - [[apk-anti-debug]] · [[apk-unpacking]]
+- [[apk-class-overloading-dex-rebuild]]
 - [[ollvm-obfuscation]]
 
 ## iOS

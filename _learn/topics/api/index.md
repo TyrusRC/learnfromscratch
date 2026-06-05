@@ -8,8 +8,10 @@ API-specific surfaces. See [[api-security]] for path ordering.
 
 ## Discovery
 - [[swagger-discovery]] · [[api-content-discovery]]
+- [[api-endpoint-analysis]]
 
-## AuthZ
+## AuthN / AuthZ
+- [[api-authentication-attacks]]
 - [[bola]] · [[bfla]] · [[mass-assignment]]
 
 ## Auth tokens
@@ -23,9 +25,11 @@ API-specific surfaces. See [[api-security]] for path ordering.
 
 ## Bug classes
 - [[cross-api-scripting-xas]]
+- [[api-unsafe-consumption]]
+- [[api-business-flow-abuse]]
 
 ## Methodology
 - [[api-threat-modeling]] · [[api-fuzzing-wide-vs-deep]]
 
-## Abuse
-- [[rate-limit-bypass]]
+## Abuse and evasion
+- [[rate-limit-bypass]] · [[api-evasion-techniques]]

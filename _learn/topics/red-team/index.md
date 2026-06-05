@@ -13,8 +13,10 @@ ordering.
 - [[c2-frameworks]]
 
 ## Evasion
-- [[amsi-bypass]] · [[etw-bypass]] · [[wldp-bypass]]
+- [[amsi-bypass]] · [[amsi-providers-tampering]]
+- [[etw-bypass]] · [[wldp-bypass]]
 - [[edr-hooks-and-unhooking]]
+- [[anti-debugging-windows]]
 - [[syscall-direct-and-indirect]]
 - [[living-off-the-land]]
 
@@ -22,10 +24,24 @@ ordering.
 - [[dll-side-loading]] · [[com-hijacking]]
 - [[parent-pid-spoofing]]
 - [[process-injection-techniques]]
+- [[file-transfer-techniques]] · [[shell-upgrade-techniques]]
+
+## Credential access
+- [[password-cracking-toolkit]]
+
+## Pivoting
+- [[pivoting-and-tunneling]]
 
 ## Persistence
 - [[persistence-techniques-windows]]
 - [[ad-persistence]]
+- [[registry-run-keys-persistence]]
+- [[wmi-event-subscription-persistence]]
+- [[ifeo-debugger-persistence]]
+- [[appinit-dlls-persistence]]
+- [[netsh-helper-dll-persistence]]
+- [[screensaver-persistence]]
+- [[accessibility-stickykeys-persistence]]
 
 ## Enterprise infrastructure tradecraft
 - [[sccm-misconfiguration-manager]]
