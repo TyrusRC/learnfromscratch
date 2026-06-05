@@ -31,3 +31,7 @@ in [[exploit-dev-index]]).
 ## Per-language / per-runtime
 - [[rust-go-reverse]] · [[csharp-python-reverse]]
 - [[cpp-mfc-reverse]] · [[wasm-reverse-engineering]]
+
+## Source-audit angle
+- [[decompiler-driven-source-review]]
+- [[patched-binary-diffing-for-vulnid]]
