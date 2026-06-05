@@ -24,5 +24,13 @@ ordering.
 - [[mev-sandwich-attacks]]
 - [[erc20-approval-phishing]]
 
+## Modern DeFi attack patterns
+- [[bridge-attacks-modern]] — cross-chain bridge classes
+- [[erc4626-vault-attacks]] — vault inflation / donation
+- [[permit-eip2612-phishing]] — Permit / Permit2 signature phishing
+- [[nft-signature-replay]] — Seaport-style NFT phishing
+- [[l2-rollup-sequencer-attacks]] — Arbitrum / Optimism / ZK surfaces
+- [[stablecoin-depeg-attacks]] — peg-mechanism failure classes
+
 ## Tooling
 - [[remix-tool]] · [[foundry-toolkit]]

@@ -55,3 +55,7 @@ Network and infrastructure attack-surface notes. See
 
 ## ICS / OT
 - [[ics-scada-protocols-attacks]]
+
+## Automotive
+- [[can-bus-attacks]]
+- [[obd2-uds-attacks]]

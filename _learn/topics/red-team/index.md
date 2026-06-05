@@ -12,6 +12,11 @@ ordering.
 - [[infrastructure-design]] · [[payload-staging]]
 - [[c2-frameworks]] · [[metasploit-fundamentals]]
 
+## C2 framework deep dives
+- [[sliver-c2-deep]]
+- [[havoc-c2-deep]]
+- [[mythic-framework-deep]]
+
 ## Initial access (client-side)
 - [[client-side-attacks-primer]]
 - [[office-vba-macros-initial-access]]
@@ -19,6 +24,13 @@ ordering.
 - [[phishing-infrastructure-design]]
 - [[pretext-design-for-engagements]]
 - [[hardware-implants-and-badusb]]
+
+## Modern AitM / MFA-bypass phishing
+- [[aitm-evilginx-modern-phishing]]
+- [[oauth-device-code-phishing-m365]]
+- [[mfa-fatigue-tradecraft]]
+- [[tycoon2fa-and-modern-phish-kits]]
+- [[conditional-access-bypass-modern]]
 
 ## Physical and SE
 - [[physical-pentest-tradecraft]]

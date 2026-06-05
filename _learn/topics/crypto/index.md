@@ -34,3 +34,7 @@ CTF-style and applied-cryptography attack notes. See
 
 ## CTF advanced
 - [[lattice-attacks-crypto-ctf]]
+
+## Post-quantum
+- [[post-quantum-crypto-attack-surface]]
+- [[pqc-migration-risk]]

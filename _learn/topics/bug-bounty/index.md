@@ -50,6 +50,11 @@ for path ordering.
 - [[keeping-up-with-research-feeds]] — RSS / advisory / blog pipeline
 - [[h1-disclosed-report-reading-method]] — H1 hacktivity mining
 
+## Practitioner pipeline
+- [[ctf-to-bug-bounty-transition]] — moving from CTF to bounty
+- [[building-a-research-home-lab]] — lab setup by research area
+- [[responsible-disclosure-across-jurisdictions]] — legal landscape
+
 ## Case studies — public disclosures
 - [[case-study-h1-top-disclosed-2024-2025]] — recent H1 patterns
 - [[case-study-orange-tsai-research-pattern]] — Devcore / Orange Tsai method

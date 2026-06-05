@@ -37,7 +37,18 @@ Steganography, traffic / memory / disk forensics. Paired with the
 - [[siem-detection-use-case-catalog]]
 - [[deception-and-honeypot-strategy]]
 
+## Cloud incident response
+- [[cloud-ir-aws-cloudtrail]] — CloudTrail-based AWS IR
+- [[cloud-ir-azure-activity-log]] — Azure / Entra IR
+- [[cloud-ir-gcp-audit-logs]] — GCP audit-log IR
+- [[cloud-ir-k8s-audit-logs]] — Kubernetes IR
+
 ## IR case studies
 - [[case-study-snowflake-2024]] — SaaS tenant + infostealer
 - [[case-study-3cx-supply-chain]] — cascading supply chain
 - [[case-study-okta-2023-support-system]] — identity vendor + HARs
+- [[case-study-capital-one-2019]] — SSRF + IMDSv1
+- [[case-study-solarwinds-2020]] — SUNBURST cascading supply chain
+- [[case-study-equifax-2017]] — patch-management failure at scale
+- [[case-study-moveit-2023]] — MFT-class mass extortion
+- [[case-study-lastpass-2022]] — vault-vendor breach
