@@ -26,6 +26,8 @@ ordering.
 - [[aws-iam-eventual-consistency-persistence]]
 - [[aws-cloudtrail-policy-size-evasion]]
 - [[aws-rogue-oidc-idp-persistence]]
+- [[aws-iam-roles-anywhere-abuse]]
+- [[s3-bucket-key-policy-confused-deputy]]
 
 ## Azure / Entra — fundamentals
 - [[entra-id-enum]] · [[az-cli-tokens]]
@@ -47,6 +49,7 @@ ordering.
 - [[gcs-attacks]] · [[gcp-iam-misconfig]]
 - [[gcp-oauth-app-abuse]]
 - [[gcp-metadata-token-theft]]
+- [[gcp-workload-identity-federation-abuse]]
 
 ## SaaS / IdP control planes
 - [[okta-attacks]]

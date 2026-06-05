@@ -32,10 +32,13 @@ ordering.
 ## Agent and tool
 - [[tool-confusion]] · [[mcp-attacks]]
 - [[mcp-tool-poisoning-rug-pull]]
+- [[mcp-server-supply-chain-attacks]]
 - [[agentic-tool-chain-confused-deputy]]
 - [[copilot-zero-click-echoleak]]
 - [[chain-of-trust-confusion]]
 - [[exfiltration-via-rendered-content]]
+- [[cursor-windsurf-ide-prompt-injection]]
+- [[agentic-credential-exfiltration-via-tool-use]]
 
 ## RAG and memory
 - [[rag-poisoning]] · [[memory-poisoning]]

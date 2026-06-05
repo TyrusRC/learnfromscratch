@@ -24,6 +24,7 @@ paths]] when you want a sequenced route.
 - [[macos-index|macOS]]
 - [[exploit-dev-index|Exploit development]]
 - [[reverse-engineering-index|Reverse engineering]]
+- [[cve-walkthroughs-index|CVE walkthroughs]]
 
 ## Operations and adversarial
 - [[red-team-index|Red team]]

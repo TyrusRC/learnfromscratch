@@ -31,9 +31,11 @@ AD attack primitives. See [[active-directory]] for ordering.
 - [[ntlm-relay-ws2025-mitigations]]
 - [[printer-bug-spoolsample]] · [[petitpotam-coercion]]
 - [[dfscoerce]] · [[shadowcoerce]]
+- [[winreg-relay-2024]]
 
 ## AD CS
-- [[adcs-attacks]] — ESC1–ESC13 baseline.
+- [[adcs-attacks]] — ESC1–ESC12 baseline.
+- [[adcs-esc13-oid-group-linked]]
 - [[adcs-esc14-altsecidentities]]
 - [[adcs-esc15-ekuwu]]
 - [[adcs-esc16-securityext-disabled]]

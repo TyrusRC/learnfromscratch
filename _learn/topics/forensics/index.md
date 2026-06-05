@@ -36,3 +36,8 @@ Steganography, traffic / memory / disk forensics. Paired with the
 ## Detection engineering
 - [[siem-detection-use-case-catalog]]
 - [[deception-and-honeypot-strategy]]
+
+## IR case studies
+- [[case-study-snowflake-2024]] — SaaS tenant + infostealer
+- [[case-study-3cx-supply-chain]] — cascading supply chain
+- [[case-study-okta-2023-support-system]] — identity vendor + HARs

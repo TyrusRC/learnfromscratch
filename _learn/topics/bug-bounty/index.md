@@ -39,10 +39,22 @@ for path ordering.
 ## Execution patterns
 - [[known-vuln-workflow]] — tech → CVE → PoC → exploit.
 - [[n-day-rapid-exploitation]] — race the patch window.
+- [[one-day-from-patch-diff]] — patch-diff to 1-day.
+- [[reading-public-pocs-effectively]] — mining public PoCs.
 - [[login-page-attacks]] · [[account-takeover-patterns]]
 - [[automated-fuzzer-vuln-discovery]]
 - [[testing-methodology-checklists]]
 - [[demonstrating-impact]]
+
+## Keeping current
+- [[keeping-up-with-research-feeds]] — RSS / advisory / blog pipeline
+- [[h1-disclosed-report-reading-method]] — H1 hacktivity mining
+
+## Case studies — public disclosures
+- [[case-study-h1-top-disclosed-2024-2025]] — recent H1 patterns
+- [[case-study-orange-tsai-research-pattern]] — Devcore / Orange Tsai method
+- [[case-study-portswigger-top-10-pattern]] — PortSwigger annual method
+- [[case-study-google-vrp-writeup-patterns]] — Google VRP patterns
 
 ## Process and meta
 - [[report-writing]] · [[report-writing-step-by-step]]
