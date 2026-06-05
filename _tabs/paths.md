@@ -1,7 +1,11 @@
 ---
-title: Learning paths
+title: Paths
+icon: fas fa-route
+order: 2
 slug: paths-index
 aliases: [learning-paths]
+permalink: /learn/paths/
+toc: true
 ---
 
 Zero-to-hero tracks. Each path orders topics by what you have to

@@ -1,7 +1,7 @@
 ---
 title: Guide
 icon: fas fa-compass
-order: 2
+order: 3
 permalink: /guide/
 toc: true
 ---
