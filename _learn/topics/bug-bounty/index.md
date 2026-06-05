@@ -86,3 +86,32 @@ for path ordering.
 ## Modern bug-bounty patterns
 - [[account-takeover-modern-chains]]
 - [[third-party-saas-misconfig-patterns]]
+
+## Per-bounty-type methodology
+- [[mobile-bug-bounty-methodology]]
+- [[api-bug-bounty-workflow]]
+- [[web3-bug-bounty-methodology]]
+- [[cloud-bug-bounty-methodology]]
+- [[ai-llm-bug-bounty-methodology]]
+- [[hardware-iot-bug-bounty-programs]]
+- [[ics-ot-bug-bounty-programs]]
+- [[embedded-firmware-bug-bounty-methodology]]
+
+## Platform deep dives
+- [[hackerone-platform-deep]]
+- [[bugcrowd-platform-deep]]
+- [[intigriti-yeswehack-european-platforms]]
+- [[code4rena-sherlock-cantina-web3]]
+- [[huntr-dev-and-oss-bounty]]
+
+## Process and operations
+- [[cvss-scoring-practitioner]]
+- [[bounty-triage-from-hunters-view]]
+- [[pre-disclosure-embargo-and-cve-coordination]]
+- [[collaborative-bug-bounty-hunting]]
+- [[live-hacking-event-playbook]]
+
+## Income and career
+- [[bug-bounty-income-tax-international]]
+- [[bug-bounty-as-career-track]]
+- [[bug-bounty-platform-payouts-and-currency]]
