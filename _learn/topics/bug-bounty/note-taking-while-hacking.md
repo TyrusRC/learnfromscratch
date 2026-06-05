@@ -35,7 +35,7 @@ A working note system is a personal knowledge base that turns ephemeral session 
 - Tried IDOR via X-Real-User-Id header -> still 403
 - Tried /api/v1/orders/:id -> 404 (no v1)
 - Tried POST same body -> 405 (PUT works, no auth check!)
-- TODO: explore PUT for write-side IDOR
+- Next: write-side IDOR via PUT — see followup loop below
 ```
 
 That last line is gold — it's the thread you pick up tomorrow.
@@ -43,6 +43,18 @@ That last line is gold — it's the thread you pick up tomorrow.
 4. Maintain an "oddities" file. Anything you don't understand at the time — strange cookie, unfamiliar header, undocumented endpoint, weird redirect, anomalous response time. Half of these become bugs once the pattern crystallises.
 5. Idea triage. The `ideas.md` file is your backlog. After each session, review it; promote one idea to next session's focus.
 6. After every report submitted, write a 5-line retro: what worked, what didn't, what to try next on this program. These compound into your personal methodology.
+
+## Followup loops — write-side IDOR worked example
+The single highest-yield discipline is closing every open thread. Take the PUT example above and run the loop:
+
+1. **Confirm primitive.** `PUT /api/v2/orders/123` with a body field controlled by you (`{"shipping_address":"X"}`) — does the server accept it as another user's order?
+2. **Map the write surface.** Re-run on each modifiable field. `status`, `total`, `customer_id`, `discount_code`, `refund_amount` — each that mutates is its own report.
+3. **Escalate impact.** Can you flip `status: "refunded"` on someone else's order? Set `total: 0` before payment capture? Change `customer_id` to take ownership? Set a coupon `value` you'd otherwise need a privileged role to set?
+4. **Check shape-shifters.** Try `PATCH`, `MERGE`, `POST?_method=PUT`, GraphQL `mutation updateOrder`, and the same endpoint over HTTP/2 — same auth gap often repeats across verbs ([[bola]], [[mass-assignment]]).
+5. **Pivot to neighbours.** If `/orders` has the bug, also test `/invoices`, `/users`, `/addresses` — write-side IDORs cluster around the same controller family.
+6. **Log the closure.** Replace the "Next:" line with `DONE: write-side IDOR via PUT on /api/v2/orders/:id — see reports/2026-05-31-orders-put-idor.md`. Closed threads don't rot into forgotten work.
+
+The write-side variant of IDOR ([[idor]]) is consistently the highest-paying because it crosses from disclosure to integrity impact in one request.
 
 ## Detection and defence
 - For hunters: notes containing live credentials or PII are a leak risk — store in an encrypted vault, never commit to a public repo, redact before sharing
