@@ -118,11 +118,19 @@ OffSec's PG Practice has OSWE-tagged boxes.
 
 See [[oscp-vs-osep-mindset]] and [[oscp-osep-oswe-track-comparison]].
 
+## Pragmatic notes from people who sat the exam
+- **Blackbox-first inside a whitebox exam:** even though the course teaches source-first, most candidates open with a short blackbox session (login flow, parameter shape, route discovery) before opening the IDE. It anchors the source review around real requests.
+- **Burp is a prerequisite, not a learnable skill mid-prep:** if you are not already fast in Burp Suite, fix that before week 1 — the exam time budget assumes muscle memory.
+- **Prep length:** two months of focused module work plus the Extra Mile exercises plus three unguided practice labs is the most common path. Booking the exam the moment the practice labs land is fine.
+- **Time shape, exam day:** plan ~15 hours for exploitation and ~10 hours for the report, with the rest as buffer. Pre-write the report skeleton; the writing phase is the unpleasant part and a template removes most of the pain.
+- **Rabbit-hole tax:** the first chain often takes 3-4 hours to *find* and a fraction of that to *write*. Budget patience, not panic.
+
 ## References
 - [OffSec — WEB-300 course](https://www.offsec.com/courses/web-300/)
 - [TJ Null OSWE-like list](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/)
 - [PortSwigger — Web Security Academy advanced labs](https://portswigger.net/web-security)
 - [HackTricks](https://book.hacktricks.xyz/)
+- Candidate experience report (Vietnamese): [OSWE — joy and disappointment](https://viblo.asia/p/oswe-niem-vui-va-su-that-vong-aAY4qw1wLPw)
 - See also: [[whitebox-source-review]], [[oscp-roadmap]], [[osep-roadmap]], [[oscp-osep-oswe-track-comparison]], [[report-writing-for-pentesters]]
 
 {% endraw %}

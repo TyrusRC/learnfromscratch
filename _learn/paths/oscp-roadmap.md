@@ -29,10 +29,12 @@ You want:
 - Labs: install Kali, complete TryHackMe "Linux Fundamentals 1–3" and "Networking Fundamentals".
 - Deliverable: a 1-page bash one-liner cheat sheet you wrote (not copied).
 
-### Week 2 — recon
-- Read: `_learn/topics/network/` — `osint-recon`, `host-discovery`, `port-scanning`, `dns-enum`, `http-enum`, `smb-enum`.
-- Labs: nmap against a HackTheBox starting-point machine; ffuf/gobuster against a deliberately vulnerable Wordpress instance.
-- Deliverable: nmap + content-discovery template script you'll reuse on every host.
+### Week 2 — recon and service enumeration
+- Read: [[osint-recon]], [[host-discovery]], [[port-scanning]].
+- Read service enum: [[ftp-enum]], [[ssh-enum]], [[smtp-enum]], [[dns-enum]], [[http-enum]], [[smb-enum]], [[snmp-enum]], [[msrpc-enum]], [[ldap-enum]], [[kerberos-enum]], [[mssql-enum]], [[mysql-enum]], [[redis-enum]], [[rdp-enum]], [[winrm-enum]].
+- Browse the rest of `_learn/topics/network/` index so you know where to look later.
+- Labs: nmap against a HackTheBox starting-point machine; ffuf/gobuster against a deliberately vulnerable WordPress instance; manually grab banners from FTP/SSH/SMTP/SNMP on at least three different boxes (no helper tools).
+- Deliverable: nmap + content-discovery template script you'll reuse on every host, plus a one-page "given an open port, what do I check first" matrix.
 
 ### Week 3 — web attacks (first half)
 - Read: [[cross-site-scripting]], [[sql-injection]], [[command-injection]], [[lfi-rfi]], [[file-upload]], [[idor]].
@@ -103,11 +105,23 @@ You want:
 - VulnHub — old but still gold for BOF practice.
 - PortSwigger Web Security Academy — web only, but the best free web-vuln training in existence.
 
+## Pragmatic notes from people who sat the exam
+A few patterns turn up repeatedly in candidate write-ups that are worth treating as defaults:
+- **Host OS:** run your tooling inside a Kali VM on a Windows or macOS host, not Kali as the bare-metal host. Two candidates' worth of pain came from clipboard, copy-paste, and snapshot issues using Kali as the primary OS.
+- **Privesc bias:** OSCP weighs privesc much more heavily than real engagements do. Real pentests usually stop at "RCE proven, here is the impact". Lean into privesc grind anyway — it is what the exam tests.
+- **IppSec videos:** watching retired-box walkthroughs at 1.25–1.5x is often higher-leverage than another raw lab grind once you can already pop easy boxes. Use them to internalise privesc reasoning rather than as a step-by-step script.
+- **Mental model shift after OSCP:** expect to feel uncomfortable about how little client-side and web-app testing the exam covers compared to real day-to-day work — that gap is exactly why [[oscp-vs-osep-mindset]], [[oswe-roadmap]], and a bug-bounty side practice matter.
+
 ## References
 - [Official OSCP exam guide](https://help.offsec.com/hc/en-us/articles/360050293792)
 - [TJ Null OSCP-like list](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/)
 - [HackTricks](https://book.hacktricks.xyz/) — encyclopedic reference (use with judgement)
 - [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
+- Candidate experience reports (Vietnamese):
+  - [OSCP — exam experience and link to pentest work](https://viblo.asia/p/trai-nghiem-thi-oscp-va-su-lien-quan-toi-cong-viec-penetration-testing-bJzKmqNOK9N)
+  - [OSEP — advanced evasion and breaching defenses, lessons](https://viblo.asia/p/cach-osepadvanced-evasion-techniques-and-breaching-defenses-lam-kho-toi-a-little-bit-EbNVQ5jWVvR)
+  - [OSWE — joy and disappointment](https://viblo.asia/p/oswe-niem-vui-va-su-that-vong-aAY4qw1wLPw)
+- [DEFCON 27 offensive C# workshop (mvelazc0)](https://github.com/mvelazc0/defcon27_csharp_workshop) — useful primer for the C# tradecraft that shows up later in OSEP
 - See also: [[oscp-exam-methodology]], [[oscp-full-chain-walkthrough]], [[report-writing-for-pentesters]], [[osep-roadmap]]
 
 {% endraw %}

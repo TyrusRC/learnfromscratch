@@ -31,7 +31,7 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - Deliverable: minimal shellcode runner in C# that you'll iterate on weekly.
 
 ### Week 3 — AMSI and ETW
-- Read: [[amsi-bypass]], [[amsi-providers-tampering]], [[etw-bypass]].
+- Read: [[amsi-bypass]], [[amsi-providers-tampering]], [[etw-bypass]], [[amsi-memory-patching-deep]], [[etw-tampering-deep]].
 - Labs: implement an AMSI bypass in C# (memory patch on `AmsiScanBuffer`). Verify by importing the AMSI signature test string after the patch.
 - Deliverable: AMSI patch + ETW patch helper class you can reuse.
 
@@ -46,7 +46,7 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - Deliverable: a module-stomping demo bypassing a sample EDR signature.
 
 ### Week 6 — syscalls and unhooking
-- Read: [[syscall-direct-and-indirect]], [[edr-hooks-and-unhooking]].
+- Read: [[syscall-direct-and-indirect]], [[edr-hooks-and-unhooking]], [[hells-halos-tartarus-gates-comparison]], [[syswhispers-freshycalls-comparison]].
 - Labs: build a direct-syscall NtAllocateVirtualMemory + NtWriteVirtualMemory + NtCreateThreadEx chain. Bonus: indirect syscalls via SysWhispers3.
 - Deliverable: a syscall-based shellcode runner.
 
@@ -61,7 +61,7 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - Deliverable: documented bypasses for each of the three buckets.
 
 ### Week 9 — network filter bypass and C2
-- Read: [[c2-protocol-design]], [[dns-c2-and-icmp-c2]], [[domain-fronting-and-cdn-abuse]], [[pivoting-and-tunneling]].
+- Read: [[c2-protocol-design]], [[dns-c2-and-icmp-c2]], [[domain-fronting-and-cdn-abuse]], [[pivoting-and-tunneling]], [[osep-network-filter-bypass-techniques]], [[bof-cobalt-strike-development]].
 - Labs: stand up a Sliver C2 fronted via Cloudfront (or a Cloudflare Worker). Add DNS C2 as a fallback transport.
 - Deliverable: working multi-transport C2 with documented detection signatures for each.
 
@@ -86,7 +86,7 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - Deliverable: a documented kiosk-breakout checklist.
 
 ### Week 14 — AD attacks deep
-- Read: [[constrained-delegation]], [[resource-based-constrained-delegation]], [[unconstrained-delegation]], [[s4u2self-abuse]], [[shadow-credentials]], [[acl-abuse]], [[adcs-attacks]], [[cross-forest-trust-abuse]], [[child-to-forest-root]], [[mssql-trusted-links]], [[mssql-xp-cmdshell-impersonation-chains]].
+- Read: [[constrained-delegation]], [[resource-based-constrained-delegation]], [[unconstrained-delegation]], [[s4u2self-abuse]], [[shadow-credentials]], [[acl-abuse]], [[adcs-attacks]], [[cross-forest-trust-abuse]], [[child-to-forest-root]], [[mssql-trusted-links]], [[mssql-xp-cmdshell-impersonation-chains]], [[osep-ad-attack-chain-walkthrough]].
 - Labs: build a chain that uses two delegation types and ends with cross-forest DA.
 - Deliverable: BloodHound diagram + Rubeus command log of the chain.
 
@@ -96,7 +96,7 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - Deliverable: chain executed end-to-end with no detection events you didn't anticipate.
 
 ### Week 16 — exam prep, report template, sit
-- Read: [[oscp-exam-methodology]] (re-read for time-mgmt patterns), [[report-writing-for-pentesters]].
+- Read: [[osep-exam-strategy-and-pacing]], [[osep-payload-development-toolkit]], [[oscp-exam-methodology]] (re-read for time-mgmt patterns), [[report-writing-for-pentesters]].
 - Labs: full 48-hour mock against a community OSEP-like challenge (Sektor7, MalDev Academy, or your own scenario).
 - Deliverable: complete OSEP-format report; book the exam.
 
@@ -114,6 +114,13 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - Sektor7 — RED Team Operator (Endgame and Malware Development).
 - MalDev Academy — comprehensive malware-development curriculum.
 - Cybernetics Pro Labs (HTB) — AD-heavy practice.
+- DEFCON 27 offensive C# workshop (mvelazc0) — free, eight short labs covering P/Invoke, custom Meterpreter stagers, raw shellcode injection, XOR/AES obfuscation, PowerShell-without-`powershell.exe`, classic DLL injection, process hollowing, parent-PID spoofing. A very efficient way to compress the early C# loader weeks.
+
+## Pragmatic notes from people who sat the exam
+- **C2 pairing:** carry two C2s. Most candidates' default is Sliver as primary (faster .NET assembly execution, smaller stagers) with Metasploit kept hot as a backup for token-handling and staging reliability. Chisel covers tunnelling for both.
+- **Recon discipline:** budget tool-time. After initial access, automated enumeration tends to plateau within 30–60 minutes; switch to manual file/registry/SQL exploration when that happens instead of grinding the same scripts.
+- **Tradecraft chunking:** `mimikatz`, `Rubeus`, `CrackMapExec`, `SharpHound/BloodHound`, `Impacket`, `SQLRecon`/`PowerUpSQL` are the recurring six. Drill each one against the lab until you can recall command shape without web search.
+- **Report writing:** start the report after each milestone, not at the end. Most write-ups describe an unpleasant final-hour scramble; a running report file removes that.
 
 ## References
 - [OffSec PEN-300 syllabus](https://www.offsec.com/courses/pen-300/)
@@ -121,6 +128,8 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - [MDSec — research and tradecraft](https://www.mdsec.co.uk/blog/)
 - [Sektor7 RTO courses](https://institute.sektor7.net/)
 - [MalDev Academy](https://maldevacademy.com/)
-- See also: [[oscp-vs-osep-mindset]], [[oscp-roadmap]], [[osep-full-chain-walkthrough]], [[report-writing-for-pentesters]]
+- [DEFCON 27 offensive C# workshop (mvelazc0)](https://github.com/mvelazc0/defcon27_csharp_workshop)
+- Candidate experience report (Vietnamese): [OSEP — advanced evasion and breaching defenses, lessons](https://viblo.asia/p/cach-osepadvanced-evasion-techniques-and-breaching-defenses-lam-kho-toi-a-little-bit-EbNVQ5jWVvR)
+- See also: [[oscp-vs-osep-mindset]], [[oscp-roadmap]], [[osep-full-chain-walkthrough]], [[osep-exam-strategy-and-pacing]], [[osep-payload-development-toolkit]], [[osep-network-filter-bypass-techniques]], [[osep-ad-attack-chain-walkthrough]], [[report-writing-for-pentesters]]
 
 {% endraw %}

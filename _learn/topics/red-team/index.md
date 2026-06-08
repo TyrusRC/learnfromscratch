@@ -66,6 +66,19 @@ ordering.
 - [[syscall-direct-and-indirect]]
 - [[living-off-the-land]]
 
+## Evasion — deep dives
+- [[amsi-memory-patching-deep]]
+- [[etw-tampering-deep]]
+- [[hells-halos-tartarus-gates-comparison]]
+- [[syswhispers-freshycalls-comparison]]
+- [[bof-cobalt-strike-development]]
+
+## OSEP / PEN-300 cluster
+- [[osep-exam-strategy-and-pacing]]
+- [[osep-payload-development-toolkit]]
+- [[osep-network-filter-bypass-techniques]]
+- [[osep-ad-attack-chain-walkthrough]]
+
 ## Execution & loaders
 - [[dll-side-loading]] · [[com-hijacking]]
 - [[parent-pid-spoofing]]
