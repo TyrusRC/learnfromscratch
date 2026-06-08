@@ -14,6 +14,7 @@ ordering.
 
 ## C2 framework deep dives
 - [[sliver-c2-deep]]
+- [[sliver-extension-development]]
 - [[havoc-c2-deep]]
 - [[mythic-framework-deep]]
 
@@ -24,6 +25,11 @@ ordering.
 - [[phishing-infrastructure-design]]
 - [[pretext-design-for-engagements]]
 - [[hardware-implants-and-badusb]]
+
+## Post-macro phishing formats
+- [[modern-phishing-payload-formats-post-vba]]
+- [[msix-and-appx-as-malware-delivery]]
+- [[onenote-and-modern-document-formats-payload-delivery]]
 
 ## Modern AitM / MFA-bypass phishing
 - [[aitm-evilginx-modern-phishing]]
@@ -37,7 +43,10 @@ ordering.
 
 ## Network filter bypass
 - [[dns-c2-and-icmp-c2]]
+- [[dns-tunneling-deep-with-modern-tools]]
 - [[domain-fronting-and-cdn-abuse]]
+- [[modern-tunnelling-chains-chisel-ligolo-gost]]
+- [[wsl-and-wsl2-as-attack-vector]]
 
 ## Allowlisting bypass
 - [[applocker-bypass-techniques]]

@@ -71,6 +71,8 @@ ordering.
 
 ## Cross-cloud and CI/CD
 - [[multi-cloud-pivoting]]
+- [[multi-cloud-red-team-scenario-walkthrough]]
+- [[cloud-to-onprem-pivot-techniques]]
 - [[ci-cd-as-cloud-attack-surface]]
 - [[gha-oidc-sub-claim-wildcards]]
 - [[tj-actions-tag-mutation]]
