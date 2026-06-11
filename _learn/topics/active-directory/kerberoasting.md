@@ -62,3 +62,5 @@ No-tooling variant for constrained shells: `setspn -T <domain> -Q */*` enumerate
 - [SpecterOps — Cracking Kerberos](https://posts.specterops.io/) — modern AES considerations
 - [Microsoft — Decrypting the selection of supported Kerberos encryption types](https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/decrypting-the-selection-of-supported-kerberos-encryption-types/1628797) — enctype matrix
 - [ired.team — Kerberoasting](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/t1208-kerberoasting) — lab walkthrough using setspn, KerberosRequestorSecurityToken and tgsrepcrack
+
+See also: [[kerberos]], [[asreproast]], [[diamond-and-sapphire-tickets]], [[silver-tickets]], [[impacket-toolkit-overview]], [[netexec-nxc-workflow]], [[defender-for-identity-evasion]]

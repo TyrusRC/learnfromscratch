@@ -50,7 +50,7 @@ Adding a Windows Hello for Business key via `roadtx winhello` makes the PRT MFA-
 - Alert on Entra sign-in logs where `authenticationProtocol = deviceCode` from unexpected IPs, especially followed by `Add registered device` events within minutes.
 - Continuous Access Evaluation + sign-in risk policies catch the cross-IP reuse pattern.
 - Educate users: anyone sending a `microsoft.com/devicelogin` code over chat is phishing.
-- Related: [[aws-sso-device-code-phishing]], [[entra-actor-token-cross-tenant]], [[app-registration-abuse]].
+- Related: [[aws-sso-device-code-phishing]], [[entra-actor-token-cross-tenant]], [[app-registration-abuse]], [[entra-prt-cookie-theft]], [[oauth-foci-family-of-client-ids-abuse]], [[graphrunner-msgraph-redteam]].
 
 ## References
 - [Dirk-jan Mollema — Phishing for Microsoft Entra Primary Refresh Tokens](https://dirkjanm.io/phishing-for-microsoft-entra-primary-refresh-tokens/) — original device-code → PRT chain with roadtx.

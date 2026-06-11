@@ -58,3 +58,5 @@ Once you have a Graph access token you can enumerate users/groups/apps; with ARM
 - [ROADtools — token abuse](https://github.com/dirkjanm/ROADtools) — token cache parsing and replay
 - [TokenTactics](https://github.com/rvrsh3ll/TokenTacticsV2) — FOCI refresh-token swaps
 - [Microsoft — MSAL token cache](https://learn.microsoft.com/en-us/entra/msal/dotnet/how-to/token-cache-serialization) — cache mechanics
+
+See also: [[oauth-foci-family-of-client-ids-abuse]], [[graphrunner-msgraph-redteam]], [[entra-prt-cookie-theft]], [[entra-device-code-prt-pivot]], [[managed-identities]], [[service-principal-abuse]]

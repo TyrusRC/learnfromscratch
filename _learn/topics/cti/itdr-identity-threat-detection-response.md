@@ -177,3 +177,5 @@ Useful metrics — don't be the team that only tracks "alerts fired":
 - CISA advisory on Midnight Blizzard / Microsoft Entra activity: https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-057a
 - Mandiant / Google Cloud, "APT29 Continues Targeting Microsoft" reporting: https://cloud.google.com/blog/topics/threat-intelligence/
 - Push Security identity attacks matrix: https://pushsecurity.com/saas-attacks/
+
+See also: [[defender-for-identity-evasion]], [[ad-coercion-and-relay-matrix-2025]], [[bloodhound-ce-deployment]], [[diamond-and-sapphire-tickets]], [[entra-prt-cookie-theft]]

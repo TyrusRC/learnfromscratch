@@ -48,6 +48,7 @@ Extracting the krbtgt hash on the DC itself does not strictly require an LSASS d
 - Enable "Audit Kerberos Service Ticket Operations" + Defender for Identity's "Suspected Golden Ticket" detector.
 - Treat krbtgt as the crown jewel — restrict who can DCSync, monitor 4662 with the replication GUIDs.
 - See [[silver-tickets]] for the per-service equivalent and [[ad-persistence]] for stacking primitives.
+- For modern PAC-hardened domains see [[diamond-and-sapphire-tickets]] — Diamond and Sapphire variants survive CVE-2022-37967 mitigations that catch naive goldens.
 
 ## References
 - [the.hacker.recipes — Golden ticket](https://www.thehacker.recipes/ad/movement/kerberos/forged-tickets/golden) — primitive reference

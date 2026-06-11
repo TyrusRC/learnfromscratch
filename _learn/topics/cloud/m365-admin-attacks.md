@@ -57,4 +57,4 @@ BloodHound for M365 — run AzureHound to map Entra roles, app owners, and Graph
 - [Entra app consent hardening](https://learn.microsoft.com/entra/identity/enterprise-apps/configure-user-consent) — official controls
 - [Microsoft Storm-0558 post-mortem](https://msrc.microsoft.com/blog/2023/09/results-of-major-technical-investigations-for-storm-0558-key-acquisition/) — token-signing-key theft chain
 
-See also: [[entra-id-enum]], [[entra-conditional-access-bypass]], [[app-registration-abuse]], [[managed-identities]].
+See also: [[entra-id-enum]], [[entra-conditional-access-bypass]], [[app-registration-abuse]], [[managed-identities]], [[graphrunner-msgraph-redteam]], [[oauth-foci-family-of-client-ids-abuse]], [[entra-prt-cookie-theft]].

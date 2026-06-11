@@ -123,4 +123,4 @@ Once the attacker has a token that didn't pass full CA:
 - [Maester — CA configuration analyser](https://maester.dev/)
 - [ROADtools](https://github.com/dirkjanm/ROADtools)
 - [dirkjanm — Entra ID research](https://dirkjanm.io/)
-- See also: [[aitm-evilginx-modern-phishing]], [[oauth-device-code-phishing-m365]], [[entra-cross-tenant-sync-abuse]], [[m365-admin-attacks]]
+- See also: [[aitm-evilginx-modern-phishing]], [[oauth-device-code-phishing-m365]], [[entra-cross-tenant-sync-abuse]], [[m365-admin-attacks]], [[oauth-foci-family-of-client-ids-abuse]], [[entra-prt-cookie-theft]], [[graphrunner-msgraph-redteam]]

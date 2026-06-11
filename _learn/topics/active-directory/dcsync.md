@@ -57,3 +57,5 @@ For surgical use on-host, `lsadump::dcsync /user:krbtgt` alone is enough — Mim
 - [Microsoft — MS-DRSR](https://learn.microsoft.com/openspecs/windows_protocols/ms-drsr/) — replication protocol spec
 - [SpecterOps — DCSync detection](https://posts.specterops.io/) — 4662 hunting patterns
 - [ired.team — DCSync](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/dump-password-hashes-from-domain-controller-with-dcsync) — lsadump::dcsync krbtgt extraction lab
+
+See also: [[golden-tickets]], [[silver-tickets]], [[diamond-and-sapphire-tickets]], [[acl-abuse]], [[impacket-toolkit-overview]], [[defender-for-identity-evasion]], [[ad-coercion-and-relay-matrix-2025]]
