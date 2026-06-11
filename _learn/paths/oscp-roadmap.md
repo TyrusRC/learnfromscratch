@@ -105,6 +105,56 @@ You want:
 - VulnHub — old but still gold for BOF practice.
 - PortSwigger Web Security Academy — web only, but the best free web-vuln training in existence.
 
+## Quick decision matrix — given an open port
+
+This is the one-page artefact most candidates wish they had built earlier. Print it. Pin it.
+
+| Port  | Service        | First check                                                                 | Then                                                                  |
+|-------|----------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------|
+| 21    | FTP            | `nc -nv $IP 21` for banner; anonymous login (`ftp $IP`, user `anonymous`)   | `[[ftp-enum]]`, look for writable dirs + web-root overlap             |
+| 22    | SSH            | banner version → searchsploit                                                | `[[ssh-enum]]`, user enum (CVE-2018-15473), key reuse                 |
+| 25    | SMTP           | `nc $IP 25`, `VRFY`/`EXPN` user enum                                         | `[[smtp-enum]]` for open relay, internal-only injection paths         |
+| 53    | DNS            | `dig axfr @$IP $domain`                                                      | `[[dns-enum]]`, subdomain brute with gobuster dns                     |
+| 80/443| HTTP(S)        | `whatweb $IP`, `nikto -h $IP`, `ffuf -u http://$IP/FUZZ`                     | `[[http-enum]]`, framework-specific (WordPress wpscan, Drupal droopescan) |
+| 111   | rpcbind        | `rpcinfo -p $IP`                                                             | look for NFS (port 2049), `showmount -e $IP`                          |
+| 135   | MSRPC          | `rpcclient -U "" $IP`                                                        | `[[msrpc-enum]]`, null sessions, anonymous SAMR enum                  |
+| 139/445| SMB           | `smbclient -L //$IP -N`, `enum4linux-ng $IP`                                 | `[[smb-enum]]`, null shares, EternalBlue era CVEs, signing status     |
+| 161   | SNMP           | `onesixtyone -c community.txt $IP`, `snmpwalk -v2c -c public $IP`            | `[[snmp-enum]]`, community brute, walk for creds in `sysDescr`        |
+| 389/636| LDAP          | `ldapsearch -x -H ldap://$IP -s base namingcontexts`                         | `[[ldap-enum]]`, anonymous bind, BloodHound from null                 |
+| 1433  | MSSQL          | `mssqlclient.py -p 1433 sa@$IP`                                              | `[[mssql-enum]]`, `xp_cmdshell`, link abuse                           |
+| 3306  | MySQL          | `mysql -h $IP -u root -p`                                                    | `[[mysql-enum]]`, default creds, into outfile                         |
+| 3389  | RDP            | `rdesktop -u guest $IP`, `crackmapexec rdp $IP -u ... -p ...`                | `[[rdp-enum]]`, BlueKeep era, sticky-keys persistence post-foothold   |
+| 5985/5986| WinRM       | `evil-winrm -i $IP -u user -p pass`                                          | `[[winrm-enum]]`, paired with valid AD creds                          |
+| 6379  | Redis          | `redis-cli -h $IP`                                                           | `[[redis-enum]]`, write SSH key via CONFIG SET dir                    |
+
+If a port is not on this list, search `_learn/topics/network/` index. If still nothing, banner-grab and search-sploit.
+
+## Useful one-liners — paste these into your template
+
+```bash
+# Full TCP scan, then service-version on found ports — two-stage pattern that survives slow targets
+nmap -p- --min-rate 5000 -oA scans/full $IP
+ports=$(awk -F'/' '/^[0-9]/{print $1}' scans/full.nmap | tr '\n' ',')
+nmap -sV -sC -p$ports -oA scans/svc $IP
+
+# UDP top-100 (slow — run in background while you start TCP work)
+sudo nmap -sU --top-ports 100 -oA scans/udp $IP
+
+# Content discovery — Big lists, json output for grep later
+ffuf -u http://$IP/FUZZ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -of json -o ffuf.json -mc 200,204,301,302,307,403
+
+# vhost discovery when you suspect name-based hosting
+ffuf -u http://$IP/ -H "Host: FUZZ.$DOMAIN" -w subdomains-top1million-110000.txt -fs <size-of-default-vhost>
+
+# Reverse shell catcher with auto-upgrade (paste tty trick after callback)
+rlwrap nc -lvnp 4444
+# in the shell once landed:
+# python3 -c 'import pty;pty.spawn("/bin/bash")'
+# Ctrl-Z; stty raw -echo; fg; export TERM=xterm-256color; stty rows $(tput lines) columns $(tput cols)
+```
+
+Keep these in `~/oscp/template.sh` and source it on every box.
+
 ## Pragmatic notes from people who sat the exam
 A few patterns turn up repeatedly in candidate write-ups that are worth treating as defaults:
 - **Host OS:** run your tooling inside a Kali VM on a Windows or macOS host, not Kali as the bare-metal host. Two candidates' worth of pain came from clipboard, copy-paste, and snapshot issues using Kali as the primary OS.

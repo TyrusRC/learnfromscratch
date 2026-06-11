@@ -92,6 +92,85 @@ Typical chain shape: **auth bypass** (something that gives you a session as an a
 - Labs: 48-hour mock against `vAPI`, `DVWA`, plus one self-built sandbox with deliberate bugs across three classes. Run your single-script exploit.
 - Deliverable: OSWE-format report.
 
+## Reusable Python exploit harness — start here, iterate weekly
+
+A skeleton that handles session, retries, evidence dump, and a single-entry-point chain. Keep this in `~/oswe/exploit_template.py` and copy it per target.
+
+```python
+#!/usr/bin/env python3
+"""OSWE single-script exploit template — auth bypass -> RCE chain."""
+import sys, argparse, json, time, traceback
+import requests, urllib3
+urllib3.disable_warnings()
+
+class Target:
+    def __init__(self, base, proxy=None):
+        self.base = base.rstrip('/')
+        self.s = requests.Session()
+        self.s.verify = False
+        if proxy:
+            self.s.proxies = {'http': proxy, 'https': proxy}
+        self.s.headers.update({'User-Agent': 'oswe-exploit/0.1'})
+        self.evidence = []
+
+    def get(self, path, **kw):
+        r = self.s.get(self.base + path, allow_redirects=False, timeout=30, **kw)
+        self._log('GET', path, r)
+        return r
+
+    def post(self, path, **kw):
+        r = self.s.post(self.base + path, allow_redirects=False, timeout=30, **kw)
+        self._log('POST', path, r)
+        return r
+
+    def _log(self, m, p, r):
+        self.evidence.append({'m': m, 'p': p, 'code': r.status_code, 'len': len(r.content)})
+
+    def dump_evidence(self, path):
+        with open(path, 'w') as f:
+            json.dump(self.evidence, f, indent=2)
+
+def step1_auth_bypass(t):
+    # e.g. type juggling, SQLi auth bypass, JWT alg=none
+    raise NotImplementedError
+
+def step2_second_order_or_deser(t):
+    # stage a payload that an admin path will trigger
+    raise NotImplementedError
+
+def step3_rce(t, cmd):
+    # trigger the planted gadget, return command output
+    raise NotImplementedError
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument('-u', '--url', required=True, help='target base URL https://x.tld')
+    p.add_argument('-c', '--cmd', default='id', help='command to run on RCE')
+    p.add_argument('--proxy', default=None, help='http://127.0.0.1:8080 for Burp')
+    p.add_argument('--evidence', default='evidence.json')
+    args = p.parse_args()
+    t = Target(args.url, proxy=args.proxy)
+    try:
+        step1_auth_bypass(t)
+        step2_second_order_or_deser(t)
+        out = step3_rce(t, args.cmd)
+        print(out)
+    except Exception as e:
+        traceback.print_exc()
+        sys.exit(1)
+    finally:
+        t.dump_evidence(args.evidence)
+
+if __name__ == '__main__':
+    main()
+```
+
+Why this shape:
+- `--proxy` flag lets you pipe through Burp during dev, then ship clean.
+- `evidence.json` becomes the appendix in the report — never lose the requests.
+- `step1/2/3` enforce the "auth bypass -> staged write -> trigger" mental model.
+- Single `main()` entry point matches the exam requirement of one Python script per target.
+
 ## Required artefacts before exam
 
 - A reusable Python exploit harness with session handling, retry, exception capture, evidence dump.

