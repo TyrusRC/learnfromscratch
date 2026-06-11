@@ -41,3 +41,4 @@ CTF-style and applied-cryptography attack notes. See
 
 ## Side-channels
 - [[cryptography-side-channels-survey]]
+- [[rsa-fault-attacks]]

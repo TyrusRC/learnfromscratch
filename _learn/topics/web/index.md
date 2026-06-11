@@ -10,6 +10,9 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 ## Zero-knowledge primer
 - [[http-and-web-primer]]
 
+## Tooling primers
+- [[burp-suite]]
+
 ## Injection
 - [[sql-injection]] · [[sql-injection-by-database]]
 - [[nosql-injection]] · [[command-injection]]

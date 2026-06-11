@@ -74,6 +74,7 @@ ordering.
 - [[anti-debugging-windows]]
 - [[syscall-direct-and-indirect]]
 - [[living-off-the-land]]
+- [[living-off-the-land-binaries-lolbas]]
 
 ## Evasion — deep dives
 - [[amsi-memory-patching-deep]]

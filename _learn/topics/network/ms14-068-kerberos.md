@@ -52,4 +52,4 @@ msf6 > run
 - [MSRC MS14-068 advisory](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2014/ms14-068) — vendor bulletin
 - [Sean Metcalf: MS14-068 deep dive](https://adsecurity.org/?p=541) — implementation detail
 
-See also: [[golden-ticket]], [[pass-the-hash]], [[kerberos-enum]], [[dcsync]].
+See also: [[golden-tickets]], [[pass-the-hash]], [[kerberos-enum]], [[dcsync]].

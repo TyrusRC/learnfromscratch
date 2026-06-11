@@ -28,7 +28,7 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution 
 
 OPSEC: the spawned process inherits the launcher's token (SYSTEM for winlogon-triggered accessibility binaries). The `GlobalFlag` + `SilentProcessExit` variant offers a stealthier branch that fires only on process exit.
 
-## Related: [[registry-persistence]], [[uac-bypass-techniques]]
+## Related: [[registry-run-keys-persistence]], [[uac-bypass-techniques]]
 
 ## Detection and defence
 - Sysmon Event ID 13 (RegistryValueSet) on any path containing `Image File Execution Options` and value name `Debugger` / `GlobalFlag` / `MonitorProcess`

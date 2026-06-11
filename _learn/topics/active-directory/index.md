@@ -28,6 +28,7 @@ AD attack primitives. See [[active-directory]] for ordering.
 - [[gmsa-decryption]]
 
 ## Relay and coercion
+- [[ntlm-relay]]
 - [[ntlm-relay-ws2025-mitigations]]
 - [[printer-bug-spoolsample]] · [[petitpotam-coercion]]
 - [[dfscoerce]] · [[shadowcoerce]]

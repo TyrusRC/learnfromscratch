@@ -11,6 +11,9 @@ ordering.
 - [[smart-contracts-overview]]
 - [[ethereum-blockchain]] · [[solidity-basics]]
 
+## Consensus-layer attacks
+- [[51-percent-attacks]]
+
 ## Bug classes
 - [[reentrancy]]
 - [[integer-overflow-solidity]]

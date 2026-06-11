@@ -21,6 +21,7 @@ Windows internals primitives and post-exploitation notes. See
 - [[cached-domain-credentials]]
 - [[wdigest-cleartext-enable]]
 - [[credential-guard-bypass]]
+- [[lsass-protection-ppl]]
 - [[token-stealing]] · [[sedebug-privilege-abuse]]
 
 ## Process injection family
@@ -28,6 +29,7 @@ Windows internals primitives and post-exploitation notes. See
 - [[thread-hijacking]]
 - [[ntmapviewofsection-injection]]
 - [[early-bird-apc]]
+- [[apc-injection]]
 - [[atom-bombing]]
 - [[module-stomping]]
 - [[ssp-package-injection]]

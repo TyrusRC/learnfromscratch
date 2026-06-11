@@ -95,12 +95,20 @@ OffSec sells each course as PEN-200, PEN-300, WEB-300. Pricing tiers vary (one-t
 
 For organisations: there are corporate licenses; for individuals, pay attention to current bundle pricing and time-bounded promotions.
 
-## Adjacent certs (worth knowing exist)
+## Adjacent OffSec certs (each has its own roadmap in this repo)
 
-- **OSED (EXP-301)** — exploit development for Windows. The "binary OSCP".
-- **OSEE (EXP-401)** — advanced Windows exploitation. The "binary OSEP". Highly respected, infrequent class.
+- **OSED (EXP-301)** — Windows user-mode exploit dev. The "binary OSCP". See [[osed-roadmap]].
+- **OSMR (EXP-312)** — macOS control bypasses + userland exploitation. See [[osmr-roadmap]].
+- **OSEE (EXP-401)** — advanced Windows kernel exploitation. The "binary OSEP". See [[osee-roadmap]].
+- **OSWA (WEB-200)** — black-box web assessor; the entry-tier web cert below OSWE. See [[oswa-roadmap]].
+- **OSDA (SOC-200)** — the OffSec defender cert; SIEM/EDR/IR analyst track. See [[osda-roadmap]].
+- **AI-300** — AI Red Teamer (prompt injection, agentic chains, model supply chain). See [[ai-300-roadmap]].
 - **OSWP** — wireless cert; historically dated; revamped recently.
+
+## Non-OffSec certs worth knowing exist
+
 - **CRTP / CRTE / CRTM** (Altered Security) — AD-focused; complements OSEP.
+- **MCRTA** (MITRE) — adversary-emulation-from-ATT&CK methodology. See [[mcrta-roadmap]].
 - **eWPTX** (eLearnSecurity) — advanced web pentest; broader than OSWE; less industry recognition.
 - **GPEN / GXPN** (SANS/GIAC) — pricier; corporate-focused; good if your employer pays.
 
@@ -131,6 +139,6 @@ After all three (the "Triple OSC3"): the next bar is OSEE (binary) or OffSec's o
 - [TJ Null's preparation lists (OSCP, OSWE)](https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/)
 - [HackTricks](https://book.hacktricks.xyz/) — encyclopedic
 - [VulnHub](https://www.vulnhub.com/) — practice VMs for offline labs
-- See also: [[oscp-roadmap]], [[osep-roadmap]], [[oswe-roadmap]], [[oscp-vs-osep-mindset]], [[oscp-exam-methodology]], [[report-writing-for-pentesters]]
+- See also: [[oscp-roadmap]], [[osep-roadmap]], [[oswe-roadmap]], [[osed-roadmap]], [[osmr-roadmap]], [[osee-roadmap]], [[oswa-roadmap]], [[osda-roadmap]], [[ai-300-roadmap]], [[mcrta-roadmap]], [[oscp-vs-osep-mindset]], [[oscp-exam-methodology]], [[report-writing-for-pentesters]]
 
 {% endraw %}

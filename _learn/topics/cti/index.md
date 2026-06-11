@@ -52,6 +52,7 @@ Cyber threat intelligence and detection engineering. Focus on tradecraft attribu
 - [[case-study-3cx-supply-chain]]
 - [[case-study-okta-2023-support-system]]
 - [[case-study-snowflake-2024]]
+- [[case-study-cleo-2024]]
 - [[ir-from-source-signals]]
 - [[keeping-up-with-research-feeds]]
 - [[deception-and-honeypot-strategy]]

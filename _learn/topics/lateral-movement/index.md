@@ -11,7 +11,7 @@ Moving between hosts and identities.
 
 ## Execution primitives
 - [[smb-exec]] · [[wmi-exec]] · [[dcom-exec]]
-- [[winrm-exec]] · [[ssh-execution]]
+- [[winrm-exec]] · [[evil-winrm]] · [[ssh-execution]]
 - [[psexec-family]]
 
 ## Pivoting

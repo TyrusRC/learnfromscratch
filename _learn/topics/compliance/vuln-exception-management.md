@@ -21,7 +21,7 @@ A usable exception record has roughly these fields. Fewer than this and you cann
 - **Exception ID** — short, unique, traceable. EXC-2026-0142.
 - **Vulnerability** — CVE, scanner plugin ID, finding title. If it is a class of finding (all TLS 1.0 endpoints on legacy network) say so.
 - **Affected asset(s)** — hostname, IP, container image, repo, application. Tie back to CMDB.
-- **Severity / CVSS** — both the raw score and your contextualised score ([[cvssscoring-practitioner]] thinking). A CVSS 9.8 on an air-gapped lab box is not the same risk as a 9.8 on the internet-facing API.
+- **Severity / CVSS** — both the raw score and your contextualised score ([[cvss-scoring-practitioner]] thinking). A CVSS 9.8 on an air-gapped lab box is not the same risk as a 9.8 on the internet-facing API.
 - **Requested by** — the engineer or team asking. Must be a human, not a shared mailbox.
 - **Business justification** — why are we not fixing it on SLA. "Patch breaks legacy ERP integration, vendor fix expected Q4." Not "we are busy."
 - **Compensating control** — see next section. The single most-skipped field, and the single one auditors care about most.
@@ -149,7 +149,7 @@ Briefly, by regime:
 - [[soc2-vs-iso27001]]
 - [[policy-and-standards-writing]]
 - [[third-party-risk-management-practitioner]]
-- [[cvssscoring-practitioner]]
+- [[cvss-scoring-practitioner]]
 - [[grc-analyst-career-track]]
 - [[internal-audit-vs-external-audit]]
 
