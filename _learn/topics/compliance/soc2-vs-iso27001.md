@@ -200,4 +200,4 @@ Plan for them before sales asks; retrofitting is more expensive.
 - [ISO/IEC 27001:2022](https://www.iso.org/standard/27001)
 - [ISO/IEC 27002:2022 — Annex A control guidance](https://www.iso.org/standard/27002)
 - [Drata / Vanta / Secureframe — compliance automation platforms (vendor pages)](https://drata.com/)
-- See also: [[pci-dss-4-implementation]], [[hipaa-security-rule]], [[nis2-implementation]], [[appsec-maturity-checklist]]
+- See also: [[pci-dss-4-implementation]], [[hipaa-security-rule]], [[nis2-implementation]], [[appsec-maturity-checklist]], [[iso-27002-2022-controls-catalog]], [[iso-27701-privacy-extension]], [[hitrust-csf-implementation]], [[csa-star-cloud-security]]

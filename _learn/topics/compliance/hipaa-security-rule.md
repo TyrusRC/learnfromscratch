@@ -175,4 +175,4 @@ HIPAA overlaps with:
 - [NIST 800-66 r2](https://csrc.nist.gov/pubs/sp/800/66/r2/final)
 - [HHS OCR enforcement actions](https://www.hhs.gov/hipaa/for-professionals/compliance-enforcement/agreements/)
 - [HITRUST CSF](https://hitrustalliance.net/)
-- See also: [[pci-dss-4-implementation]], [[soc2-vs-iso27001]], [[gdpr-incident-implications]], [[appsec-maturity-checklist]]
+- See also: [[pci-dss-4-implementation]], [[soc2-vs-iso27001]], [[gdpr-incident-implications]], [[appsec-maturity-checklist]], [[hitrust-csf-implementation]], [[iso-27701-privacy-extension]]

@@ -206,3 +206,5 @@ Many senior auditors hold both, plus SOC 2 ([[soc2-vs-iso27001]]) and HITRUST cr
 - PCI SSC — Assessor qualification requirements and code of conduct: https://www.pcisecuritystandards.org/program_training_and_qualification/qualification_requirements/
 - Coalfire — PCI assessment service overview (representative QSAC practice): https://www.coalfire.com/services/cybersecurity-compliance/pci
 - Schellman — PCI QSA service overview (representative QSAC practice): https://www.schellman.com/pci-compliance
+
+See also: [[pci-dss-4-customised-approach]], [[pci-saq-selection-and-scoping]], [[pci-cardholder-data-flow-mapping]], [[pci-3ds-and-p2pe-overlays]]

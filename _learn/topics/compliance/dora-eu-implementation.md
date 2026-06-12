@@ -104,4 +104,4 @@ The actual red-team execution follows [[osep-ad-attack-chain-walkthrough]] / red
 - [EIOPA DORA microsite](https://www.eiopa.europa.eu/)
 - [Practitioner: KPMG / PwC / EY DORA implementation guides](https://kpmg.com/)
 
-See also: [[nis2-implementation]], [[building-an-iso27001-isms-practitioner]], [[soc2-vs-iso27001]], [[third-party-risk-management-practitioner]], [[nist-csf-2-implementation]], [[tabletop-exercise-design-and-execution]], [[red-team-vs-pentest-engagement-shape]], [[vulnerability-management-lifecycle]], [[gdpr-incident-implications]]
+See also: [[nis2-implementation]], [[building-an-iso27001-isms-practitioner]], [[soc2-vs-iso27001]], [[third-party-risk-management-practitioner]], [[nist-csf-2-implementation]], [[tabletop-exercise-design-and-execution]], [[red-team-vs-pentest-engagement-shape]], [[vulnerability-management-lifecycle]], [[gdpr-incident-implications]], [[iso-22301-business-continuity]], [[iso-27002-2022-controls-catalog]]

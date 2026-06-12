@@ -190,3 +190,5 @@ Common transitions in: GRC analyst, internal audit, procurement-with-security-in
 - EU DORA Regulation 2022/2554 (consolidated text): https://eur-lex.europa.eu/eli/reg/2022/2554/oj
 - NYDFS 23 NYCRR 500 — Cybersecurity Requirements: https://www.dfs.ny.gov/industry_guidance/cybersecurity
 - ENISA — Good Practices for Supply Chain Cybersecurity: https://www.enisa.europa.eu/publications/good-practices-for-supply-chain-cybersecurity
+
+See also: [[csa-star-cloud-security]], [[hitrust-csf-implementation]], [[cmmc-2-dod-contractor]], [[fedramp-authorization-process]], [[iso-27701-privacy-extension]]

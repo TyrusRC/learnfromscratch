@@ -129,4 +129,4 @@ Practical use: pick the "lead" framework you'll be audited against (e.g., ISO 27
 - [CSF Tool (informal community)](https://csf.tools/)
 - [Cybersecurity Framework Profiles repository](https://www.nist.gov/cyberframework/profiles)
 
-See also: [[building-an-iso27001-isms-practitioner]], [[soc2-vs-iso27001]], [[dora-eu-implementation]], [[nis2-implementation]], [[pci-dss-4-implementation]], [[third-party-risk-management-practitioner]], [[appsec-maturity-checklist]], [[vulnerability-management-lifecycle]], [[ciso-vciso-track]], [[policy-and-standards-writing]]
+See also: [[building-an-iso27001-isms-practitioner]], [[soc2-vs-iso27001]], [[dora-eu-implementation]], [[nis2-implementation]], [[pci-dss-4-implementation]], [[third-party-risk-management-practitioner]], [[appsec-maturity-checklist]], [[vulnerability-management-lifecycle]], [[ciso-vciso-track]], [[policy-and-standards-writing]], [[iso-27002-2022-controls-catalog]], [[cmmc-2-dod-contractor]], [[fedramp-authorization-process]], [[hitrust-csf-implementation]], [[csa-star-cloud-security]]

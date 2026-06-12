@@ -133,4 +133,4 @@ Most organisations build one control framework and map to multiple compliance re
 - [PCI DSS 4.0 standard](https://www.pcisecuritystandards.org/document_library/?category=pcidss)
 - [PCI Prioritised Approach](https://www.pcisecuritystandards.org/document_library/?category=pcidss&document=pci_dss_prioritized_approach)
 - [QSA registry](https://www.pcisecuritystandards.org/assessors_and_solutions/qualified_security_assessors)
-- See also: [[appsec-maturity-checklist]], [[secure-sdlc-rollout-playbook]], [[hipaa-security-rule]], [[soc2-vs-iso27001]]
+- See also: [[appsec-maturity-checklist]], [[secure-sdlc-rollout-playbook]], [[hipaa-security-rule]], [[soc2-vs-iso27001]], [[pci-dss-4-customised-approach]], [[pci-saq-selection-and-scoping]], [[pci-cardholder-data-flow-mapping]], [[pci-3ds-and-p2pe-overlays]]

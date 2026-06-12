@@ -164,3 +164,5 @@ Pair with [[appsec-maturity-checklist]] and [[secure-sdlc-rollout-playbook]] for
 - Exemplar Global auditor certification: https://exemplarglobal.org/certification/
 - BSI ISO/IEC 27001 Lead Auditor course: https://www.bsigroup.com/en-GB/training-courses/iso-iec-27001-lead-auditor-training-course/
 - ISO 19011:2018 Guidelines for auditing management systems: https://www.iso.org/standard/70017.html
+
+See also: [[iso-27002-2022-controls-catalog]], [[iso-42001-ai-management-system]], [[iso-27701-privacy-extension]], [[iso-22301-business-continuity]]

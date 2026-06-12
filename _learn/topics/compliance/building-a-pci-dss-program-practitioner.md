@@ -171,3 +171,5 @@ Compare costs and outcomes with [[soc2-vs-iso27001]] when scoping a multi-framew
 - Visa Global Registry of Service Providers: https://www.visa.com/splisting/
 - OWASP guidance on payment page script integrity (CSP + SRI): https://owasp.org/www-project-secure-headers/
 - Akamai / Jscrambler / Source Defense vendor write-ups on Req 6.4.3 and 11.6.1 implementation patterns: https://www.jscrambler.com/blog/pci-dss-v4-0-requirements-6-4-3-and-11-6-1
+
+See also: [[pci-dss-4-customised-approach]], [[pci-saq-selection-and-scoping]], [[pci-cardholder-data-flow-mapping]], [[pci-3ds-and-p2pe-overlays]]
