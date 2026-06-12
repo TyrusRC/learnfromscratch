@@ -58,3 +58,5 @@ Some apps rate-limit only unauthenticated requests; sending a (possibly invalid)
 - [HackTricks: rate-limit bypass](https://book.hacktricks.wiki/en/pentesting-web/rate-limit-bypass.html) — header and path tricks
 - [PortSwigger: race conditions](https://portswigger.net/web-security/race-conditions) — single-packet attack technique
 - [OWASP API #4 Unrestricted Resource Consumption (2023)](https://owasp.org/API-Security/editions/2023/en/0xa4-unrestricted-resource-consumption/) — class definition
+
+See also: [[redos-hunting-methodology]]

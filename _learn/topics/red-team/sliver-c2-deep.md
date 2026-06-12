@@ -130,4 +130,4 @@ EDR vendor coverage of Sliver is now substantial (CrowdStrike, SentinelOne, Defe
 - [Sliver project](https://github.com/BishopFox/sliver)
 - [Sliver documentation](https://sliver.sh/)
 - [BishopFox blog](https://bishopfox.com/blog)
-- See also: [[c2-frameworks]], [[havoc-c2-deep]], [[mythic-framework-deep]], [[c2-protocol-design]]
+- See also: [[c2-frameworks]], [[havoc-c2-deep]], [[mythic-framework-deep]], [[c2-protocol-design]], [[cobalt-strike-malleable-c2-profiles]], [[donut-shellcode-generation]]

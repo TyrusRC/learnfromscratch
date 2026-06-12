@@ -194,4 +194,4 @@ This is the modern detection-engineering workflow.
 - [Atomic Operator CLI](https://github.com/swimlane/atomic-operator)
 - [MITRE Caldera](https://caldera.mitre.org/)
 - [Red Canary blog](https://redcanary.com/blog/)
-- See also: [[detection-engineering-pyramid-of-pain]], [[cti-collection-management]], [[purple-team-feedback-loop]], [[edr-rules-as-code-from-attack-patterns]]
+- See also: [[detection-engineering-pyramid-of-pain]], [[cti-collection-management]], [[purple-team-feedback-loop]], [[edr-rules-as-code-from-attack-patterns]], [[caldera-mitre-emulation]], [[sigma-rules-detection-as-code]]

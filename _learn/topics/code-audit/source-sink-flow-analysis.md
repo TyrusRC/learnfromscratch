@@ -53,3 +53,5 @@ rules:
 - [Semgrep taint mode](https://semgrep.dev/docs/writing-rules/data-flow/taint-mode/) — sources, sinks, sanitisers
 - [Joern Code Property Graph](https://docs.joern.io/code-property-graph/) — alternative flow-analysis engine
 - [OWASP Code Review Guide](https://owasp.org/www-project-code-review-guide/) — general methodology
+
+See also: [[codeql-custom-query-development]], [[semgrep-custom-rule-development]], [[whitebox-to-exploit-methodology]]

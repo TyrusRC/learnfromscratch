@@ -156,3 +156,5 @@ alias hello {
 - https://sliver.sh/docs?name=BOFs
 - https://github.com/HavocFramework/Havoc
 - https://learn.microsoft.com/en-us/windows/win32/debug/pe-format
+
+See also: [[cobalt-strike-malleable-c2-profiles]], [[donut-shellcode-generation]], [[process-injection-techniques]], [[syscall-direct-and-indirect]]

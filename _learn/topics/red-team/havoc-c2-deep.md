@@ -109,4 +109,4 @@ Operators often run all three at different times depending on engagement.
 - [Havoc project](https://github.com/HavocFramework/Havoc)
 - [C5pider's blog](https://5pider.net/blog/)
 - [MDSec / Outflank — Demon analysis](https://www.mdsec.co.uk/)
-- See also: [[c2-frameworks]], [[sliver-c2-deep]], [[mythic-framework-deep]], [[syscall-direct-and-indirect]]
+- See also: [[c2-frameworks]], [[sliver-c2-deep]], [[mythic-framework-deep]], [[syscall-direct-and-indirect]], [[cobalt-strike-malleable-c2-profiles]], [[donut-shellcode-generation]]

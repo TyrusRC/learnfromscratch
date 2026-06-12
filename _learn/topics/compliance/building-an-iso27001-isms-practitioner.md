@@ -159,3 +159,5 @@ The ISMS does not replace your detection, IR, or appsec programmes — it *gover
 - [[gdpr-incident-implications]]
 - [[cti-collection-management]]
 - [[ir-from-source-signals]]
+- [[nist-csf-2-implementation]]
+- [[dora-eu-implementation]]

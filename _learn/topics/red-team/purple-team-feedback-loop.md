@@ -50,4 +50,4 @@ A purple-team engagement is red and blue working in the same room, coordinated b
 - [Atomic Red Team](https://atomicredteam.io/) — library of small, scriptable adversary tests
 - [VECTR](https://vectr.io/) — purple-team tracking tool
 - [MITRE ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) — coverage visualisation
-- [[opsec-fundamentals]]
+- [[opsec-fundamentals]] [[caldera-mitre-emulation]] [[atomic-red-team-emulation-deep]] [[sigma-rules-detection-as-code]]

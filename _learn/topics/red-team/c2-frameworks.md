@@ -48,4 +48,4 @@ Process-context tradecraft is just as important as protocol choice. Cobalt Strik
 - [Mythic docs](https://docs.mythic-c2.net/) — agent and C2 profile model
 - [Havoc framework](https://github.com/HavocFramework/Havoc) — code and demon features
 - [ired.team — Cobalt Strike 101](https://www.ired.team/offensive-security/red-team-infrastructure/cobalt-strike-101-installation-and-interesting-commands) — beacon commands including argue, spawnu, psinject, browserpivot
-- [[c2-protocol-design]] [[infrastructure-design]]
+- [[c2-protocol-design]] [[infrastructure-design]] [[cobalt-strike-malleable-c2-profiles]] [[donut-shellcode-generation]] [[caldera-mitre-emulation]]

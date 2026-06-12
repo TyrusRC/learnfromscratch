@@ -142,4 +142,4 @@ For a typical EU mid-large entity:
 - [Directive (EU) 2022/2555 (NIS2)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2555)
 - [ENISA — NIS2 page](https://www.enisa.europa.eu/topics/cybersecurity-policy/nis-directive-new)
 - [European Commission — DG CONNECT NIS2](https://digital-strategy.ec.europa.eu/en/policies/nis2-directive)
-- See also: [[pci-dss-4-implementation]], [[hipaa-security-rule]], [[gdpr-incident-implications]], [[soc2-vs-iso27001]], [[responsible-disclosure-across-jurisdictions]]
+- See also: [[pci-dss-4-implementation]], [[hipaa-security-rule]], [[gdpr-incident-implications]], [[soc2-vs-iso27001]], [[responsible-disclosure-across-jurisdictions]], [[dora-eu-implementation]], [[nist-csf-2-implementation]]

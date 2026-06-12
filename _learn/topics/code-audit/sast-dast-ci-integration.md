@@ -182,6 +182,6 @@ rules:
 - [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
 - [Snyk integration docs](https://docs.snyk.io/)
 - [OWASP ZAP automation](https://www.zaproxy.org/docs/automate/)
-- See also: [[whitebox-to-exploit-methodology]], [[source-sink-flow-analysis]], [[secrets-in-code-detection-patterns]], [[appsec-maturity-checklist]]
+- See also: [[whitebox-to-exploit-methodology]], [[source-sink-flow-analysis]], [[secrets-in-code-detection-patterns]], [[appsec-maturity-checklist]], [[codeql-custom-query-development]], [[semgrep-custom-rule-development]]
 
 {% endraw %}
