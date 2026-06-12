@@ -52,3 +52,5 @@ Frequent post-ex wins: an App Service with `Contributor` over its resource group
 ## References
 - [HackTricks Cloud — Managed identities](https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-managed-identities.html) — abuse recipes per resource type.
 - [Microsoft — Managed identities overview](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview) — official endpoint and configuration reference.
+
+See also: [[az-cli-tokens]], [[azure-key-vault-attacks]], [[azure-storage-sas-abuse]], [[service-principal-abuse]]

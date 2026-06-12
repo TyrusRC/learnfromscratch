@@ -55,3 +55,5 @@ A frequent post-ex move: VMs with the `DiskEncryptionSet` referencing a vault ke
 ## References
 - [HackTricks Cloud — Az Key Vault](https://cloud.hacktricks.wiki/en/pentesting-cloud/azure-security/az-services/az-keyvault.html) — enumeration and abuse recipes.
 - [Microsoft — Key Vault security overview](https://learn.microsoft.com/en-us/azure/key-vault/general/security-features) — control vs data plane reference.
+
+See also: [[managed-identities]], [[az-cli-tokens]], [[azure-storage-sas-abuse]], [[service-principal-abuse]]

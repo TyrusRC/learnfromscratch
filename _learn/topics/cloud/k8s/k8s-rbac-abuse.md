@@ -55,3 +55,5 @@ Other primitives worth remembering: `update`/`patch` on a `Node` lets you alter 
 - [Kubernetes — Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) — official semantics of `escalate`, `bind`, `impersonate`.
 - [BishopFox — Bad Pods](https://bishopfox.com/blog/kubernetes-pod-privilege-escalation) — pod-spec abuses tied to RBAC verbs.
 - [appsecco — Attacking Kubernetes through RBAC](https://blog.appsecco.com/attacking-kubernetes-clusters-using-the-kubernetes-api-2ee2e3a6c4dd) — recipe library.
+
+See also: [[k8s-service-account-tokens]], [[k8s-privileged-pod]], [[k8s-admission-controllers]], [[kubelet-exposed-api-attacks]], [[k8s-image-registry-poisoning]], [[gke-workload-identity-abuse]], [[eks-pod-identity-abuse]]

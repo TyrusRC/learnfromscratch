@@ -52,3 +52,5 @@ SSRF caveat: until 2020 the metadata server accepted requests without the `Metad
 ## References
 - [GCP — Storing and retrieving instance metadata](https://cloud.google.com/compute/docs/metadata/overview) — endpoint reference and `Metadata-Flavor` header requirement.
 - [HackTricks Cloud — GCP metadata](https://cloud.hacktricks.wiki/en/pentesting-cloud/gcp-security/gcp-services/gcp-compute/gcp-compute-instance-metadata.html) — SSRF and post-ex notes.
+
+See also: [[gke-workload-identity-abuse]], [[gcp-iam-misconfig]], [[gcp-service-account-enum]]

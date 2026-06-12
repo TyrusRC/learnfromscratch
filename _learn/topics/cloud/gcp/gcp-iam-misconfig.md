@@ -58,3 +58,5 @@ Chain with [[gcp-service-account-enum]] for target selection and [[gcp-metadata-
 - [Rhino Security — GCP IAM Privesc](https://github.com/RhinoSecurityLabs/GCP-IAM-Privilege-Escalation) — privesc catalog
 - [HackTricks Cloud — GCP privesc](https://cloud.hacktricks.wiki/en/pentesting-cloud/gcp-security/gcp-privilege-escalation/index.html) — abuse paths
 - [Google — IAM best practices](https://cloud.google.com/iam/docs/using-iam-securely) — hardening guidance
+
+See also: [[gke-workload-identity-abuse]], [[gcp-cloud-build-trigger-abuse]], [[gcp-service-account-enum]], [[gcp-metadata-server]]

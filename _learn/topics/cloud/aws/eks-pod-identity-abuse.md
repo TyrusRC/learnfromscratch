@@ -81,4 +81,4 @@ aws eks describe-pod-identity-association --cluster-name $C --association-id $A
 - [Snyk — EKS Pod Identity attack research](https://snyk.io/blog/)
 - [Wiz — Pod Identity vs IRSA](https://www.wiz.io/blog/)
 
-See also: [[k8s-service-account-tokens]], [[k8s-rbac-abuse]], [[k8s-privileged-pod]], [[aws-instance-metadata]], [[aws-sts-assume-role]], [[gcp-workload-identity-federation-abuse]], [[multi-cloud-pivoting]]
+See also: [[k8s-service-account-tokens]], [[k8s-rbac-abuse]], [[k8s-privileged-pod]], [[aws-instance-metadata]], [[aws-sts-assume-role]], [[gcp-workload-identity-federation-abuse]], [[multi-cloud-pivoting]], [[gke-workload-identity-abuse]], [[kubelet-exposed-api-attacks]]

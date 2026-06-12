@@ -47,3 +47,5 @@ For OpSec, prefer `wmiexec` or `dcomexec` over service-create variants — no 70
 - [PsExec — Sysinternals](https://learn.microsoft.com/en-us/sysinternals/downloads/psexec) — original tool docs.
 - [Impacket examples](https://github.com/fortra/impacket/tree/master/examples) — psexec/smbexec/wmiexec/atexec sources.
 - [PSExec internals — HackTricks](https://book.hacktricks.wiki/en/windows-hardening/lateral-movement/psexec-and-winexec.html) — service-create walkthrough.
+
+See also: [[smb-exec]], [[wmi-exec]], [[evil-winrm]], [[rmm-tool-abuse-screenconnect-anydesk]], [[sccm-mecm-lateral-movement]]

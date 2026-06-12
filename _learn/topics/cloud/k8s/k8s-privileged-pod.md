@@ -74,3 +74,5 @@ Chain with [[k8s-host-mount-escape]] (often combined: privileged + hostPath /) a
 - [Kubernetes — Security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) — privileged semantics
 - [HackTricks — k8s pentest](https://book.hacktricks.wiki/en/pentesting-network/pentesting-kubernetes/index.html) — escape catalog
 - [Falco rules](https://github.com/falcosecurity/rules) — runtime detection
+
+See also: [[k8s-rbac-abuse]], [[k8s-service-account-tokens]], [[k8s-host-mount-escape]], [[kubelet-exposed-api-attacks]], [[k8s-image-registry-poisoning]], [[linux-capabilities-abuse]]

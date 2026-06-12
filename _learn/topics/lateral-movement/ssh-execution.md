@@ -58,3 +58,5 @@ When pivoting with `ssh -R` to expose an internal service back through the footh
 - [The Hacker Recipes — SSH](https://www.thehacker.recipes/) — ControlMaster hijack notes.
 - [OpenSSH manual — ssh_config](https://man.openbsd.org/ssh_config) — ControlMaster, ForwardAgent, IdentitiesOnly.
 - [ired.team — SSH tunnelling / port forwarding](https://www.ired.team/offensive-security/lateral-movement/ssh-tunnelling-port-forwarding) — `-L`/`-R`/`-D` mechanics and `GatewayPorts` binding nuance.
+
+See also: [[ssh-agent-hijack]], [[cve-2024-6387-regresshion-openssh]]

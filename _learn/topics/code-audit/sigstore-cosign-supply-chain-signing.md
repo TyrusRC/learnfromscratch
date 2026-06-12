@@ -193,4 +193,4 @@ See [[slsa-supply-chain-framework]].
 - [Chainguard — keyless signing in practice](https://www.chainguard.dev/unchained)
 - [Kyverno verifyImages](https://kyverno.io/docs/writing-policies/verify-images/)
 
-See also: [[slsa-supply-chain-framework]], [[sbom-and-software-supply-chain-attestation]], [[policy-as-code-opa-kyverno-defender]], [[gitops-security-argo-flux]], [[helm-chart-security-audit]], [[cicd-pipeline-hardening-defender]], [[github-actions-workflow-source-audit]], [[gha-oidc-sub-claim-wildcards]], [[tj-actions-tag-mutation]], [[npm-postinstall-and-typosquat-audit]]
+See also: [[slsa-supply-chain-framework]], [[sbom-and-software-supply-chain-attestation]], [[policy-as-code-opa-kyverno-defender]], [[gitops-security-argo-flux]], [[helm-chart-security-audit]], [[cicd-pipeline-hardening-defender]], [[github-actions-workflow-source-audit]], [[gha-oidc-sub-claim-wildcards]], [[tj-actions-tag-mutation]], [[npm-postinstall-and-typosquat-audit]], [[k8s-image-registry-poisoning]]

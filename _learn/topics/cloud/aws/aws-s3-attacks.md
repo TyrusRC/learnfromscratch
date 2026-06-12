@@ -51,3 +51,5 @@ Other recurring patterns: subdomain takeover by claiming a freed bucket; `s3:Get
 ## References
 - [HackingTheCloud — S3 enumeration & exploitation](https://hackingthe.cloud/aws/enumeration/s3/) — practical recipes and tools.
 - [AWS — Block Public Access](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html) — vendor reference for the BPA settings most often misconfigured.
+
+See also: [[aws-iam-enum]], [[aws-secrets-manager]], [[azure-storage-sas-abuse]]

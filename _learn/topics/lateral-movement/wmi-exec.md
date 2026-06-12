@@ -46,3 +46,5 @@ The legacy `wmic` one-liner — `wmic /node:10.0.0.6 /user:administrator /passwo
 - [WMI as an attack vector — Mandiant](https://www.mandiant.com/resources/blog/windows-management-instrumentation-wmi-offense-defense-and-forensics) — canonical research paper.
 - [WMI lateral movement — HackTricks](https://book.hacktricks.wiki/en/windows-hardening/lateral-movement/wmiexec.html) — variants and detections.
 - [ired.team — WMI for lateral movement](https://www.ired.team/offensive-security/lateral-movement/t1047-wmi-for-lateral-movement) — `wmic /node` syntax and 4648/4624 event chain.
+
+See also: [[psexec-family]], [[smb-exec]], [[dcom-exec]], [[rmm-tool-abuse-screenconnect-anydesk]], [[sccm-mecm-lateral-movement]]

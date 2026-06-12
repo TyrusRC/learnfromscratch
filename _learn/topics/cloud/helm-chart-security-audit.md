@@ -200,4 +200,4 @@ Layered defense: chart audit + CI scan + admission policy.
 - [CNCF — Helm security blog series](https://www.cncf.io/blog/)
 - [Bridgecrew — Checkov Helm policies](https://www.checkov.io/4.Integrations/Helm.html)
 
-See also: [[gitops-security-argo-flux]], [[sigstore-cosign-supply-chain-signing]], [[k8s-admission-webhook-abuse]], [[k8s-rbac-abuse]], [[k8s-manifest-source-audit]], [[policy-as-code-opa-kyverno-defender]], [[iac-scanning-checkov-tfsec-kics]], [[k8s-privileged-pod]], [[k8s-host-mount-escape]], [[sbom-and-software-supply-chain-attestation]]
+See also: [[gitops-security-argo-flux]], [[sigstore-cosign-supply-chain-signing]], [[k8s-admission-webhook-abuse]], [[k8s-rbac-abuse]], [[k8s-manifest-source-audit]], [[policy-as-code-opa-kyverno-defender]], [[iac-scanning-checkov-tfsec-kics]], [[k8s-privileged-pod]], [[k8s-host-mount-escape]], [[sbom-and-software-supply-chain-attestation]], [[k8s-image-registry-poisoning]], [[kubelet-exposed-api-attacks]]

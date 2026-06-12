@@ -57,3 +57,5 @@ gcloud iam service-accounts keys create k.json \
 - [GCP — Service account permissions](https://cloud.google.com/iam/docs/service-account-permissions) — official ActAs/TokenCreator semantics.
 - [HackTricks Cloud — GCP IAM enumeration](https://cloud.hacktricks.wiki/en/pentesting-cloud/gcp-security/gcp-services/gcp-iam-and-org-policies-enum.html) — practical commands and escalation paths.
 - [Rhino — GCP penetration testing](https://github.com/RhinoSecurityLabs/GCP-IAM-Privilege-Escalation) — catalogued IAM escalation primitives.
+
+See also: [[gke-workload-identity-abuse]], [[gcp-cloud-build-trigger-abuse]], [[gcp-iam-misconfig]], [[gcp-metadata-server]]
