@@ -64,3 +64,5 @@ Chain with [[k8s-rbac-abuse]] for the create permissions and [[k8s-privileged-po
 - [Kubernetes — Admission webhooks](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) — official model
 - [Kyverno — Policy reports](https://kyverno.io/docs/policy-reports/) — enforcement modes
 - [Aqua — Admission controller bypass research](https://www.aquasec.com/blog/) — TOCTOU and webhook-kill patterns
+
+See also: [[policy-as-code-opa-kyverno-defender]], [[helm-chart-security-audit]], [[gitops-security-argo-flux]]

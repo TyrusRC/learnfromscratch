@@ -180,3 +180,5 @@ Realistic effort: a single engineer can build the local lab in a week. Rolling i
 - CycloneDX specification (OWASP) — https://cyclonedx.org/specification/overview/
 - SPDX specification (Linux Foundation / ISO 5962) — https://spdx.dev/specifications/
 - NTIA "The Minimum Elements for an SBOM" — https://www.ntia.gov/files/ntia/publications/sbom_minimum_elements_report.pdf
+
+See also: [[sigstore-cosign-supply-chain-signing]], [[slsa-supply-chain-framework]], [[cicd-pipeline-hardening-defender]], [[helm-chart-security-audit]]

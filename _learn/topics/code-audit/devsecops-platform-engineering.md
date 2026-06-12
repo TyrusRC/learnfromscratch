@@ -191,3 +191,5 @@ Who struggles: pure pentesters who view devs as adversaries; pure platform engin
 - https://www.cisa.gov/securebydesign
 - https://owasp.org/www-project-devsecops-maturity-model/
 - https://github.com/cncf/tag-security
+
+See also: [[cicd-pipeline-hardening-defender]], [[sigstore-cosign-supply-chain-signing]], [[slsa-supply-chain-framework]], [[iac-scanning-checkov-tfsec-kics]], [[policy-as-code-opa-kyverno-defender]], [[backstage-idp-security]], [[gitops-security-argo-flux]], [[helm-chart-security-audit]]

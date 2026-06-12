@@ -207,6 +207,6 @@ For each finding:
 - [Gatekeeper constraint library](https://open-policy-agent.github.io/gatekeeper/website/docs/howto)
 - [Regal — Rego linter](https://github.com/StyraInc/regal)
 - [Rego policy testing](https://www.openpolicyagent.org/docs/latest/policy-testing/)
-- See also: [[k8s-admission-webhook-abuse]], [[k8s-manifest-source-audit]], [[authorization-patterns-rebac-abac]]
+- See also: [[k8s-admission-webhook-abuse]], [[k8s-manifest-source-audit]], [[authorization-patterns-rebac-abac]], [[policy-as-code-opa-kyverno-defender]]
 
 {% endraw %}

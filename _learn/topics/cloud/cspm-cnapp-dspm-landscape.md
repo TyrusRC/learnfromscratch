@@ -174,3 +174,5 @@ Pair with [[cloud-identity-mental-model]] and [[cloud-iam-misconfig-patterns]] f
 - <https://cloud.google.com/security-command-center/docs> — GCP Security Command Center documentation
 - <https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction> — Microsoft Defender for Cloud overview
 - <https://github.com/prowler-cloud/prowler> — Prowler open-source CSPM (good for hands-on study)
+
+See also: [[cspm-operational-tuning]], [[ciem-cloud-entitlement-management]], [[iac-scanning-checkov-tfsec-kics]], [[cilium-tetragon-falco-runtime]]

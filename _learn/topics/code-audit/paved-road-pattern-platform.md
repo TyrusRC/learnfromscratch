@@ -173,3 +173,6 @@ Who succeeds: orgs with strong platform/SRE culture, with security leadership th
 - [[case-study-snowflake-2024]]
 - [[case-study-capital-one-2019]]
 - [[policy-and-standards-writing]]
+- [[backstage-idp-security]]
+- [[devsecops-platform-engineering]]
+- [[cicd-pipeline-hardening-defender]]

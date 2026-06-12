@@ -41,3 +41,5 @@ Modern build systems no longer ship static cloud keys; they mint short-lived cre
 - [GitHub: Security hardening with OpenID Connect](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect) — canonical OIDC sub-claim format.
 - [Palo Alto Unit42 — tj-actions supply chain](https://unit42.paloaltonetworks.com/github-actions-supply-chain-attack/) — real-world CI breach mechanics.
 - [HackTricks Cloud — CI/CD](https://cloud.hacktricks.wiki/en/pentesting-ci-cd/index.html) — pipeline attack catalogue.
+
+See also: [[cicd-pipeline-hardening-defender]], [[gitops-security-argo-flux]], [[sigstore-cosign-supply-chain-signing]], [[slsa-supply-chain-framework]], [[iac-scanning-checkov-tfsec-kics]]

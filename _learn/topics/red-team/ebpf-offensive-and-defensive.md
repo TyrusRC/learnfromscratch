@@ -159,6 +159,6 @@ OSEE / advanced kernel exploitation: BPF verifier bugs are real LPE primitives.
 - [Falco documentation](https://falco.org/docs/)
 - [bpftrace](https://github.com/iovisor/bpftrace)
 - [eBPF.io reading list](https://ebpf.io/get-started/)
-- See also: [[container-runtime-escapes-modern]], [[linux-userland-and-kernel-rootkit-primer]], [[kernel-syscall-source-review]], [[edr-rules-as-code-from-attack-patterns]]
+- See also: [[container-runtime-escapes-modern]], [[linux-userland-and-kernel-rootkit-primer]], [[kernel-syscall-source-review]], [[edr-rules-as-code-from-attack-patterns]], [[cilium-tetragon-falco-runtime]]
 
 {% endraw %}
