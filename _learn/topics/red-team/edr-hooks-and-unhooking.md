@@ -42,4 +42,4 @@ HMODULE clean = LoadLibraryEx(L"ntdll.dll", NULL, DONT_RESOLVE_DLL_REFERENCES);
 - [klezVirus — SysWhispers3](https://github.com/klezVirus/SysWhispers3) — indirect syscalls with stack spoofing
 - [MDSec — Bypassing User-Mode Hooks](https://www.mdsec.co.uk/2020/12/bypassing-user-mode-hooks-and-direct-invocation-of-system-calls-for-red-teams/) — analysis of unhooking patterns
 - [ired.team — Full DLL unhooking with C++](https://www.ired.team/offensive-security/defense-evasion/how-to-unhook-a-dll-using-c++) — walk-through of mapping clean ntdll from disk and copy-back patterns
-- [[syscall-direct-and-indirect]] [[amsi-bypass]] [[etw-bypass]]
+- [[syscall-direct-and-indirect]] [[amsi-bypass]] [[etw-bypass]] [[byovd-bring-your-own-vulnerable-driver]] [[defender-for-identity-evasion]]

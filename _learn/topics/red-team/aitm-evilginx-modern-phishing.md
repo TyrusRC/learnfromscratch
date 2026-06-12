@@ -116,4 +116,4 @@ AitM is a powerful capability that must be used within scope:
 - [Microsoft — AitM attacks blog](https://www.microsoft.com/en-us/security/blog/2022/07/12/from-cookie-theft-to-bec-attackers-use-aitm-phishing-sites/)
 - [Mandiant — AitM threat actor patterns](https://cloud.google.com/blog/topics/threat-intelligence)
 - [TrustedSec — AitM operational notes](https://www.trustedsec.com/blog)
-- See also: [[phishing-infrastructure-design]], [[oauth-device-code-phishing-m365]], [[conditional-access-bypass-modern]], [[passkey-mobile-ble-phish]]
+- See also: [[phishing-infrastructure-design]], [[oauth-device-code-phishing-m365]], [[conditional-access-bypass-modern]], [[passkey-mobile-ble-phish]], [[browser-in-the-browser-phish]], [[tycoon2fa-and-modern-phish-kits]]

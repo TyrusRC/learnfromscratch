@@ -86,3 +86,5 @@ chainsaw hunt -s rules/sigma -m evtx C:\triage\Logs   # Sigma rule sweep
 - [SANS — Hunt Evil poster](https://www.sans.org/security-resources/posters/) — Event ID quick reference
 - [EvtxECmd](https://ericzimmerman.github.io/) — Eric Zimmerman parser
 - [Chainsaw](https://github.com/WithSecureLabs/chainsaw) — fast Sigma-driven EVTX hunting
+
+See also: [[hayabusa-windows-event-log-triage]], [[chainsaw-evtx-hunting]], [[kape-triage-collection]], [[velociraptor-threat-hunting]], [[sigma-rules-detection-as-code]]

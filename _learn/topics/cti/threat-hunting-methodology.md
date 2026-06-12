@@ -198,3 +198,5 @@ A study path for a senior analyst moving into hunting:
 - ThreatHunter Playbook (open hunt patterns): https://threathunterplaybook.com/
 - Splunk PEAK threat hunting framework: https://www.splunk.com/en_us/blog/security/peak-threat-hunting-framework.html
 - CISA, "Threat Hunting Guidance": https://www.cisa.gov/resources-tools/services/cisa-threat-hunting
+
+See also: [[sigma-rules-detection-as-code]], [[velociraptor-threat-hunting]], [[hayabusa-windows-event-log-triage]], [[chainsaw-evtx-hunting]], [[kape-triage-collection]]

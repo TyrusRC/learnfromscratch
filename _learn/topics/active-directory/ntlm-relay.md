@@ -117,5 +117,5 @@ SecurityEvent
 - https://github.com/topotam/PetitPotam
 - https://posts.specterops.io/shadow-credentials-abusing-key-trust-account-mapping-for-takeover-8ee1a53566ab
 
-See also: [[ntlm]], [[adcs-attacks]], [[shadow-credentials]], [[resource-based-constrained-delegation]], [[pass-the-hash]], [[kerberoasting]], [[smb-enum]], [[lateral-movement-playbook]], [[ad-coercion-and-relay-matrix-2025]], [[impacket-toolkit-overview]], [[ntlm-relay-ws2025-mitigations]], [[winreg-relay-2024]]
+See also: [[ntlm]], [[adcs-attacks]], [[shadow-credentials]], [[resource-based-constrained-delegation]], [[pass-the-hash]], [[kerberoasting]], [[smb-enum]], [[lateral-movement-playbook]], [[ad-coercion-and-relay-matrix-2025]], [[impacket-toolkit-overview]], [[ntlm-relay-ws2025-mitigations]], [[winreg-relay-2024]], [[certipy-toolkit-deep]]
 {% endraw %}

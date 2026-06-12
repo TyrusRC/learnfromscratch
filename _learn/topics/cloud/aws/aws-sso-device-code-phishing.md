@@ -58,3 +58,5 @@ aws sso get-role-credentials --access-token $AT --region $REGION \
 ## References
 - [christophetd — Phishing for AWS credentials via Identity Center device code](https://blog.christophetd.fr/phishing-for-aws-credentials-via-aws-sso-device-code-authentication/) — original PoC and CLI walkthrough.
 - [AWS — IAM Identity Center OIDC API](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html) — endpoint reference for the device flow.
+
+See also: [[aws-iam-identity-center-internal-abuse]], [[aws-iam-enum]], [[aws-assumerole-chains]], [[token-stealing-cloud]]

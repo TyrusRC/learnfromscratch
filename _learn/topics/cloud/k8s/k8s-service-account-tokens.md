@@ -71,3 +71,5 @@ Chain into [[k8s-rbac-abuse]] for the privilege analysis lens.
 - [Kubernetes — ServiceAccount tokens](https://kubernetes.io/docs/concepts/security/service-accounts/) — token mechanics
 - [Kubernetes — BoundServiceAccountTokenVolume](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/) — projected tokens
 - [HackTricks — k8s SA abuse](https://book.hacktricks.wiki/en/pentesting-network/pentesting-kubernetes/abusing-roles-clusterroles-in-kubernetes/index.html) — RBAC abuse catalog
+
+See also: [[eks-pod-identity-abuse]], [[k8s-rbac-abuse]], [[k8s-privileged-pod]], [[gcp-workload-identity-federation-abuse]]

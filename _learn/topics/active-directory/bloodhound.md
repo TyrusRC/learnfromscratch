@@ -57,4 +57,4 @@ If the Neo4j backend is running but you cannot reach the BloodHound UI, the raw 
 - [GitHub — bloodhound-ce-python](https://github.com/dirkjanm/BloodHound.py) — Linux collector
 - [ired.team — BloodHound on Kali](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/abusing-active-directory-with-bloodhound-on-kali-linux) — Neo4j first-run + PowerShell `Invoke-BloodHound` workflow
 
-See also: [[bloodhound-ce-deployment]], [[sharphound]], [[ldap-enumeration]], [[snaffler-share-mining]], [[netexec-nxc-workflow]], [[impacket-toolkit-overview]], [[ad-coercion-and-relay-matrix-2025]]
+See also: [[bloodhound-ce-deployment]], [[sharphound]], [[ldap-enumeration]], [[snaffler-share-mining]], [[netexec-nxc-workflow]], [[impacket-toolkit-overview]], [[ad-coercion-and-relay-matrix-2025]], [[windows-laps-v2-attacks]], [[certipy-toolkit-deep]]

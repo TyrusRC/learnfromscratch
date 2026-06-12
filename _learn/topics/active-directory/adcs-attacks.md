@@ -44,4 +44,4 @@ When Certipy is off the table, the same enrollment can be done by hand: build an
 - [Certipy wiki](https://github.com/ly4k/Certipy/wiki) — current ESC catalogue and command reference
 - [HackTricks — AD CS abuse](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/ad-certificates/domain-escalation.html) — concise per-ESC playbook
 - [ired.team — Misconfigured cert template to DA](https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse/from-misconfigured-certificate-template-to-domain-admin) — Certify + manual OpenSSL CSR workflow for ESC1
-- See also: [[adcs-esc14-altsecidentities]], [[adcs-esc15-ekuwu]], [[adcs-esc16-securityext-disabled]], [[shadow-credentials]]
+- See also: [[adcs-esc14-altsecidentities]], [[adcs-esc15-ekuwu]], [[adcs-esc16-securityext-disabled]], [[shadow-credentials]], [[certipy-toolkit-deep]]
