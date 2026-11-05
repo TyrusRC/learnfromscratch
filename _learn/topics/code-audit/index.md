@@ -56,9 +56,13 @@ Source-review notes for PHP, Java, and ASP.NET stacks. See
 ## Framework patterns
 - [[spring-boot-audit-patterns]]
 - [[django-audit-patterns]]
+- [[flask-audit-patterns]]
 - [[laravel-audit-patterns]]
-- [[rails-audit-patterns]]
+- [[rails-audit-patterns]] · [[ruby-rails-audit-patterns]]
 - [[express-nestjs-audit-patterns]]
+
+## OSWE exam prep
+- [[oswe-exploit-scripting-guide]]
 
 ## Framework deep dives
 - [[spring-deserialisation-deep]]

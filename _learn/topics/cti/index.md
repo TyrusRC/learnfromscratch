@@ -17,6 +17,9 @@ Cyber threat intelligence and detection engineering. Focus on tradecraft attribu
 - [[detection-engineering-pyramid-of-pain]] — Bianco's pyramid
 - [[atomic-red-team-emulation-deep]] — testing detections
 - [[siem-detection-use-case-catalog]] (cross-link)
+- [[yara-rule-authoring]] · [[elastic-detection-rules]]
+- [[detection-as-code-pipeline]]
+- [[mitre-attack-collection-exfiltration-impact]]
 
 ## Behavioral analytics / ML detection
 - [[ueba-detection-ml-primer]]
@@ -31,7 +34,7 @@ Cyber threat intelligence and detection engineering. Focus on tradecraft attribu
 - [[mssp-mdr-vendor-relationships]]
 
 ## Threat hunting
-- [[threat-hunting-methodology]]
+- [[threat-hunting-methodology]] · [[threat-hunting-methodology-structured]]
 - [[hypothesis-driven-hunting]]
 - [[structured-analytic-techniques-for-hunters]]
 

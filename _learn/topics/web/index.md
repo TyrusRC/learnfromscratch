@@ -14,9 +14,9 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[burp-suite]]
 
 ## Injection
-- [[sql-injection]] · [[sql-injection-by-database]]
+- [[sql-injection]] · [[sql-injection-by-database]] · [[blind-sqli-techniques]]
 - [[nosql-injection]] · [[command-injection]]
-- [[ssti]] · [[python-ssti-jinja]] · [[client-side-template-injection]]
+- [[ssti]] · [[python-ssti-jinja]] · [[ssti-by-engine]] · [[client-side-template-injection]]
 - [[xxe]] · [[ldap-injection]] · [[xpath-injection]]
 - [[crlf-injection]] · [[smtp-injection]]
 - [[http-parameter-pollution]] · [[server-side-parameter-pollution]]
@@ -36,6 +36,7 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[service-worker-persistent-xss]] · [[mv3-extension-bypass]]
 
 ## Auth / session
+- [[authentication-vulnerabilities]] · [[session-hijacking-from-source]]
 - [[jwt]] · [[oauth-flows]] · [[oauth-token-theft]] · [[oauth-token-leak-vectors]]
 - [[pkce-downgrade-and-bypass]] · [[oauth-authorization-code-injection]]
 - [[saml-attacks]] · [[parser-differential-saml-ruby]]
@@ -56,19 +57,19 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[http-request-smuggling]] · [[cache-poisoning]] · [[cache-deception]]
 - [[http2-h2-downgrade-desync-v3]] · [[request-tunnelling-desync]]
 - [[host-header-injection]]
-- [[websocket-attacks]]
-- [[race-conditions]]
+- [[websocket-attacks]] · [[websocket-command-injection]]
+- [[race-conditions]] · [[race-conditions-deep]]
 
 ## File and path
-- [[file-upload]] · [[lfi-rfi]] · [[path-traversal]]
-- [[open-redirect]]
+- [[file-upload]] · [[lfi-rfi]] · [[lfi-to-rce-chains]] · [[path-traversal]]
+- [[open-redirect]] · [[client-side-path-traversal]]
 - [[webdav-attacks]]
 
 ## Indirect access
-- [[ssrf]] · [[ssrf-to-cloud]]
+- [[ssrf]] · [[ssrf-to-cloud]] · [[ssrf-internal-service-exploitation]]
 
 ## Server-side application
-- [[deserialisation]] · [[viewstate-attacks]]
+- [[deserialisation]] · [[viewstate-attacks]] · [[nodejs-deserialization]]
 - [[python-deserialization]]
 - [[python-format-string]] · [[python-sandbox-escape]] · [[python-sys-audit-bypass]]
 - [[prototype-pollution-server-side]]
@@ -144,6 +145,18 @@ Atomic web-app vulnerability and primitive notes. Pair with the
 - [[firebase-misconfig]] · [[elasticsearch-exposed]] · [[mongodb-exposed]]
 - [[shared-hosting-attacks]]
 - [[waf-bypass]] · [[canonicalization-attacks]]
+
+## Database exploitation
+- [[postgresql-exploitation]] · [[database-rce-from-sqli]]
+
+## Whitebox web (source review)
+- [[xss-from-source-review]] · [[data-exfiltration-from-source]]
+- [[session-hijacking-from-source]] · [[weak-token-generation]] · [[insecure-randomness]]
+- [[php-type-juggling]] · [[regex-filter-bypass-patterns]] · [[character-restriction-bypass]]
+- [[dependency-confusion]]
+
+## Enterprise SaaS attack surface
+- [[servicenow-attacks]]
 
 ## CMS / framework attack surface
 - [[wordpress-attacks]] · [[drupal-attacks]]

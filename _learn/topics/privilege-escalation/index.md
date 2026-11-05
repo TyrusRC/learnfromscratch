@@ -10,7 +10,8 @@ Privesc vectors by platform. Linked from the OS internals paths.
 - [[windows-enumeration]]
 - [[user-account-control]] (UAC bypass theory)
 - [[uac-bypass-techniques]]
-- [[token-impersonation]]
+- [[token-impersonation]] · [[potato-exploits]]
+- [[named-pipe-impersonation]] · [[leaked-handle-exploitation]]
 - [[credential-dumping]]
 - [[unquoted-service-paths]]
 - [[weak-service-permissions]]

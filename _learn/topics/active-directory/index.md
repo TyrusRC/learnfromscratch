@@ -46,3 +46,4 @@ AD attack primitives. See [[active-directory]] for ordering.
 - [[ms-rpc-abuse]] · [[ad-persistence]]
 - [[mssql-trusted-links]] · [[mssql-xp-cmdshell-impersonation-chains]]
 - [[sidhistory-injection]]
+- [[skeleton-key]] · [[shadow-principals-pam]] · [[rodc-golden-tickets]]

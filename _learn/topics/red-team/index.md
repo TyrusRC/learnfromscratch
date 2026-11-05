@@ -13,6 +13,7 @@ ordering.
 - [[c2-frameworks]] · [[metasploit-fundamentals]]
 
 ## C2 framework deep dives
+- [[cobalt-strike-operations]]
 - [[sliver-c2-deep]]
 - [[sliver-extension-development]]
 - [[havoc-c2-deep]]
@@ -68,13 +69,16 @@ ordering.
 - [[red-team-vs-pentest-engagement-shape]]
 
 ## Evasion
+- [[av-evasion-primer]]
 - [[amsi-bypass]] · [[amsi-providers-tampering]]
 - [[etw-bypass]] · [[wldp-bypass]]
 - [[edr-hooks-and-unhooking]]
 - [[anti-debugging-windows]]
 - [[syscall-direct-and-indirect]]
+- [[sleep-mask-and-memory-evasion]]
 - [[living-off-the-land]]
-- [[living-off-the-land-binaries-lolbas]]
+- [[living-off-the-land-binaries-lolbas]] · [[lolbas-grouped-techniques]]
+- [[wdac-policy-bypass]] · [[asr-rules-and-bypasses]]
 
 ## Evasion — deep dives
 - [[amsi-memory-patching-deep]]
@@ -89,6 +93,9 @@ ordering.
 - [[osep-network-filter-bypass-techniques]]
 - [[osep-ad-attack-chain-walkthrough]]
 
+## .NET tradecraft
+- [[offensive-dotnet-tradecraft]]
+
 ## Execution & loaders
 - [[dll-side-loading]] · [[com-hijacking]]
 - [[parent-pid-spoofing]]
@@ -97,6 +104,10 @@ ordering.
 
 ## Credential access
 - [[password-cracking-toolkit]]
+
+## Post-exploitation data
+- [[host-recon-tradecraft]]
+- [[data-hunting-and-exfiltration]]
 
 ## Pivoting
 - [[pivoting-and-tunneling]]
@@ -114,6 +125,10 @@ ordering.
 
 ## Enterprise infrastructure tradecraft
 - [[sccm-misconfiguration-manager]]
+
+## AD defence bypass
+- [[ad-defensive-architecture-bypass]]
+- [[ad-deception-and-honeypot-evasion]]
 
 ## Adversary feedback
 - [[purple-team-feedback-loop]]
